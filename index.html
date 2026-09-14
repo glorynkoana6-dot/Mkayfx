@@ -2,42 +2,47 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#070a10">
 
-  <title>Mkayfx | Market Intelligence</title>
+  <title>Mkayfx | Live Market Intelligence</title>
 
   <style>
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
     :root {
       --bg: #070a10;
       --panel: #0d1119;
       --panel2: #111722;
-      --border: #1c2432;
-      --text: #f4f7fb;
-      --muted: #7d8798;
+      --border: #1e2734;
+      --text: #f5f7fb;
+      --muted: #7f8999;
       --green: #13d88f;
       --red: #ff4d67;
-      --blue: #4da3ff;
       --yellow: #ffc857;
+      --blue: #4da3ff;
     }
 
     body {
+      min-height: 100vh;
       background:
-        radial-gradient(circle at top right, rgba(77,163,255,.08), transparent 30%),
+        radial-gradient(circle at top right, rgba(77,163,255,.09), transparent 30%),
         var(--bg);
       color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-      min-height: 100vh;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
     }
 
     .app {
-      max-width: 1100px;
+      max-width: 1050px;
       margin: auto;
       padding: 18px 16px 60px;
     }
@@ -46,141 +51,154 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 24px;
+      gap: 12px;
+      margin-bottom: 22px;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 11px;
     }
 
     .logo {
       width: 42px;
       height: 42px;
-      border-radius: 13px;
-      background: linear-gradient(135deg, #4da3ff, #13d88f);
       display: flex;
-      justify-content: center;
       align-items: center;
-      color: #04100d;
+      justify-content: center;
+      border-radius: 13px;
       font-weight: 900;
-      font-size: 18px;
+      background: linear-gradient(
+        135deg,
+        var(--blue),
+        var(--green)
+      );
+      color: #07100e;
     }
 
     .brand h1 {
       font-size: 20px;
-      letter-spacing: -.4px;
     }
 
     .brand p {
-      font-size: 12px;
-      color: var(--muted);
       margin-top: 2px;
+      font-size: 11px;
+      color: var(--muted);
     }
 
-    .status {
-      border: 1px solid rgba(19,216,143,.25);
-      background: rgba(19,216,143,.08);
-      color: var(--green);
-      padding: 8px 12px;
+    .live-status {
+      padding: 8px 11px;
       border-radius: 999px;
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: .5px;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .6px;
+      border: 1px solid rgba(19,216,143,.25);
+      background: rgba(19,216,143,.09);
+      color: var(--green);
+    }
+
+    .live-dot {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      margin-right: 5px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 10px var(--green);
     }
 
     .hero {
-      border: 1px solid var(--border);
+      padding: 21px;
+      border-radius: 21px;
       background:
-        linear-gradient(145deg, rgba(77,163,255,.07), transparent),
+        linear-gradient(
+          145deg,
+          rgba(77,163,255,.07),
+          transparent
+        ),
         var(--panel);
-      border-radius: 22px;
-      padding: 22px;
-      margin-bottom: 16px;
+      border: 1px solid var(--border);
     }
 
     .hero-top {
       display: flex;
       justify-content: space-between;
-      gap: 20px;
+      gap: 18px;
       align-items: flex-start;
     }
 
     .eyebrow {
+      font-size: 10px;
       color: var(--muted);
-      font-size: 12px;
-      font-weight: 700;
-      text-transform: uppercase;
+      font-weight: 800;
       letter-spacing: 1px;
+      text-transform: uppercase;
     }
 
     .hero h2 {
-      font-size: 30px;
+      font-size: 28px;
       margin-top: 8px;
-      letter-spacing: -1px;
     }
 
     .hero-desc {
-      margin-top: 8px;
       color: var(--muted);
-      font-size: 14px;
-      line-height: 1.6;
+      font-size: 13px;
+      line-height: 1.55;
+      margin-top: 7px;
     }
 
-    .bias-box {
-      min-width: 120px;
-      text-align: center;
-      background: rgba(19,216,143,.08);
-      border: 1px solid rgba(19,216,143,.18);
-      padding: 12px;
-      border-radius: 16px;
+    .bias {
+      min-width: 125px;
+      padding: 13px;
+      border-radius: 14px;
+      background: var(--panel2);
+      border: 1px solid var(--border);
     }
 
-    .bias-box small {
+    .bias small {
       color: var(--muted);
-      font-size: 10px;
-      text-transform: uppercase;
+      font-size: 9px;
     }
 
-    .bias-box strong {
+    .bias strong {
       display: block;
-      color: var(--green);
       margin-top: 5px;
-      font-size: 18px;
+      font-size: 17px;
     }
 
     .summary-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
-      margin-top: 20px;
+      gap: 9px;
+      margin-top: 18px;
     }
 
     .summary {
       padding: 12px;
       background: rgba(255,255,255,.025);
       border: 1px solid var(--border);
-      border-radius: 13px;
+      border-radius: 12px;
     }
 
-    .summary p {
-      font-size: 10px;
+    .summary small {
+      display: block;
+      font-size: 9px;
       color: var(--muted);
       text-transform: uppercase;
     }
 
     .summary strong {
       display: block;
-      margin-top: 6px;
-      font-size: 14px;
+      margin-top: 5px;
+      font-size: 13px;
     }
 
     .section-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin: 24px 2px 12px;
+      margin: 23px 2px 11px;
     }
 
     .section-header h3 {
@@ -188,8 +206,8 @@
     }
 
     .section-header span {
-      font-size: 11px;
       color: var(--muted);
+      font-size: 10px;
     }
 
     .signals {
@@ -199,47 +217,35 @@
     }
 
     .signal-card {
+      padding: 17px;
+      border-radius: 18px;
       background: var(--panel);
       border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 17px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .signal-card::after {
-      content: "";
-      position: absolute;
-      width: 110px;
-      height: 110px;
-      right: -50px;
-      top: -50px;
-      border-radius: 50%;
-      background: rgba(77,163,255,.04);
     }
 
     .signal-top {
       display: flex;
       justify-content: space-between;
+      gap: 10px;
       align-items: center;
     }
 
     .asset {
       display: flex;
-      align-items: center;
       gap: 9px;
+      align-items: center;
     }
 
     .asset-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 10px;
-      background: var(--panel2);
+      width: 37px;
+      height: 37px;
       display: flex;
       align-items: center;
       justify-content: center;
+      border-radius: 10px;
+      background: var(--panel2);
+      font-size: 11px;
       font-weight: 900;
-      font-size: 12px;
     }
 
     .asset-name strong {
@@ -248,52 +254,55 @@
 
     .asset-name small {
       display: block;
-      color: var(--muted);
       margin-top: 3px;
-      font-size: 10px;
+      color: var(--muted);
+      font-size: 9px;
     }
 
     .tag {
-      font-size: 10px;
-      font-weight: 900;
       padding: 7px 10px;
       border-radius: 999px;
-      letter-spacing: .5px;
+      font-size: 9px;
+      font-weight: 900;
     }
 
-    .buy {
-      background: rgba(19,216,143,.1);
+    .tag.buy {
       color: var(--green);
-      border: 1px solid rgba(19,216,143,.18);
+      background: rgba(19,216,143,.1);
+      border: 1px solid rgba(19,216,143,.2);
     }
 
-    .sell {
-      background: rgba(255,77,103,.1);
+    .tag.sell {
       color: var(--red);
-      border: 1px solid rgba(255,77,103,.18);
+      background: rgba(255,77,103,.1);
+      border: 1px solid rgba(255,77,103,.2);
     }
 
-    .wait {
-      background: rgba(255,200,87,.08);
+    .tag.wait {
       color: var(--yellow);
-      border: 1px solid rgba(255,200,87,.17);
+      background: rgba(255,200,87,.08);
+      border: 1px solid rgba(255,200,87,.18);
+    }
+
+    .tag.error {
+      color: var(--red);
+      background: rgba(255,77,103,.1);
     }
 
     .price {
       font-size: 25px;
-      font-weight: 800;
-      margin-top: 18px;
-      letter-spacing: -.5px;
+      font-weight: 850;
+      margin-top: 17px;
     }
 
-    .confidence-row {
+    .row {
       display: flex;
       justify-content: space-between;
-      margin-top: 16px;
-      font-size: 11px;
+      margin-top: 14px;
+      font-size: 10px;
     }
 
-    .confidence-row span:first-child {
+    .row span:first-child {
       color: var(--muted);
     }
 
@@ -307,128 +316,131 @@
 
     .bar-fill {
       height: 100%;
-      background: linear-gradient(90deg, #4da3ff, #13d88f);
-      border-radius: 20px;
+      background: linear-gradient(
+        90deg,
+        var(--blue),
+        var(--green)
+      );
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 7px;
+      margin-top: 14px;
+    }
+
+    .metric {
+      padding: 9px;
+      border-radius: 10px;
+      background: var(--panel2);
+    }
+
+    .metric small {
+      display: block;
+      color: var(--muted);
+      font-size: 8px;
+    }
+
+    .metric strong {
+      display: block;
+      margin-top: 4px;
+      font-size: 11px;
     }
 
     .levels {
       display: grid;
-      grid-template-columns: repeat(3,1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 7px;
-      margin-top: 17px;
+      margin-top: 8px;
     }
 
     .level {
-      background: var(--panel2);
+      padding: 9px 6px;
       border-radius: 10px;
-      padding: 10px 7px;
+      background: var(--panel2);
     }
 
     .level small {
-      color: var(--muted);
-      font-size: 9px;
       display: block;
+      font-size: 8px;
+      color: var(--muted);
     }
 
     .level strong {
       display: block;
-      font-size: 11px;
-      margin-top: 5px;
-    }
-
-    .insight-card {
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 18px;
-    }
-
-    .insight-line {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 13px 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .insight-line:last-child {
-      border-bottom: none;
-    }
-
-    .insight-left strong {
-      font-size: 13px;
-    }
-
-    .insight-left p {
-      color: var(--muted);
-      font-size: 11px;
       margin-top: 4px;
-      line-height: 1.4;
-    }
-
-    .positive {
-      color: var(--green);
-      font-weight: 800;
-      font-size: 11px;
-    }
-
-    .negative {
-      color: var(--red);
-      font-weight: 800;
-      font-size: 11px;
-    }
-
-    .neutral {
-      color: var(--yellow);
-      font-weight: 800;
-      font-size: 11px;
-    }
-
-    .warning {
-      margin-top: 22px;
-      color: #626d7e;
       font-size: 10px;
-      line-height: 1.6;
-      text-align: center;
+    }
+
+    .candle-time {
+      color: var(--muted);
+      font-size: 9px;
+      margin-top: 12px;
     }
 
     .refresh-btn {
       width: 100%;
-      border: none;
-      margin-top: 16px;
+      border: 0;
+      margin-top: 18px;
       padding: 15px;
       border-radius: 14px;
-      color: white;
-      font-weight: 800;
+      font-weight: 850;
       font-size: 13px;
-      background: linear-gradient(135deg, #3478f6, #159675);
-      cursor: pointer;
+      color: white;
+      background:
+        linear-gradient(
+          135deg,
+          #3478f6,
+          #159675
+        );
     }
 
-    .refresh-btn:active {
-      transform: scale(.99);
+    .system-message {
+      padding: 15px;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      border-radius: 14px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .footer {
+      color: #5d6776;
+      text-align: center;
+      font-size: 9px;
+      line-height: 1.5;
+      margin-top: 20px;
+    }
+
+    .bullish {
+      color: var(--green);
+    }
+
+    .bearish {
+      color: var(--red);
+    }
+
+    .mixed {
+      color: var(--yellow);
     }
 
     @media(max-width: 700px) {
-      .summary-grid {
-        grid-template-columns: repeat(2,1fr);
-      }
-
       .signals {
         grid-template-columns: 1fr;
+      }
+
+      .summary-grid {
+        grid-template-columns: repeat(2,1fr);
       }
 
       .hero-top {
         flex-direction: column;
       }
 
-      .bias-box {
+      .bias {
         width: 100%;
-        text-align: left;
-      }
-
-      .hero h2 {
-        font-size: 25px;
       }
     }
   </style>
@@ -440,16 +452,24 @@
 
   <header class="topbar">
     <div class="brand">
-      <div class="logo">M</div>
+
+      <div class="logo">
+        M
+      </div>
 
       <div>
         <h1>Mkayfx</h1>
-        <p>Market Intelligence</p>
+        <p>Live Market Intelligence</p>
       </div>
+
     </div>
 
-    <div class="status">
-      ● DEMO DATA
+    <div
+      class="live-status"
+      id="liveStatus"
+    >
+      <span class="live-dot"></span>
+      CONNECTING
     </div>
   </header>
 
@@ -459,19 +479,31 @@
     <div class="hero-top">
 
       <div>
-        <div class="eyebrow">Market Overview</div>
+        <div class="eyebrow">
+          Market Overview
+        </div>
 
-        <h2>Trading Intelligence</h2>
+        <h2>
+          Live Trading Intelligence
+        </h2>
 
         <p class="hero-desc">
-          Multi-asset market bias, directional signals and trade levels
-          in one dashboard.
+          Automated 5-minute market analysis using
+          live Twelve Data candles.
         </p>
       </div>
 
-      <div class="bias-box">
-        <small>Overall Bias</small>
-        <strong>BULLISH</strong>
+      <div class="bias">
+        <small>
+          OVERALL BIAS
+        </small>
+
+        <strong
+          id="overallBias"
+          class="mixed"
+        >
+          LOADING
+        </strong>
       </div>
 
     </div>
@@ -480,23 +512,31 @@
     <div class="summary-grid">
 
       <div class="summary">
-        <p>Active Signals</p>
-        <strong>3</strong>
+        <small>Active Signals</small>
+        <strong id="activeSignals">
+          -
+        </strong>
       </div>
 
       <div class="summary">
-        <p>Avg Confidence</p>
-        <strong>78%</strong>
+        <small>Avg Confidence</small>
+        <strong id="avgConfidence">
+          -
+        </strong>
       </div>
 
       <div class="summary">
-        <p>Market Risk</p>
-        <strong>Medium</strong>
+        <small>Timeframe</small>
+        <strong id="interval">
+          -
+        </strong>
       </div>
 
       <div class="summary">
-        <p>Updated</p>
-        <strong id="updateTime">--:--</strong>
+        <small>Updated</small>
+        <strong id="updatedTime">
+          -
+        </strong>
       </div>
 
     </div>
@@ -505,329 +545,41 @@
 
 
   <div class="section-header">
-    <h3>Market Signals</h3>
-    <span>Multi-asset analysis</span>
+
+    <h3>
+      Market Signals
+    </h3>
+
+    <span id="dataSource">
+      Loading data...
+    </span>
+
   </div>
 
 
-  <section class="signals">
-
-    <!-- GOLD -->
-
-    <div class="signal-card">
-
-      <div class="signal-top">
-
-        <div class="asset">
-
-          <div class="asset-icon">
-            AU
-          </div>
-
-          <div class="asset-name">
-            <strong>XAUUSD</strong>
-            <small>Gold / US Dollar</small>
-          </div>
-
-        </div>
-
-        <div class="tag buy">
-          BUY
-        </div>
-
-      </div>
-
-      <div class="price">
-        3,642.50
-      </div>
-
-      <div class="confidence-row">
-        <span>Signal Confidence</span>
-        <strong>86%</strong>
-      </div>
-
-      <div class="bar">
-        <div class="bar-fill" style="width:86%"></div>
-      </div>
-
-      <div class="levels">
-
-        <div class="level">
-          <small>ENTRY</small>
-          <strong>3642.50</strong>
-        </div>
-
-        <div class="level">
-          <small>STOP LOSS</small>
-          <strong>3634.20</strong>
-        </div>
-
-        <div class="level">
-          <small>TAKE PROFIT</small>
-          <strong>3659.10</strong>
-        </div>
-
-      </div>
-
+  <section
+    class="signals"
+    id="signals"
+  >
+    <div class="system-message">
+      Loading live market analysis...
     </div>
-
-
-    <!-- EURUSD -->
-
-    <div class="signal-card">
-
-      <div class="signal-top">
-
-        <div class="asset">
-
-          <div class="asset-icon">
-            EU
-          </div>
-
-          <div class="asset-name">
-            <strong>EURUSD</strong>
-            <small>Euro / US Dollar</small>
-          </div>
-
-        </div>
-
-        <div class="tag sell">
-          SELL
-        </div>
-
-      </div>
-
-      <div class="price">
-        1.17284
-      </div>
-
-      <div class="confidence-row">
-        <span>Signal Confidence</span>
-        <strong>76%</strong>
-      </div>
-
-      <div class="bar">
-        <div class="bar-fill" style="width:76%"></div>
-      </div>
-
-      <div class="levels">
-
-        <div class="level">
-          <small>ENTRY</small>
-          <strong>1.17284</strong>
-        </div>
-
-        <div class="level">
-          <small>STOP LOSS</small>
-          <strong>1.17540</strong>
-        </div>
-
-        <div class="level">
-          <small>TAKE PROFIT</small>
-          <strong>1.16772</strong>
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <!-- GBPUSD -->
-
-    <div class="signal-card">
-
-      <div class="signal-top">
-
-        <div class="asset">
-
-          <div class="asset-icon">
-            GU
-          </div>
-
-          <div class="asset-name">
-            <strong>GBPUSD</strong>
-            <small>British Pound / US Dollar</small>
-          </div>
-
-        </div>
-
-        <div class="tag wait">
-          WAIT
-        </div>
-
-      </div>
-
-      <div class="price">
-        1.35940
-      </div>
-
-      <div class="confidence-row">
-        <span>Signal Confidence</span>
-        <strong>58%</strong>
-      </div>
-
-      <div class="bar">
-        <div class="bar-fill" style="width:58%"></div>
-      </div>
-
-      <div class="levels">
-
-        <div class="level">
-          <small>ENTRY</small>
-          <strong>Waiting</strong>
-        </div>
-
-        <div class="level">
-          <small>STOP LOSS</small>
-          <strong>—</strong>
-        </div>
-
-        <div class="level">
-          <small>TAKE PROFIT</small>
-          <strong>—</strong>
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <!-- BTC -->
-
-    <div class="signal-card">
-
-      <div class="signal-top">
-
-        <div class="asset">
-
-          <div class="asset-icon">
-            ₿
-          </div>
-
-          <div class="asset-name">
-            <strong>BTCUSD</strong>
-            <small>Bitcoin / US Dollar</small>
-          </div>
-
-        </div>
-
-        <div class="tag buy">
-          BUY
-        </div>
-
-      </div>
-
-      <div class="price">
-        $115,420
-      </div>
-
-      <div class="confidence-row">
-        <span>Signal Confidence</span>
-        <strong>79%</strong>
-      </div>
-
-      <div class="bar">
-        <div class="bar-fill" style="width:79%"></div>
-      </div>
-
-      <div class="levels">
-
-        <div class="level">
-          <small>ENTRY</small>
-          <strong>115,420</strong>
-        </div>
-
-        <div class="level">
-          <small>STOP LOSS</small>
-          <strong>114,100</strong>
-        </div>
-
-        <div class="level">
-          <small>TAKE PROFIT</small>
-          <strong>118,060</strong>
-        </div>
-
-      </div>
-
-    </div>
-
   </section>
 
 
-  <div class="section-header">
-    <h3>Market Insight</h3>
-    <span>Analysis engine</span>
-  </div>
-
-
-  <section class="insight-card">
-
-    <div class="insight-line">
-
-      <div class="insight-left">
-        <strong>USD Strength</strong>
-        <p>Dollar momentum across major pairs.</p>
-      </div>
-
-      <span class="negative">
-        BEARISH
-      </span>
-
-    </div>
-
-
-    <div class="insight-line">
-
-      <div class="insight-left">
-        <strong>Gold Momentum</strong>
-        <p>Price structure currently favours buyers.</p>
-      </div>
-
-      <span class="positive">
-        BULLISH
-      </span>
-
-    </div>
-
-
-    <div class="insight-line">
-
-      <div class="insight-left">
-        <strong>BTC Momentum</strong>
-        <p>Higher-timeframe structure remains positive.</p>
-      </div>
-
-      <span class="positive">
-        BULLISH
-      </span>
-
-    </div>
-
-
-    <div class="insight-line">
-
-      <div class="insight-left">
-        <strong>News Risk</strong>
-        <p>Check major economic releases before entering.</p>
-      </div>
-
-      <span class="neutral">
-        MEDIUM
-      </span>
-
-    </div>
-
-  </section>
-
-
-  <button class="refresh-btn" onclick="refreshDashboard()">
-    Refresh Analysis
+  <button
+    class="refresh-btn"
+    id="refreshButton"
+    onclick="loadMarketData()"
+  >
+    Refresh Live Analysis
   </button>
 
 
-  <p class="warning">
-    Mkayfx market information is for educational and analytical purposes.
-    Trading involves risk. Signals are not guaranteed outcomes.
+  <p class="footer">
+    Mkayfx market intelligence is generated automatically
+    from market data and technical analysis.
+    Trading involves risk and no signal guarantees a profitable trade.
   </p>
 
 </div>
@@ -835,45 +587,553 @@
 
 <script>
 
-function setTime() {
+const assetInfo = {
 
-  const now = new Date();
+  XAUUSD: {
+    icon: "AU",
+    name: "Gold / US Dollar"
+  },
 
-  document.getElementById("updateTime").innerText =
-    now.toLocaleTimeString([], {
+  EURUSD: {
+    icon: "EU",
+    name: "Euro / US Dollar"
+  },
+
+  GBPUSD: {
+    icon: "GU",
+    name: "British Pound / US Dollar"
+  },
+
+  BTCUSD: {
+    icon: "₿",
+    name: "Bitcoin / US Dollar"
+  }
+
+};
+
+
+function formatPrice(symbol, value) {
+
+  if (
+    value === null ||
+    value === undefined
+  ) {
+    return "—";
+  }
+
+  const number = Number(value);
+
+  if (
+    symbol === "EURUSD" ||
+    symbol === "GBPUSD"
+  ) {
+
+    return number.toFixed(5);
+
+  }
+
+  if (symbol === "BTCUSD") {
+
+    return number.toLocaleString(
+      undefined,
+      {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      }
+    );
+
+  }
+
+  return number.toLocaleString(
+    undefined,
+    {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    }
+  );
+
+}
+
+
+function signalClass(signal) {
+
+  if (signal === "BUY") {
+    return "buy";
+  }
+
+  if (signal === "SELL") {
+    return "sell";
+  }
+
+  if (signal === "ERROR") {
+    return "error";
+  }
+
+  return "wait";
+
+}
+
+
+function trendClass(trend) {
+
+  if (trend === "BULLISH") {
+    return "bullish";
+  }
+
+  if (trend === "BEARISH") {
+    return "bearish";
+  }
+
+  return "mixed";
+
+}
+
+
+function formatUpdateTime(value) {
+
+  if (!value) {
+    return "—";
+  }
+
+  const date = new Date(value);
+
+  return date.toLocaleTimeString(
+    [],
+    {
       hour: "2-digit",
       minute: "2-digit"
-    });
+    }
+  );
 
 }
 
 
-function refreshDashboard() {
+function renderMarket(market) {
 
-  const button = document.querySelector(".refresh-btn");
+  const info =
+    assetInfo[market.symbol] ||
+    {
+      icon: "?",
+      name: market.symbol
+    };
 
-  button.innerText = "Analysing markets...";
 
-  setTimeout(() => {
+  if (market.signal === "ERROR") {
 
-    setTime();
+    return `
+      <div class="signal-card">
 
-    button.innerText = "Analysis Updated ✓";
+        <div class="signal-top">
 
-    setTimeout(() => {
+          <div class="asset">
 
-      button.innerText = "Refresh Analysis";
+            <div class="asset-icon">
+              ${info.icon}
+            </div>
 
-    }, 1500);
+            <div class="asset-name">
+              <strong>
+                ${market.symbol}
+              </strong>
 
-  }, 900);
+              <small>
+                ${info.name}
+              </small>
+            </div>
+
+          </div>
+
+          <div class="tag error">
+            ERROR
+          </div>
+
+        </div>
+
+        <div class="candle-time">
+          ${market.error || "Market data unavailable"}
+        </div>
+
+      </div>
+    `;
+
+  }
+
+
+  return `
+    <div class="signal-card">
+
+      <div class="signal-top">
+
+        <div class="asset">
+
+          <div class="asset-icon">
+            ${info.icon}
+          </div>
+
+          <div class="asset-name">
+
+            <strong>
+              ${market.symbol}
+            </strong>
+
+            <small>
+              ${info.name}
+            </small>
+
+          </div>
+
+        </div>
+
+        <div
+          class="tag ${signalClass(market.signal)}"
+        >
+          ${market.signal}
+        </div>
+
+      </div>
+
+
+      <div class="price">
+        ${formatPrice(
+          market.symbol,
+          market.price
+        )}
+      </div>
+
+
+      <div class="row">
+
+        <span>
+          Signal Confidence
+        </span>
+
+        <strong>
+          ${market.confidence ?? 0}%
+        </strong>
+
+      </div>
+
+
+      <div class="bar">
+
+        <div
+          class="bar-fill"
+          style="
+            width:
+            ${market.confidence ?? 0}%
+          "
+        >
+        </div>
+
+      </div>
+
+
+      <div class="metrics">
+
+        <div class="metric">
+
+          <small>
+            TREND
+          </small>
+
+          <strong
+            class="${trendClass(
+              market.trend
+            )}"
+          >
+            ${market.trend || "—"}
+          </strong>
+
+        </div>
+
+
+        <div class="metric">
+
+          <small>
+            RSI
+          </small>
+
+          <strong>
+            ${market.rsi ?? "—"}
+          </strong>
+
+        </div>
+
+      </div>
+
+
+      <div class="levels">
+
+        <div class="level">
+
+          <small>
+            ENTRY
+          </small>
+
+          <strong>
+            ${
+              market.entry === null
+              ? "WAIT"
+              : formatPrice(
+                  market.symbol,
+                  market.entry
+                )
+            }
+          </strong>
+
+        </div>
+
+
+        <div class="level">
+
+          <small>
+            STOP LOSS
+          </small>
+
+          <strong>
+            ${formatPrice(
+              market.symbol,
+              market.sl
+            )}
+          </strong>
+
+        </div>
+
+
+        <div class="level">
+
+          <small>
+            TAKE PROFIT
+          </small>
+
+          <strong>
+            ${formatPrice(
+              market.symbol,
+              market.tp
+            )}
+          </strong>
+
+        </div>
+
+      </div>
+
+
+      <div class="candle-time">
+        Latest candle:
+        ${market.candle_time || "—"}
+      </div>
+
+    </div>
+  `;
 
 }
 
 
-setTime();
+async function loadMarketData() {
 
-setInterval(setTime, 60000);
+  const button =
+    document.getElementById(
+      "refreshButton"
+    );
+
+  button.innerText =
+    "Loading live markets...";
+
+
+  try {
+
+    const response = await fetch(
+      "./data.json?t=" + Date.now(),
+      {
+        cache: "no-store"
+      }
+    );
+
+
+    if (!response.ok) {
+
+      throw new Error(
+        "Could not load data.json"
+      );
+
+    }
+
+
+    const data =
+      await response.json();
+
+
+    document.getElementById(
+      "liveStatus"
+    ).innerHTML =
+      `
+      <span class="live-dot"></span>
+      ${data.status || "LIVE"}
+      `;
+
+
+    const biasElement =
+      document.getElementById(
+        "overallBias"
+      );
+
+
+    biasElement.innerText =
+      data.overall_bias || "MIXED";
+
+
+    biasElement.className =
+      trendClass(
+        data.overall_bias
+      );
+
+
+    document.getElementById(
+      "interval"
+    ).innerText =
+      data.interval || "—";
+
+
+    document.getElementById(
+      "updatedTime"
+    ).innerText =
+      formatUpdateTime(
+        data.updated
+      );
+
+
+    document.getElementById(
+      "dataSource"
+    ).innerText =
+      "Source: " +
+      (
+        data.source ||
+        "Market Data"
+      );
+
+
+    const markets =
+      Array.isArray(data.markets)
+      ? data.markets
+      : [];
+
+
+    const active =
+      markets.filter(
+        market =>
+          market.signal === "BUY" ||
+          market.signal === "SELL"
+      );
+
+
+    document.getElementById(
+      "activeSignals"
+    ).innerText =
+      active.length;
+
+
+    const confidenceValues =
+      markets
+        .filter(
+          market =>
+            typeof market.confidence
+            === "number"
+        )
+        .map(
+          market =>
+            market.confidence
+        );
+
+
+    let average = 0;
+
+
+    if (
+      confidenceValues.length
+      > 0
+    ) {
+
+      average =
+        confidenceValues.reduce(
+          (total, value) =>
+            total + value,
+          0
+        )
+        /
+        confidenceValues.length;
+
+    }
+
+
+    document.getElementById(
+      "avgConfidence"
+    ).innerText =
+      Math.round(average) + "%";
+
+
+    document.getElementById(
+      "signals"
+    ).innerHTML =
+      markets
+        .map(renderMarket)
+        .join("");
+
+
+    button.innerText =
+      "Live Analysis Updated ✓";
+
+
+    setTimeout(
+      () => {
+
+        button.innerText =
+          "Refresh Live Analysis";
+
+      },
+      1500
+    );
+
+
+  }
+
+  catch (error) {
+
+    document.getElementById(
+      "liveStatus"
+    ).innerText =
+      "● DATA ERROR";
+
+
+    document.getElementById(
+      "signals"
+    ).innerHTML =
+      `
+      <div class="system-message">
+        Could not load live market data.
+        Make sure the GitHub Action has
+        successfully created data.json.
+      </div>
+      `;
+
+
+    button.innerText =
+      "Retry Live Analysis";
+
+
+    console.error(error);
+
+  }
+
+}
+
+
+loadMarketData();
+
+
+setInterval(
+  loadMarketData,
+  60000
+);
 
 </script>
 
