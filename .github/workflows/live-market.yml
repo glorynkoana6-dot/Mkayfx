@@ -27,16 +27,17 @@ jobs:
           TWELVE_DATA_API_KEY: ${{ secrets.TWELVE_DATA_API_KEY }}
         run: python analyzer.py
 
-      - name: Save updated market data
+      - name: Save market data and permanent signal history
         run: |
           git config user.name "Mkayfx Bot"
           git config user.email "actions@github.com"
 
-          git add data.json
+          git add data.json signal_history.json
 
           if git diff --cached --quiet; then
             echo "No market-data changes"
           else
             git commit -m "Update live market analysis"
+            git pull --rebase origin main
             git push
           fi
