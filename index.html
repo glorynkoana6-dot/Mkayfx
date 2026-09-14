@@ -2,43 +2,38 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#06090f">
-
-<title>Mkayfx V3 Pro</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#05080d">
+<title>Mkayfx V4 Max</title>
 
 <style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
+*{box-sizing:border-box;margin:0;padding:0}
 
 :root{
-  --bg:#06090f;
-  --panel:#0d131d;
-  --panel2:#121a26;
-  --panel3:#172231;
-  --border:#223044;
+  --bg:#05080d;
+  --panel:#0b111a;
+  --panel2:#111a27;
+  --panel3:#172334;
+  --border:#223149;
   --text:#f4f7fb;
-  --muted:#7f8b9d;
-  --green:#16d992;
-  --red:#ff526a;
-  --yellow:#ffc857;
-  --blue:#54a7ff;
-  --purple:#a98cff;
-  --shadow:0 14px 40px rgba(0,0,0,.22);
+  --muted:#7f8da2;
+  --green:#17dc98;
+  --red:#ff536d;
+  --yellow:#ffc95a;
+  --blue:#58aaff;
+  --purple:#a88cff;
+  --shadow:0 16px 42px rgba(0,0,0,.25);
 }
 
 body.light{
-  --bg:#eef3f9;
+  --bg:#edf3f9;
   --panel:#fff;
-  --panel2:#f6f8fb;
-  --panel3:#edf2f8;
-  --border:#d8e0eb;
-  --text:#101722;
-  --muted:#687487;
-  --shadow:0 12px 30px rgba(32,54,84,.10);
+  --panel2:#f5f8fc;
+  --panel3:#ebf1f7;
+  --border:#d6dfeb;
+  --text:#111924;
+  --muted:#68778b;
+  --shadow:0 12px 32px rgba(28,52,80,.10);
 }
 
 html{
@@ -48,20 +43,12 @@ html{
 body{
   min-height:100vh;
   background:
-    radial-gradient(
-      circle at 90% 0,
-      rgba(84,167,255,.10),
-      transparent 30%
-    ),
+    radial-gradient(circle at 90% 0,rgba(88,170,255,.10),transparent 29%),
+    radial-gradient(circle at 0 35%,rgba(23,220,152,.05),transparent 25%),
     var(--bg);
   color:var(--text);
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Arial,
-    sans-serif;
-  padding-bottom:86px;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  padding-bottom:88px;
 }
 
 button,
@@ -70,18 +57,22 @@ select{
   font:inherit;
 }
 
+button{
+  cursor:pointer;
+}
+
 .app{
-  max-width:1150px;
+  max-width:1180px;
   margin:auto;
-  padding:16px;
+  padding:15px;
 }
 
 .topbar{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  gap:12px;
-  margin-bottom:16px;
+  gap:10px;
+  margin-bottom:14px;
 }
 
 .brand{
@@ -91,19 +82,15 @@ select{
 }
 
 .logo{
-  width:44px;
-  height:44px;
-  border-radius:14px;
+  width:45px;
+  height:45px;
+  border-radius:15px;
   display:grid;
   place-items:center;
   font-weight:950;
-  background:
-    linear-gradient(
-      135deg,
-      var(--blue),
-      var(--green)
-    );
-  color:#05100c;
+  color:#03100b;
+  background:linear-gradient(135deg,var(--blue),var(--green));
+  box-shadow:0 0 28px rgba(23,220,152,.15);
 }
 
 .brand h1{
@@ -111,22 +98,36 @@ select{
 }
 
 .brand p{
-  font-size:10px;
+  font-size:9px;
   color:var(--muted);
   margin-top:2px;
 }
 
-.status{
-  padding:8px 11px;
-  border-radius:999px;
+.toolbar{
+  display:flex;
+  gap:6px;
+  align-items:center;
+}
+
+.icon-btn,
+.chip-btn{
+  border:1px solid var(--border);
+  background:var(--panel);
+  color:var(--text);
+  border-radius:11px;
+  padding:9px 10px;
   font-size:9px;
-  font-weight:900;
-  border:
-    1px solid
-    rgba(22,217,146,.25);
+  font-weight:850;
+}
+
+.status{
+  padding:8px 10px;
+  border-radius:999px;
+  font-size:8px;
+  font-weight:950;
+  border:1px solid rgba(23,220,152,.22);
   color:var(--green);
-  background:
-    rgba(22,217,146,.08);
+  background:rgba(23,220,152,.07);
 }
 
 .dot{
@@ -136,50 +137,27 @@ select{
   border-radius:50%;
   background:currentColor;
   margin-right:5px;
-  box-shadow:
-    0 0 10px currentColor;
-}
-
-.toolbar{
-  display:flex;
-  gap:7px;
-  align-items:center;
-}
-
-.icon-btn{
-  border:1px solid var(--border);
-  background:var(--panel);
-  color:var(--text);
-  padding:9px 10px;
-  border-radius:11px;
-  font-size:11px;
+  box-shadow:0 0 10px currentColor;
 }
 
 .alert{
   display:none;
-  padding:12px 14px;
-  border-radius:13px;
-  border:
-    1px solid
-    rgba(255,200,87,.22);
-  background:
-    rgba(255,200,87,.08);
+  padding:11px 13px;
+  border-radius:12px;
+  border:1px solid rgba(255,201,90,.22);
+  background:rgba(255,201,90,.08);
   color:var(--yellow);
-  font-size:10px;
-  margin-bottom:12px;
+  font-size:9px;
+  margin-bottom:10px;
 }
 
 .hero{
   border:1px solid var(--border);
-  background:
-    linear-gradient(
-      145deg,
-      rgba(84,167,255,.07),
-      transparent 55%
-    ),
-    var(--panel);
   border-radius:22px;
   padding:18px;
+  background:
+    linear-gradient(145deg,rgba(88,170,255,.07),transparent 55%),
+    var(--panel);
   box-shadow:var(--shadow);
 }
 
@@ -190,37 +168,55 @@ select{
 }
 
 .eyebrow{
-  font-size:9px;
-  letter-spacing:1px;
+  font-size:8px;
+  letter-spacing:1.1px;
   color:var(--muted);
-  font-weight:850;
+  font-weight:900;
 }
 
 .hero h2{
-  font-size:26px;
+  font-size:27px;
   margin-top:6px;
 }
 
 .hero p{
   color:var(--muted);
-  font-size:11px;
-  line-height:1.5;
+  font-size:10px;
+  line-height:1.55;
   margin-top:6px;
+  max-width:620px;
+}
+
+.hero-badges{
+  display:flex;
+  gap:6px;
+  flex-wrap:wrap;
+  margin-top:10px;
+}
+
+.badge{
+  padding:6px 8px;
+  border-radius:999px;
+  background:var(--panel2);
+  border:1px solid var(--border);
+  font-size:7px;
+  font-weight:900;
 }
 
 .bias-box{
-  min-width:135px;
+  min-width:165px;
   background:var(--panel2);
   border:1px solid var(--border);
   padding:12px;
-  border-radius:14px;
+  border-radius:15px;
 }
 
 .bias-box small,
 .stat small,
-.mini small,
 .metric small,
-.level small{
+.mini small,
+.level small,
+.pulse small{
   display:block;
   color:var(--muted);
   font-size:7px;
@@ -230,57 +226,49 @@ select{
 
 .bias-box strong{
   display:block;
-  font-size:17px;
+  font-size:18px;
   margin-top:4px;
 }
 
 .stats{
   display:grid;
-  grid-template-columns:
-    repeat(6,1fr);
-  gap:8px;
-  margin-top:15px;
+  grid-template-columns:repeat(8,1fr);
+  gap:7px;
+  margin-top:14px;
 }
 
 .stat{
-  background:
-    rgba(255,255,255,.025);
-  border:
-    1px solid var(--border);
+  background:rgba(255,255,255,.025);
+  border:1px solid var(--border);
   border-radius:11px;
-  padding:10px;
+  padding:9px;
 }
 
 .stat strong{
   display:block;
   margin-top:4px;
-  font-size:12px;
+  font-size:11px;
 }
 
 .pulse-grid{
   display:grid;
-  grid-template-columns:
-    1fr 1fr 1fr;
-  gap:9px;
-  margin-top:10px;
+  grid-template-columns:repeat(4,1fr);
+  gap:8px;
+  margin-top:9px;
 }
 
 .pulse{
   background:var(--panel2);
   border:1px solid var(--border);
   border-radius:13px;
-  padding:11px;
-}
-
-.pulse small{
-  font-size:7px;
-  color:var(--muted);
+  padding:10px;
 }
 
 .pulse strong{
   display:block;
   margin-top:4px;
-  font-size:12px;
+  font-size:10px;
+  line-height:1.35;
 }
 
 .section-head{
@@ -288,74 +276,70 @@ select{
   justify-content:space-between;
   align-items:center;
   gap:8px;
-  margin:22px 2px 10px;
+  margin:21px 2px 9px;
 }
 
 .section-head h3{
-  font-size:16px;
+  font-size:15px;
 }
 
 .section-head span{
   color:var(--muted);
-  font-size:9px;
+  font-size:8px;
 }
 
 .controls{
   display:flex;
   flex-wrap:wrap;
-  gap:7px;
-  margin-bottom:11px;
+  gap:6px;
+  margin-bottom:10px;
 }
 
 .search{
   flex:1;
-  min-width:160px;
-  border:
-    1px solid var(--border);
+  min-width:155px;
+  border:1px solid var(--border);
   background:var(--panel);
   color:var(--text);
   outline:none;
-  border-radius:11px;
-  padding:10px 11px;
-  font-size:10px;
+  border-radius:10px;
+  padding:10px;
+  font-size:9px;
 }
 
 .control-btn,
 select{
-  border:
-    1px solid var(--border);
+  border:1px solid var(--border);
   background:var(--panel);
   color:var(--muted);
-  padding:9px 10px;
-  border-radius:10px;
-  font-size:9px;
-  font-weight:800;
+  padding:9px;
+  border-radius:9px;
+  font-size:8px;
+  font-weight:850;
 }
 
 .control-btn.active{
   color:var(--text);
   background:var(--panel3);
-  border-color:#3d6593;
+  border-color:#426d9f;
 }
 
 .cards{
   display:grid;
-  grid-template-columns:
-    repeat(2,1fr);
-  gap:11px;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
 }
 
 .card{
-  border:
-    1px solid var(--border);
+  border:1px solid var(--border);
   background:var(--panel);
   border-radius:18px;
-  padding:15px;
+  padding:14px;
   box-shadow:var(--shadow);
 }
 
 .card.favorite{
-  border-color:#496b95;
+  border-color:#4b709c;
 }
 
 .card-top{
@@ -389,14 +373,14 @@ select{
 .asset small{
   display:block;
   color:var(--muted);
-  font-size:8px;
+  font-size:7px;
   margin-top:3px;
 }
 
 .right-actions{
   display:flex;
   align-items:center;
-  gap:6px;
+  gap:5px;
 }
 
 .star{
@@ -411,47 +395,51 @@ select{
 }
 
 .tag,
-.grade{
-  padding:6px 8px;
+.grade,
+.risk-tag{
+  padding:6px 7px;
   border-radius:999px;
-  font-size:8px;
+  font-size:7px;
   font-weight:950;
 }
 
 .buy{
   color:var(--green);
-  background:
-    rgba(22,217,146,.09);
-  border:
-    1px solid
-    rgba(22,217,146,.18);
+  background:rgba(23,220,152,.08);
+  border:1px solid rgba(23,220,152,.18);
 }
 
 .sell{
   color:var(--red);
-  background:
-    rgba(255,82,106,.09);
-  border:
-    1px solid
-    rgba(255,82,106,.18);
+  background:rgba(255,83,109,.08);
+  border:1px solid rgba(255,83,109,.18);
 }
 
 .wait{
   color:var(--yellow);
-  background:
-    rgba(255,200,87,.08);
-  border:
-    1px solid
-    rgba(255,200,87,.17);
+  background:rgba(255,201,90,.08);
+  border:1px solid rgba(255,201,90,.17);
 }
 
 .grade{
   color:var(--blue);
-  background:
-    rgba(84,167,255,.08);
-  border:
-    1px solid
-    rgba(84,167,255,.18);
+  background:rgba(88,170,255,.08);
+  border:1px solid rgba(88,170,255,.17);
+}
+
+.risk-low{
+  color:var(--green);
+  background:rgba(23,220,152,.06);
+}
+
+.risk-medium{
+  color:var(--yellow);
+  background:rgba(255,201,90,.06);
+}
+
+.risk-high{
+  color:var(--red);
+  background:rgba(255,83,109,.06);
 }
 
 .price-row{
@@ -459,16 +447,16 @@ select{
   justify-content:space-between;
   align-items:flex-end;
   gap:10px;
-  margin-top:14px;
+  margin-top:12px;
 }
 
 .price{
-  font-size:25px;
+  font-size:24px;
   font-weight:900;
 }
 
 .change{
-  font-size:9px;
+  font-size:8px;
 }
 
 .up{
@@ -484,32 +472,33 @@ select{
 }
 
 .spark-wrap{
-  height:58px;
-  margin-top:10px;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(84,167,255,.05),
-      transparent
-    );
+  height:60px;
+  margin-top:9px;
+  background:linear-gradient(180deg,rgba(88,170,255,.05),transparent);
   border-radius:10px;
   overflow:hidden;
 }
 
 .spark{
   width:100%;
-  height:58px;
+  height:60px;
 }
 
-.conf-row{
+.signal-meta{
   display:flex;
   justify-content:space-between;
-  font-size:9px;
+  gap:8px;
+  align-items:center;
   margin-top:10px;
+  font-size:8px;
 }
 
-.conf-row span:first-child{
+.signal-meta span{
   color:var(--muted);
+}
+
+.expiry{
+  font-weight:900;
 }
 
 .bar{
@@ -522,20 +511,14 @@ select{
 
 .bar>div{
   height:100%;
-  background:
-    linear-gradient(
-      90deg,
-      var(--blue),
-      var(--green)
-    );
+  background:linear-gradient(90deg,var(--blue),var(--green));
 }
 
 .metrics{
   display:grid;
-  grid-template-columns:
-    repeat(4,1fr);
-  gap:6px;
-  margin-top:11px;
+  grid-template-columns:repeat(5,1fr);
+  gap:5px;
+  margin-top:9px;
 }
 
 .metric,
@@ -543,7 +526,8 @@ select{
 .mini{
   background:var(--panel2);
   border-radius:9px;
-  padding:8px 6px;
+  padding:7px 6px;
+  min-width:0;
 }
 
 .metric strong,
@@ -551,29 +535,49 @@ select{
 .mini strong{
   display:block;
   margin-top:3px;
-  font-size:9px;
+  font-size:8px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+.tf-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:5px;
+  margin-top:5px;
+}
+
+.tf{
+  padding:7px;
+  border-radius:9px;
+  background:var(--panel2);
+  font-size:8px;
+}
+
+.tf b{
+  float:right;
 }
 
 .levels{
   display:grid;
-  grid-template-columns:
-    repeat(3,1fr);
-  gap:6px;
-  margin-top:6px;
+  grid-template-columns:repeat(4,1fr);
+  gap:5px;
+  margin-top:5px;
 }
 
 .score-box{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:6px;
-  margin-top:6px;
+  gap:5px;
+  margin-top:5px;
 }
 
 .score{
-  padding:8px;
+  padding:7px;
   border-radius:9px;
   background:var(--panel2);
-  font-size:9px;
+  font-size:8px;
 }
 
 .score b{
@@ -582,7 +586,7 @@ select{
 
 .advanced{
   display:none;
-  margin-top:8px;
+  margin-top:7px;
 }
 
 .advanced.show{
@@ -591,13 +595,13 @@ select{
 
 .advanced-grid{
   display:grid;
-  grid-template-columns:
-    repeat(3,1fr);
-  gap:6px;
+  grid-template-columns:repeat(4,1fr);
+  gap:5px;
 }
 
-.reason-list{
-  margin-top:8px;
+.reason-list,
+.breakdown{
+  margin-top:7px;
   padding:9px;
   border-radius:10px;
   background:#090e15;
@@ -606,30 +610,30 @@ select{
   line-height:1.55;
 }
 
-.light .reason-list{
+.light .reason-list,
+.light .breakdown{
   background:var(--panel2);
 }
 
-.reason-list div+div{
+.reason-list div+div,
+.breakdown div+div{
   margin-top:3px;
 }
 
 .card-actions{
   display:grid;
-  grid-template-columns:
-    repeat(3,1fr);
-  gap:6px;
-  margin-top:9px;
+  grid-template-columns:repeat(4,1fr);
+  gap:5px;
+  margin-top:8px;
 }
 
 .card-btn{
-  border:
-    1px solid var(--border);
+  border:1px solid var(--border);
   background:var(--panel3);
   color:var(--text);
-  padding:8px 6px;
-  border-radius:9px;
-  font-size:8px;
+  padding:8px 5px;
+  border-radius:8px;
+  font-size:7px;
   font-weight:850;
 }
 
@@ -637,39 +641,36 @@ select{
   display:flex;
   justify-content:space-between;
   gap:8px;
-  margin-top:9px;
+  margin-top:8px;
   color:var(--muted);
   font-size:7px;
 }
 
 .panel-grid{
   display:grid;
-  grid-template-columns:
-    repeat(2,1fr);
-  gap:11px;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
 }
 
 .panel{
-  border:
-    1px solid var(--border);
+  border:1px solid var(--border);
   background:var(--panel);
   border-radius:17px;
-  padding:14px;
+  padding:13px;
 }
 
 .panel h3{
-  font-size:14px;
-  margin-bottom:9px;
+  font-size:13px;
+  margin-bottom:8px;
 }
 
 .row{
   display:flex;
   justify-content:space-between;
   gap:10px;
-  padding:8px 0;
-  border-bottom:
-    1px solid var(--border);
-  font-size:9px;
+  padding:7px 0;
+  border-bottom:1px solid var(--border);
+  font-size:8px;
 }
 
 .row:last-child{
@@ -682,14 +683,12 @@ select{
 
 .leader-item{
   display:grid;
-  grid-template-columns:
-    24px 1fr auto auto;
-  gap:8px;
+  grid-template-columns:22px 1fr auto auto auto;
+  gap:7px;
   align-items:center;
-  padding:8px 0;
-  border-bottom:
-    1px solid var(--border);
-  font-size:9px;
+  padding:7px 0;
+  border-bottom:1px solid var(--border);
+  font-size:8px;
 }
 
 .leader-item:last-child{
@@ -697,21 +696,81 @@ select{
 }
 
 .rank{
-  width:22px;
-  height:22px;
+  width:21px;
+  height:21px;
   border-radius:7px;
   display:grid;
   place-items:center;
   background:var(--panel2);
+  font-size:7px;
+}
+
+.perf-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:6px;
+}
+
+.perf{
+  background:var(--panel2);
+  border-radius:10px;
+  padding:9px;
+}
+
+.perf small{
+  font-size:7px;
+  color:var(--muted);
+}
+
+.perf strong{
+  display:block;
+  margin-top:4px;
+  font-size:12px;
+}
+
+.trade-item,
+.news-item{
+  padding:9px 0;
+  border-bottom:1px solid var(--border);
   font-size:8px;
+}
+
+.trade-item:last-child,
+.news-item:last-child{
+  border-bottom:none;
+}
+
+.meta{
+  color:var(--muted);
+  font-size:7px;
+  margin-top:4px;
+  line-height:1.4;
+}
+
+.news-title{
+  font-size:9px;
+  font-weight:850;
+  line-height:1.4;
+}
+
+.impact{
+  float:right;
+  padding:4px 6px;
+  border-radius:999px;
+  font-size:6px;
+  font-weight:950;
+}
+
+.news-link{
+  color:var(--blue);
+  text-decoration:none;
 }
 
 .risk-form,
 .settings-grid{
   display:grid;
-  grid-template-columns:
-    1fr 1fr;
-  gap:7px;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
 }
 
 .risk-form input,
@@ -719,13 +778,12 @@ select{
 .settings-grid input,
 .settings-grid select{
   width:100%;
-  border:
-    1px solid var(--border);
+  border:1px solid var(--border);
   background:var(--panel2);
   color:var(--text);
   border-radius:9px;
   padding:9px;
-  font-size:9px;
+  font-size:8px;
   outline:none;
 }
 
@@ -735,89 +793,72 @@ select{
 
 .primary{
   border:none;
-  background:
-    linear-gradient(
-      135deg,
-      #3478f6,
-      #159675
-    );
-  color:white;
+  background:linear-gradient(135deg,#3478f6,#159675);
+  color:#fff;
   border-radius:10px;
   padding:10px;
-  font-size:9px;
+  font-size:8px;
   font-weight:900;
 }
 
 .result{
-  margin-top:9px;
+  margin-top:8px;
   background:var(--panel2);
-  padding:10px;
-  border-radius:10px;
+  padding:9px;
+  border-radius:9px;
   color:#aab4c2;
-  font-size:9px;
+  font-size:8px;
   line-height:1.55;
 }
 
 .journal-controls{
   display:flex;
-  gap:6px;
+  gap:5px;
   flex-wrap:wrap;
-  margin-bottom:8px;
+  margin-bottom:7px;
 }
 
 .journal-item{
-  padding:9px 0;
-  border-bottom:
-    1px solid var(--border);
-  font-size:9px;
+  padding:8px 0;
+  border-bottom:1px solid var(--border);
+  font-size:8px;
 }
 
 .journal-item:last-child{
   border-bottom:none;
 }
 
-.journal-meta{
-  color:var(--muted);
-  font-size:7px;
-  margin-top:4px;
-}
-
 .journal-actions{
   display:flex;
-  gap:5px;
-  margin-top:6px;
+  gap:4px;
+  margin-top:5px;
+  flex-wrap:wrap;
 }
 
 .tiny-btn{
-  border:
-    1px solid var(--border);
+  border:1px solid var(--border);
   background:var(--panel2);
   color:var(--text);
   border-radius:7px;
-  padding:6px 7px;
-  font-size:7px;
+  padding:6px;
+  font-size:6px;
 }
 
 .empty{
   color:var(--muted);
-  font-size:9px;
-  padding:8px 0;
+  font-size:8px;
+  padding:7px 0;
 }
 
 .refresh{
   width:100%;
-  margin-top:16px;
+  margin-top:14px;
   border:none;
   border-radius:12px;
-  padding:13px;
+  padding:12px;
   color:#fff;
-  background:
-    linear-gradient(
-      135deg,
-      #3478f6,
-      #159675
-    );
-  font-size:10px;
+  background:linear-gradient(135deg,#3478f6,#159675);
+  font-size:9px;
   font-weight:900;
 }
 
@@ -825,48 +866,44 @@ select{
   text-align:center;
   color:#5d6979;
   font-size:7px;
-  line-height:1.5;
-  margin:16px 10px 4px;
+  line-height:1.55;
+  margin:15px 10px 4px;
 }
 
 .bottom-nav{
   position:fixed;
   left:50%;
-  bottom:10px;
+  bottom:9px;
   transform:translateX(-50%);
-  width:min(94%,520px);
+  width:min(95%,560px);
   display:grid;
-  grid-template-columns:
-    repeat(5,1fr);
-  gap:4px;
-  padding:6px;
-  background:
-    rgba(13,19,29,.93);
+  grid-template-columns:repeat(6,1fr);
+  gap:3px;
+  padding:5px;
+  background:rgba(11,17,26,.93);
   backdrop-filter:blur(18px);
-  border:
-    1px solid var(--border);
+  border:1px solid var(--border);
   border-radius:18px;
   z-index:50;
   box-shadow:var(--shadow);
 }
 
 .light .bottom-nav{
-  background:
-    rgba(255,255,255,.93);
+  background:rgba(255,255,255,.93);
 }
 
 .bottom-nav a{
   text-decoration:none;
   color:var(--muted);
-  font-size:7px;
+  font-size:6px;
   text-align:center;
-  padding:7px 2px;
-  border-radius:10px;
+  padding:6px 1px;
+  border-radius:9px;
 }
 
 .bottom-nav b{
   display:block;
-  font-size:14px;
+  font-size:13px;
   margin-bottom:2px;
   color:var(--text);
 }
@@ -883,7 +920,30 @@ select{
   color:var(--yellow);
 }
 
-@media(max-width:760px){
+.matrix{
+  overflow:auto;
+}
+
+.matrix table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:8px;
+}
+
+.matrix th,
+.matrix td{
+  padding:8px 6px;
+  border-bottom:1px solid var(--border);
+  text-align:left;
+  white-space:nowrap;
+}
+
+.matrix th{
+  color:var(--muted);
+  font-size:7px;
+}
+
+@media(max-width:800px){
 
   .hero-top{
     flex-direction:column;
@@ -894,12 +954,11 @@ select{
   }
 
   .stats{
-    grid-template-columns:
-      repeat(3,1fr);
+    grid-template-columns:repeat(4,1fr);
   }
 
   .pulse-grid{
-    grid-template-columns:1fr;
+    grid-template-columns:repeat(2,1fr);
   }
 
   .cards{
@@ -911,15 +970,12 @@ select{
   }
 
   .metrics{
-    grid-template-columns:
-      repeat(2,1fr);
+    grid-template-columns:repeat(3,1fr);
   }
 
   .advanced-grid{
-    grid-template-columns:
-      repeat(2,1fr);
+    grid-template-columns:repeat(2,1fr);
   }
-
 }
 </style>
 </head>
@@ -937,13 +993,21 @@ select{
     </div>
 
     <div>
-      <h1>Mkayfx V3 Pro</h1>
-      <p>Live Market Intelligence</p>
+      <h1>Mkayfx V4 Max</h1>
+      <p>Multi-Timeframe Market Intelligence</p>
     </div>
 
   </div>
 
+
   <div class="toolbar">
+
+    <button
+      class="icon-btn"
+      onclick="shareSnapshot()"
+    >
+      SHARE
+    </button>
 
     <button
       class="icon-btn"
@@ -969,9 +1033,7 @@ select{
   id="staleAlert"
   class="alert"
 >
-  Market data looks stale.
-  Check the GitHub Action before
-  using any setup.
+  Market data looks stale. Check the latest GitHub Action before using a setup.
 </div>
 
 
@@ -985,7 +1047,7 @@ select{
     <div>
 
       <div class="eyebrow">
-        MKAYFX SIGNAL ENGINE
+        MKAYFX V4 MAX ENGINE
       </div>
 
       <h2>
@@ -993,10 +1055,34 @@ select{
       </h2>
 
       <p>
-        Live 5-minute analysis with trend,
-        momentum, structure, support/resistance,
-        volatility, signal grading and risk levels.
+        5M + synthetic 15M/1H confirmation, structure, liquidity sweeps,
+        fair-value gaps, BOS, signal expiry, tracked performance,
+        market news and risk tools.
       </p>
+
+      <div class="hero-badges">
+
+        <span class="badge">
+          5M DATA
+        </span>
+
+        <span class="badge">
+          15M CONFIRMATION
+        </span>
+
+        <span class="badge">
+          1H CONFIRMATION
+        </span>
+
+        <span class="badge">
+          AUTO TRACKING
+        </span>
+
+        <span class="badge">
+          NEWS RISK
+        </span>
+
+      </div>
 
     </div>
 
@@ -1012,6 +1098,14 @@ select{
         class="mixed"
       >
         LOADING
+      </strong>
+
+      <small style="margin-top:8px">
+        Market Risk
+      </small>
+
+      <strong id="marketRisk">
+        —
       </strong>
 
     </div>
@@ -1037,13 +1131,23 @@ select{
     </div>
 
     <div class="stat">
-      <small>Bull Score</small>
+      <small>Bull</small>
       <strong id="bullTotal">0</strong>
     </div>
 
     <div class="stat">
-      <small>Bear Score</small>
+      <small>Bear</small>
       <strong id="bearTotal">0</strong>
+    </div>
+
+    <div class="stat">
+      <small>Win Rate</small>
+      <strong id="winRate">0%</strong>
+    </div>
+
+    <div class="stat">
+      <small>Total R</small>
+      <strong id="totalR">0R</strong>
     </div>
 
     <div class="stat">
@@ -1071,9 +1175,16 @@ select{
     </div>
 
     <div class="pulse">
+      <small>TRACKED SIGNALS</small>
+      <strong id="trackedSignals">
+        0
+      </strong>
+    </div>
+
+    <div class="pulse">
       <small>LAST ENGINE UPDATE</small>
       <strong id="updatedAt">
-        -
+        —
       </strong>
     </div>
 
@@ -1086,15 +1197,10 @@ select{
   class="section-head"
   id="markets"
 >
-
-  <h3>
-    Markets
-  </h3>
-
+  <h3>Markets</h3>
   <span id="sourceText">
     Loading...
   </span>
-
 </div>
 
 
@@ -1142,7 +1248,6 @@ select{
     ★
   </button>
 
-
   <select
     id="sort"
     onchange="renderMarkets()"
@@ -1152,16 +1257,16 @@ select{
       Confidence
     </option>
 
+    <option value="strength">
+      Trend Strength
+    </option>
+
+    <option value="move">
+      4H Move
+    </option>
+
     <option value="symbol">
       Symbol
-    </option>
-
-    <option value="grade">
-      Grade
-    </option>
-
-    <option value="change1h">
-      1H Move
     </option>
 
   </select>
@@ -1173,9 +1278,33 @@ select{
   class="cards"
   id="marketCards"
 >
-
   <div class="panel">
-    Loading V3 market data...
+    Loading V4 data...
+  </div>
+</section>
+
+
+<div class="section-head">
+
+  <h3>
+    Signal Matrix
+  </h3>
+
+  <span>
+    Fast multi-timeframe scan
+  </span>
+
+</div>
+
+
+<section class="panel matrix">
+
+  <div id="matrix">
+
+    <div class="empty">
+      Loading...
+    </div>
+
   </div>
 
 </section>
@@ -1188,7 +1317,7 @@ select{
   </h3>
 
   <span>
-    Highest confidence first
+    Confidence + trend strength
   </span>
 
 </div>
@@ -1208,6 +1337,134 @@ select{
 
 <div
   class="section-head"
+  id="performance"
+>
+
+  <h3>
+    Tracked Performance
+  </h3>
+
+  <span>
+    Backend signal tracking
+  </span>
+
+</div>
+
+
+<div class="panel-grid">
+
+  <section class="panel">
+
+    <h3>
+      Performance Engine
+    </h3>
+
+
+    <div class="perf-grid">
+
+      <div class="perf">
+        <small>Win Rate</small>
+        <strong id="perfWin">0%</strong>
+      </div>
+
+      <div class="perf">
+        <small>Wins</small>
+        <strong id="perfWins">0</strong>
+      </div>
+
+      <div class="perf">
+        <small>Losses</small>
+        <strong id="perfLosses">0</strong>
+      </div>
+
+      <div class="perf">
+        <small>Total R</small>
+        <strong id="perfR">0R</strong>
+      </div>
+
+      <div class="perf">
+        <small>Profit Factor</small>
+        <strong id="perfPF">0</strong>
+      </div>
+
+      <div class="perf">
+        <small>Open</small>
+        <strong id="perfOpen">0</strong>
+      </div>
+
+      <div class="perf">
+        <small>Expired</small>
+        <strong id="perfExpired">0</strong>
+      </div>
+
+      <div class="perf">
+        <small>Streak</small>
+        <strong id="perfStreak">—</strong>
+      </div>
+
+    </div>
+
+
+    <div
+      id="symbolStats"
+      class="result"
+    >
+      No statistics yet.
+    </div>
+
+  </section>
+
+
+  <section class="panel">
+
+    <h3>
+      Recent Tracked Signals
+    </h3>
+
+    <div id="recentTrades">
+
+      <div class="empty">
+        No tracked signals yet.
+      </div>
+
+    </div>
+
+  </section>
+
+</div>
+
+
+<div
+  class="section-head"
+  id="news"
+>
+
+  <h3>
+    Market News Radar
+  </h3>
+
+  <span>
+    Headline impact scanner
+  </span>
+
+</div>
+
+
+<section class="panel">
+
+  <div id="newsList">
+
+    <div class="empty">
+      Loading news...
+    </div>
+
+  </div>
+
+</section>
+
+
+<div
+  class="section-head"
   id="tools"
 >
 
@@ -1220,92 +1477,95 @@ select{
 
 <div class="panel-grid">
 
-<section class="panel">
+  <section class="panel">
 
-  <h3>
-    Market Status
-  </h3>
+    <h3>
+      Market Status
+    </h3>
 
-  <div class="row">
-    <span>Session</span>
-    <strong id="session">-</strong>
-  </div>
+    <div class="row">
+      <span>Session</span>
+      <strong id="session">—</strong>
+    </div>
 
-  <div class="row">
-    <span>Local Time</span>
-    <strong id="localTime">-</strong>
-  </div>
+    <div class="row">
+      <span>Local Time</span>
+      <strong id="localTime">—</strong>
+    </div>
 
-  <div class="row">
-    <span>Data Age</span>
-    <strong id="dataAge">-</strong>
-  </div>
+    <div class="row">
+      <span>Data Age</span>
+      <strong id="dataAge">—</strong>
+    </div>
 
-  <div class="row">
-    <span>Backend</span>
-    <strong id="backend">-</strong>
-  </div>
+    <div class="row">
+      <span>Backend</span>
+      <strong id="backend">—</strong>
+    </div>
 
-  <div class="row">
-    <span>Timeframe</span>
-    <strong id="timeframe">-</strong>
-  </div>
+    <div class="row">
+      <span>Timeframe</span>
+      <strong id="timeframe">—</strong>
+    </div>
 
-</section>
+    <div class="row">
+      <span>Version</span>
+      <strong id="version">—</strong>
+    </div>
+
+  </section>
 
 
-<section class="panel">
+  <section class="panel">
 
-  <h3>
-    Risk Calculator
-  </h3>
+    <h3>
+      Advanced Risk Calculator
+    </h3>
 
-  <div class="risk-form">
+    <div class="risk-form">
 
-    <input
-      id="balance"
-      type="number"
-      value="200"
-      placeholder="Balance"
+      <input
+        id="balance"
+        type="number"
+        value="200"
+        placeholder="Balance"
+      >
+
+      <input
+        id="riskPct"
+        type="number"
+        value="1"
+        step="0.1"
+        placeholder="Risk %"
+      >
+
+      <select
+        id="riskMarket"
+        class="wide"
+      >
+        <option value="">
+          Select market
+        </option>
+      </select>
+
+      <button
+        class="primary wide"
+        onclick="calculateRisk()"
+      >
+        Calculate Units / Lots
+      </button>
+
+    </div>
+
+
+    <div
+      id="riskResult"
+      class="result"
     >
+      Select an active setup. Lot conversion is an estimate; verify your broker's contract size.
+    </div>
 
-    <input
-      id="riskPct"
-      type="number"
-      value="1"
-      step="0.1"
-      placeholder="Risk %"
-    >
-
-    <select
-      id="riskMarket"
-      class="wide"
-    >
-      <option value="">
-        Select market
-      </option>
-    </select>
-
-    <button
-      class="primary wide"
-      onclick="calculateRisk()"
-    >
-      Calculate
-    </button>
-
-  </div>
-
-
-  <div
-    id="riskResult"
-    class="result"
-  >
-    Select a market to calculate
-    your maximum money at risk and
-    current setup distance.
-  </div>
-
-</section>
+  </section>
 
 </div>
 
@@ -1335,6 +1595,13 @@ select{
       onclick="exportJournal()"
     >
       Export CSV
+    </button>
+
+    <button
+      class="tiny-btn"
+      onclick="exportSnapshot()"
+    >
+      Export Market JSON
     </button>
 
     <button
@@ -1376,12 +1643,7 @@ select{
 
     <div>
 
-      <label
-        style="
-          font-size:8px;
-          color:var(--muted)
-        "
-      >
+      <label style="font-size:7px;color:var(--muted)">
         Minimum alert confidence
       </label>
 
@@ -1398,12 +1660,7 @@ select{
 
     <div>
 
-      <label
-        style="
-          font-size:8px;
-          color:var(--muted)
-        "
-      >
+      <label style="font-size:7px;color:var(--muted)">
         Auto refresh
       </label>
 
@@ -1437,7 +1694,6 @@ select{
       Save Settings
     </button>
 
-
     <button
       class="primary"
       onclick="requestNotifications()"
@@ -1452,12 +1708,8 @@ select{
     id="settingsResult"
     class="result"
   >
-    Alerts trigger when a market changes
-    into BUY or SELL and meets your
-    confidence threshold.
-
-    On iPhone, browser notifications may
-    require adding the site to your Home Screen.
+    Alerts fire when BUY/SELL changes and meets your confidence threshold.
+    iPhone notification support can vary by browser/Home Screen mode.
   </div>
 
 </section>
@@ -1468,15 +1720,14 @@ select{
   class="refresh"
   onclick="loadData(true)"
 >
-  Refresh V3 Analysis
+  Refresh V4 Analysis
 </button>
 
 
 <p class="footer">
-  Mkayfx is an analytical dashboard,
-  not a guarantee of future performance.
-  Verify market conditions and manage
-  risk before trading.
+  Mkayfx is a market-analysis tool, not a guarantee of profit.
+  Signal grades and tracked results are based on this rules engine and do not
+  include spread, slippage, commissions or broker execution.
 </p>
 
 </div>
@@ -1486,7 +1737,7 @@ select{
 
   <a href="#dashboard">
     <b>⌂</b>
-    Dashboard
+    Home
   </a>
 
   <a href="#markets">
@@ -1494,9 +1745,14 @@ select{
     Markets
   </a>
 
-  <a href="#tools">
-    <b>⚙</b>
-    Tools
+  <a href="#performance">
+    <b>◎</b>
+    Stats
+  </a>
+
+  <a href="#news">
+    <b>◫</b>
+    News
   </a>
 
   <a href="#journal">
@@ -1524,7 +1780,9 @@ let refreshLeft = 60;
 
 let lastUpdate = null;
 
-let refreshTimer = null;
+
+const $ = id =>
+  document.getElementById(id);
 
 
 const assetInfo = {
@@ -1552,8 +1810,136 @@ const assetInfo = {
 };
 
 
-const $ = id =>
-  document.getElementById(id);
+function safe(v,f="—"){
+
+  return (
+    v === null ||
+    v === undefined ||
+    v === ""
+  )
+  ?
+  f
+  :
+  v;
+
+}
+
+
+function fmt(symbol,v){
+
+  if(
+    v === null ||
+    v === undefined ||
+    Number.isNaN(
+      Number(v)
+    )
+  ){
+
+    return "—";
+
+  }
+
+
+  const n =
+    Number(v);
+
+
+  if(
+    [
+      "EURUSD",
+      "GBPUSD"
+    ].includes(symbol)
+  ){
+
+    return n.toFixed(5);
+
+  }
+
+
+  return n.toLocaleString(
+    undefined,
+    {
+      minimumFractionDigits:2,
+      maximumFractionDigits:2
+    }
+  );
+
+}
+
+
+function pct(v){
+
+  const n =
+    Number(v || 0);
+
+
+  return (
+    `${n >= 0 ? "+" : ""}${n.toFixed(3)}%`
+  );
+
+}
+
+
+function trendClass(v){
+
+  return (
+    v === "BULLISH"
+    ?
+    "bullish"
+    :
+    v === "BEARISH"
+    ?
+    "bearish"
+    :
+    "mixed"
+  );
+
+}
+
+
+function signalClass(v){
+
+  return (
+    v === "BUY"
+    ?
+    "buy"
+    :
+    v === "SELL"
+    ?
+    "sell"
+    :
+    "wait"
+  );
+
+}
+
+
+function changeClass(v){
+
+  return (
+    Number(v) > 0
+    ?
+    "up"
+    :
+    Number(v) < 0
+    ?
+    "down"
+    :
+    "flat"
+  );
+
+}
+
+
+function riskClass(v){
+
+  return (
+    `risk-${String(
+      v || "low"
+    ).toLowerCase()}`
+  );
+
+}
 
 
 function favorites(){
@@ -1569,11 +1955,11 @@ function favorites(){
 }
 
 
-function saveFavorites(value){
+function saveFavorites(v){
 
   localStorage.setItem(
     "mkayfxFavs",
-    JSON.stringify(value)
+    JSON.stringify(v)
   );
 
 }
@@ -1585,26 +1971,17 @@ function toggleFavorite(symbol){
     favorites();
 
 
-  if(
+  list =
     list.includes(symbol)
-  ){
-
-    list =
-      list.filter(
-        item =>
-          item !== symbol
-      );
-
-  }
-
-  else{
-
-    list = [
+    ?
+    list.filter(
+      x => x !== symbol
+    )
+    :
+    [
       ...list,
       symbol
     ];
-
-  }
 
 
   saveFavorites(list);
@@ -1614,146 +1991,13 @@ function toggleFavorite(symbol){
 }
 
 
-function fmt(
-  symbol,
-  value
-){
-
-  if(
-    value === null ||
-    value === undefined ||
-    Number.isNaN(
-      Number(value)
-    )
-  ){
-
-    return "—";
-
-  }
-
-
-  const number =
-    Number(value);
-
-
-  if(
-    [
-      "EURUSD",
-      "GBPUSD"
-    ].includes(symbol)
-  ){
-
-    return number.toFixed(5);
-
-  }
-
-
-  return number.toLocaleString(
-    undefined,
-    {
-      minimumFractionDigits:2,
-      maximumFractionDigits:2
-    }
-  );
-
-}
-
-
-function pct(value){
-
-  const number =
-    Number(value || 0);
-
-
-  return (
-    (
-      number >= 0
-      ?
-      "+"
-      :
-      ""
-    )
-    +
-    number.toFixed(3)
-    +
-    "%"
-  );
-
-}
-
-
-function trendClass(value){
-
-  if(value === "BULLISH"){
-    return "bullish";
-  }
-
-  if(value === "BEARISH"){
-    return "bearish";
-  }
-
-  return "mixed";
-
-}
-
-
-function signalClass(value){
-
-  if(value === "BUY"){
-    return "buy";
-  }
-
-  if(value === "SELL"){
-    return "sell";
-  }
-
-  return "wait";
-
-}
-
-
-function changeClass(value){
-
-  if(Number(value) > 0){
-    return "up";
-  }
-
-  if(Number(value) < 0){
-    return "down";
-  }
-
-  return "flat";
-
-}
-
-
-function safe(
-  value,
-  fallback="—"
-){
-
-  if(
-    value === null ||
-    value === undefined ||
-    value === ""
-  ){
-
-    return fallback;
-
-  }
-
-  return value;
-
-}
-
-
 function setFilter(
-  value,
+  v,
   button
 ){
 
   currentFilter =
-    value;
+    v;
 
 
   document
@@ -1761,8 +2005,8 @@ function setFilter(
       ".control-btn"
     )
     .forEach(
-      item =>
-        item.classList.remove(
+      x =>
+        x.classList.remove(
           "active"
         )
     );
@@ -1786,6 +2030,7 @@ function toggleTheme(){
 
 
   localStorage.setItem(
+
     "mkayfxTheme",
 
     document.body.classList.contains(
@@ -1795,6 +2040,12 @@ function toggleTheme(){
     "light"
     :
     "dark"
+
+  );
+
+
+  markets.forEach(
+    drawSparkline
   );
 
 }
@@ -1819,46 +2070,122 @@ function applyTheme(){
 }
 
 
-function signalReasons(market){
+function expiryText(m){
+
+  if(
+    !m.expires_at ||
+    ![
+      "BUY",
+      "SELL"
+    ].includes(
+      m.signal
+    )
+  ){
+
+    return "NO ACTIVE EXPIRY";
+
+  }
+
+
+  const seconds =
+    Math.floor(
+      (
+        new Date(
+          m.expires_at
+        ).getTime()
+        -
+        Date.now()
+      )
+      /
+      1000
+    );
+
+
+  if(
+    seconds <= 0
+  ){
+
+    return "EXPIRED / WAIT REFRESH";
+
+  }
+
+
+  const min =
+    Math.floor(
+      seconds / 60
+    );
+
+
+  const sec =
+    seconds % 60;
+
 
   return (
-    market.reasons || []
+    `${min}m ${String(sec).padStart(2,"0")}s`
+  );
+
+}
+
+
+function reasonHTML(m){
+
+  return (
+    m.reasons || []
   )
   .map(
-    reason =>
+    r =>
+      `<div>✓ ${r}</div>`
+  )
+  .join("")
+  ||
+  "<div>No reasons supplied.</div>";
+
+}
+
+
+function breakdownHTML(m){
+
+  return (
+    m.score_breakdown || []
+  )
+  .map(
+    x =>
       `
       <div>
-        ✓ ${reason}
+        <b class="${
+          x.side === "BULL"
+          ?
+          "bullish"
+          :
+          "bearish"
+        }">
+          ${x.side} +${x.points}
+        </b>
+        · ${x.reason}
       </div>
       `
   )
   .join("")
   ||
-  `
-  <div>
-    No detailed reasons supplied.
-  </div>
-  `;
+  "<div>No score breakdown.</div>";
 
 }
 
 
-function cardHTML(market){
+function cardHTML(m){
 
   const info =
-    assetInfo[
-      market.symbol
-    ]
+    assetInfo[m.symbol]
     ||
     {
       icon:"?",
-      name:market.symbol
+      name:m.symbol
     };
 
 
-  const favorite =
+  const fav =
     favorites().includes(
-      market.symbol
+      m.symbol
     );
 
 
@@ -1867,9 +2194,9 @@ function cardHTML(market){
   <article
     class="
       card
-      ${favorite ? "favorite" : ""}
+      ${fav ? "favorite" : ""}
     "
-    id="card-${market.symbol}"
+    id="card-${m.symbol}"
   >
 
     <div class="card-top">
@@ -1883,7 +2210,7 @@ function cardHTML(market){
         <div>
 
           <strong>
-            ${market.symbol}
+            ${m.symbol}
           </strong>
 
           <small>
@@ -1900,11 +2227,11 @@ function cardHTML(market){
         <button
           class="
             star
-            ${favorite ? "on" : ""}
+            ${fav ? "on" : ""}
           "
           onclick="
             toggleFavorite(
-              '${market.symbol}'
+              '${m.symbol}'
             )
           "
         >
@@ -1913,7 +2240,7 @@ function cardHTML(market){
 
 
         <span class="grade">
-          ${safe(market.grade)}
+          ${safe(m.grade)}
         </span>
 
 
@@ -1921,11 +2248,11 @@ function cardHTML(market){
           class="
             tag
             ${signalClass(
-              market.signal
+              m.signal
             )}
           "
         >
-          ${safe(market.signal)}
+          ${safe(m.signal)}
         </span>
 
       </div>
@@ -1938,8 +2265,8 @@ function cardHTML(market){
       <div class="price">
 
         ${fmt(
-          market.symbol,
-          market.price
+          m.symbol,
+          m.price
         )}
 
       </div>
@@ -1949,13 +2276,13 @@ function cardHTML(market){
         class="
           change
           ${changeClass(
-            market.change_1h
+            m.change_4h
           )}
         "
       >
-        1H
+        4H
         ${pct(
-          market.change_1h
+          m.change_4h
         )}
       </div>
 
@@ -1966,25 +2293,29 @@ function cardHTML(market){
 
       <canvas
         class="spark"
-        id="spark-${market.symbol}"
+        id="spark-${m.symbol}"
       >
       </canvas>
 
     </div>
 
 
-    <div class="conf-row">
+    <div class="signal-meta">
 
       <span>
-        Confidence
+        ${safe(m.setup_type)}
+        ·
+        ${safe(m.confidence,0)}%
+        ·
+        ${safe(m.grade)}
       </span>
 
-      <strong>
-        ${safe(
-          market.confidence,
-          0
-        )}%
-      </strong>
+      <b
+        class="expiry"
+        id="expiry-${m.symbol}"
+      >
+        ${expiryText(m)}
+      </b>
 
     </div>
 
@@ -1997,11 +2328,48 @@ function cardHTML(market){
           ${Math.min(
             100,
             Number(
-              market.confidence || 0
+              m.confidence || 0
             )
           )}%
         "
       >
+      </div>
+
+    </div>
+
+
+    <div class="tf-grid">
+
+      <div class="tf">
+
+        5M
+
+        <b class="${trendClass(m.trend)}">
+          ${safe(m.trend)}
+        </b>
+
+      </div>
+
+
+      <div class="tf">
+
+        15M
+
+        <b class="${trendClass(m.trend_15m)}">
+          ${safe(m.trend_15m)}
+        </b>
+
+      </div>
+
+
+      <div class="tf">
+
+        1H
+
+        <b class="${trendClass(m.trend_1h)}">
+          ${safe(m.trend_1h)}
+        </b>
+
       </div>
 
     </div>
@@ -2012,19 +2380,11 @@ function cardHTML(market){
       <div class="metric">
 
         <small>
-          Trend
+          Strength
         </small>
 
-        <strong
-          class="
-            ${trendClass(
-              market.trend
-            )}
-          "
-        >
-          ${safe(
-            market.trend
-          )}
+        <strong>
+          ${safe(m.trend_strength,0)}/100
         </strong>
 
       </div>
@@ -2037,9 +2397,7 @@ function cardHTML(market){
         </small>
 
         <strong>
-          ${safe(
-            market.regime
-          )}
+          ${safe(m.regime)}
         </strong>
 
       </div>
@@ -2052,9 +2410,7 @@ function cardHTML(market){
         </small>
 
         <strong>
-          ${safe(
-            market.momentum
-          )}
+          ${safe(m.momentum)}
         </strong>
 
       </div>
@@ -2067,9 +2423,24 @@ function cardHTML(market){
         </small>
 
         <strong>
-          ${safe(
-            market.rsi
-          )}
+          ${safe(m.rsi)}
+        </strong>
+
+      </div>
+
+
+      <div class="metric">
+
+        <small>
+          Risk
+        </small>
+
+        <strong
+          class="${riskClass(
+            m.risk_level
+          )}"
+        >
+          ${safe(m.risk_level)}
         </strong>
 
       </div>
@@ -2087,8 +2458,8 @@ function cardHTML(market){
 
         <strong>
           ${fmt(
-            market.symbol,
-            market.entry
+            m.symbol,
+            m.entry
           )}
         </strong>
 
@@ -2098,13 +2469,13 @@ function cardHTML(market){
       <div class="level">
 
         <small>
-          Stop
+          SL
         </small>
 
         <strong>
           ${fmt(
-            market.symbol,
-            market.sl
+            m.symbol,
+            m.sl
           )}
         </strong>
 
@@ -2114,13 +2485,29 @@ function cardHTML(market){
       <div class="level">
 
         <small>
-          Target
+          TP1
         </small>
 
         <strong>
           ${fmt(
-            market.symbol,
-            market.tp
+            m.symbol,
+            m.tp1
+          )}
+        </strong>
+
+      </div>
+
+
+      <div class="level">
+
+        <small>
+          TP2
+        </small>
+
+        <strong>
+          ${fmt(
+            m.symbol,
+            m.tp
           )}
         </strong>
 
@@ -2133,11 +2520,11 @@ function cardHTML(market){
 
       <div class="score">
 
-        Bull score
+        Bull
 
         <b class="bullish">
           ${safe(
-            market.bull_score,
+            m.bull_score,
             0
           )}
         </b>
@@ -2147,11 +2534,11 @@ function cardHTML(market){
 
       <div class="score">
 
-        Bear score
+        Bear
 
         <b class="bearish">
           ${safe(
-            market.bear_score,
+            m.bear_score,
             0
           )}
         </b>
@@ -2163,7 +2550,7 @@ function cardHTML(market){
 
     <div
       class="advanced"
-      id="adv-${market.symbol}"
+      id="adv-${m.symbol}"
     >
 
       <div class="advanced-grid">
@@ -2171,18 +2558,16 @@ function cardHTML(market){
         <div class="mini">
 
           <small>
-            5M Change
+            5M Move
           </small>
 
           <strong
-            class="
-              ${changeClass(
-                market.change_5m
-              )}
-            "
+            class="${changeClass(
+              m.change_5m
+            )}"
           >
             ${pct(
-              market.change_5m
+              m.change_5m
             )}
           </strong>
 
@@ -2192,18 +2577,70 @@ function cardHTML(market){
         <div class="mini">
 
           <small>
-            1H Change
+            15M Move
           </small>
 
           <strong
-            class="
-              ${changeClass(
-                market.change_1h
-              )}
-            "
+            class="${changeClass(
+              m.change_15m
+            )}"
           >
             ${pct(
-              market.change_1h
+              m.change_15m
+            )}
+          </strong>
+
+        </div>
+
+
+        <div class="mini">
+
+          <small>
+            1H Move
+          </small>
+
+          <strong
+            class="${changeClass(
+              m.change_1h
+            )}"
+          >
+            ${pct(
+              m.change_1h
+            )}
+          </strong>
+
+        </div>
+
+
+        <div class="mini">
+
+          <small>
+            4H Move
+          </small>
+
+          <strong
+            class="${changeClass(
+              m.change_4h
+            )}"
+          >
+            ${pct(
+              m.change_4h
+            )}
+          </strong>
+
+        </div>
+
+
+        <div class="mini">
+
+          <small>
+            EMA9
+          </small>
+
+          <strong>
+            ${fmt(
+              m.symbol,
+              m.ema9
             )}
           </strong>
 
@@ -2218,8 +2655,8 @@ function cardHTML(market){
 
           <strong>
             ${fmt(
-              market.symbol,
-              market.ema20
+              m.symbol,
+              m.ema20
             )}
           </strong>
 
@@ -2234,8 +2671,8 @@ function cardHTML(market){
 
           <strong>
             ${fmt(
-              market.symbol,
-              market.ema50
+              m.symbol,
+              m.ema50
             )}
           </strong>
 
@@ -2250,24 +2687,9 @@ function cardHTML(market){
 
           <strong>
             ${fmt(
-              market.symbol,
-              market.atr
+              m.symbol,
+              m.atr
             )}
-          </strong>
-
-        </div>
-
-
-        <div class="mini">
-
-          <small>
-            ATR %
-          </small>
-
-          <strong>
-            ${safe(
-              market.atr_percent
-            )}%
           </strong>
 
         </div>
@@ -2281,8 +2703,8 @@ function cardHTML(market){
 
           <strong>
             ${fmt(
-              market.symbol,
-              market.support
+              m.symbol,
+              m.support
             )}
           </strong>
 
@@ -2297,8 +2719,40 @@ function cardHTML(market){
 
           <strong>
             ${fmt(
-              market.symbol,
-              market.resistance
+              m.symbol,
+              m.resistance
+            )}
+          </strong>
+
+        </div>
+
+
+        <div class="mini">
+
+          <small>
+            Major Support
+          </small>
+
+          <strong>
+            ${fmt(
+              m.symbol,
+              m.major_support
+            )}
+          </strong>
+
+        </div>
+
+
+        <div class="mini">
+
+          <small>
+            Major Resist.
+          </small>
+
+          <strong>
+            ${fmt(
+              m.symbol,
+              m.major_resistance
             )}
           </strong>
 
@@ -2312,9 +2766,7 @@ function cardHTML(market){
           </small>
 
           <strong>
-            ${safe(
-              market.structure
-            )}
+            ${safe(m.structure)}
           </strong>
 
         </div>
@@ -2327,9 +2779,7 @@ function cardHTML(market){
           </small>
 
           <strong>
-            ${safe(
-              market.candle_pattern
-            )}
+            ${safe(m.candle_pattern)}
           </strong>
 
         </div>
@@ -2338,21 +2788,63 @@ function cardHTML(market){
         <div class="mini">
 
           <small>
-            R:R
+            FVG
           </small>
 
           <strong>
+            ${safe(m.fvg)}
+          </strong>
 
-            ${
-              market.risk_reward
-              ?
-              `1:${Number(
-                market.risk_reward
-              ).toFixed(1)}`
-              :
-              "—"
-            }
+        </div>
 
+
+        <div class="mini">
+
+          <small>
+            Sweep
+          </small>
+
+          <strong>
+            ${safe(m.liquidity_sweep)}
+          </strong>
+
+        </div>
+
+
+        <div class="mini">
+
+          <small>
+            BOS
+          </small>
+
+          <strong>
+            ${safe(m.bos)}
+          </strong>
+
+        </div>
+
+
+        <div class="mini">
+
+          <small>
+            Dominance
+          </small>
+
+          <strong>
+            ${safe(m.dominance,0)}%
+          </strong>
+
+        </div>
+
+
+        <div class="mini">
+
+          <small>
+            Alignment
+          </small>
+
+          <strong>
+            ${safe(m.alignment,0)}/3
           </strong>
 
         </div>
@@ -2365,9 +2857,7 @@ function cardHTML(market){
           </small>
 
           <strong>
-            ${safe(
-              market.freshness
-            )}
+            ${safe(m.freshness)}
           </strong>
 
         </div>
@@ -2381,9 +2871,18 @@ function cardHTML(market){
           Why this signal
         </b>
 
-        ${signalReasons(
-          market
-        )}
+        ${reasonHTML(m)}
+
+      </div>
+
+
+      <div class="breakdown">
+
+        <b>
+          Score breakdown
+        </b>
+
+        ${breakdownHTML(m)}
 
       </div>
 
@@ -2396,7 +2895,7 @@ function cardHTML(market){
         class="card-btn"
         onclick="
           toggleAdvanced(
-            '${market.symbol}'
+            '${m.symbol}'
           )
         "
       >
@@ -2407,7 +2906,7 @@ function cardHTML(market){
         class="card-btn"
         onclick="
           copySignal(
-            '${market.symbol}'
+            '${m.symbol}'
           )
         "
       >
@@ -2418,11 +2917,22 @@ function cardHTML(market){
         class="card-btn"
         onclick="
           savePaperTrade(
-            '${market.symbol}'
+            '${m.symbol}'
           )
         "
       >
-        PAPER TRADE
+        PAPER
+      </button>
+
+      <button
+        class="card-btn"
+        onclick="
+          shareMarket(
+            '${m.symbol}'
+          )
+        "
+      >
+        SHARE
       </button>
 
     </div>
@@ -2432,15 +2942,11 @@ function cardHTML(market){
 
       <span>
         Candle
-        ${safe(
-          market.candle_time
-        )}
+        ${safe(m.candle_time)}
       </span>
 
       <span>
-        ${safe(
-          market.candle_age_minutes
-        )}
+        ${safe(m.candle_age_minutes)}
         min old
       </span>
 
@@ -2459,21 +2965,19 @@ function renderMarkets(){
     [...markets];
 
 
-  const query =
+  const q =
     $("search")
       .value
       .trim()
       .toUpperCase();
 
 
-  if(query){
+  if(q){
 
     list =
       list.filter(
-        market =>
-          market.symbol.includes(
-            query
-          )
+        m =>
+          m.symbol.includes(q)
       );
 
   }
@@ -2484,15 +2988,15 @@ function renderMarkets(){
     "WATCHLIST"
   ){
 
-    const favoriteList =
+    const fav =
       favorites();
 
 
     list =
       list.filter(
-        market =>
-          favoriteList.includes(
-            market.symbol
+        m =>
+          fav.includes(
+            m.symbol
           )
       );
 
@@ -2505,8 +3009,8 @@ function renderMarkets(){
 
     list =
       list.filter(
-        market =>
-          market.signal ===
+        m =>
+          m.signal ===
           currentFilter
       );
 
@@ -2517,7 +3021,10 @@ function renderMarkets(){
     $("sort").value;
 
 
-  if(sort === "confidence"){
+  if(
+    sort ===
+    "confidence"
+  ){
 
     list.sort(
       (a,b) =>
@@ -2533,44 +3040,53 @@ function renderMarkets(){
   }
 
 
-  if(sort === "symbol"){
+  if(
+    sort ===
+    "strength"
+  ){
+
+    list.sort(
+      (a,b) =>
+        (
+          b.trend_strength || 0
+        )
+        -
+        (
+          a.trend_strength || 0
+        )
+    );
+
+  }
+
+
+  if(
+    sort ===
+    "move"
+  ){
+
+    list.sort(
+      (a,b) =>
+        Math.abs(
+          b.change_4h || 0
+        )
+        -
+        Math.abs(
+          a.change_4h || 0
+        )
+    );
+
+  }
+
+
+  if(
+    sort ===
+    "symbol"
+  ){
 
     list.sort(
       (a,b) =>
         a.symbol.localeCompare(
           b.symbol
-        )
-    );
-
-  }
-
-
-  if(sort === "grade"){
-
-    list.sort(
-      (a,b) =>
-        (
-          b.confidence || 0
-        )
-        -
-        (
-          a.confidence || 0
-        )
-    );
-
-  }
-
-
-  if(sort === "change1h"){
-
-    list.sort(
-      (a,b) =>
-        Math.abs(
-          b.change_1h || 0
-        )
-        -
-        Math.abs(
-          a.change_1h || 0
         )
     );
 
@@ -2609,20 +3125,20 @@ function renderMarkets(){
 }
 
 
-function drawSparkline(market){
+function drawSparkline(m){
 
   const canvas =
     $(
-      `spark-${market.symbol}`
+      `spark-${m.symbol}`
     );
 
 
   if(
     !canvas ||
     !Array.isArray(
-      market.sparkline
+      m.sparkline
     ) ||
-    market.sparkline.length < 2
+    m.sparkline.length < 2
   ){
 
     return;
@@ -2652,94 +3168,90 @@ function drawSparkline(market){
     );
 
 
-  const context =
+  const c =
     canvas.getContext(
       "2d"
     );
 
 
-  context.scale(
+  c.setTransform(
     ratio,
-    ratio
+    0,
+    0,
+    ratio,
+    0,
+    0
   );
 
 
-  const width =
-    rect.width;
-
-
-  const height =
-    rect.height;
-
-
   const values =
-    market.sparkline.map(
+    m.sparkline.map(
       Number
     );
 
 
-  const minimum =
+  const min =
     Math.min(
       ...values
     );
 
 
-  const maximum =
+  const max =
     Math.max(
       ...values
     );
 
 
   const range =
-    maximum - minimum || 1;
+    max - min || 1;
 
 
-  context.clearRect(
+  c.clearRect(
     0,
     0,
-    width,
-    height
+    rect.width,
+    rect.height
   );
 
 
-  context.beginPath();
+  c.beginPath();
 
 
   values.forEach(
-    (value,index) => {
+    (v,i) => {
 
       const x =
         (
-          index /
+          i /
           (
             values.length - 1
           )
         )
         *
-        width;
+        rect.width;
 
 
       const y =
-        height
+        rect.height
         -
         (
           (
-            value - minimum
+            v - min
           )
           /
           range
         )
         *
         (
-          height - 8
+          rect.height - 8
         )
         -
         4;
 
 
-      if(index){
+      if(i){
 
-        context.lineTo(
+        c.lineTo(
           x,
           y
         );
@@ -2748,7 +3260,7 @@ function drawSparkline(market){
 
       else{
 
-        context.moveTo(
+        c.moveTo(
           x,
           y
         );
@@ -2759,28 +3271,28 @@ function drawSparkline(market){
   );
 
 
-  context.lineWidth =
+  c.lineWidth =
     2;
 
 
-  context.strokeStyle =
+  c.strokeStyle =
 
-    market.signal === "BUY"
+    m.signal === "BUY"
     ?
-    "#16d992"
+    "#17dc98"
 
     :
 
-    market.signal === "SELL"
+    m.signal === "SELL"
     ?
-    "#ff526a"
+    "#ff536d"
 
     :
 
-    "#54a7ff";
+    "#58aaff";
 
 
-  context.stroke();
+  c.stroke();
 
 }
 
@@ -2797,109 +3309,312 @@ function toggleAdvanced(symbol){
 }
 
 
-function copySignal(symbol){
+function signalText(m){
 
-  const market =
+  return `${m.symbol} ${m.signal} ${m.grade}
+Confidence: ${m.confidence}%
+Setup: ${m.setup_type}
+5M/15M/1H: ${m.trend}/${m.trend_15m}/${m.trend_1h}
+Entry: ${fmt(m.symbol,m.entry)}
+SL: ${fmt(m.symbol,m.sl)}
+TP1: ${fmt(m.symbol,m.tp1)}
+TP2: ${fmt(m.symbol,m.tp)}
+Risk: ${m.risk_level}
+Mkayfx V4 Max`;
+
+}
+
+
+async function copySignal(symbol){
+
+  const m =
     markets.find(
-      item =>
-        item.symbol === symbol
+      x =>
+        x.symbol === symbol
     );
 
 
-  if(!market){
+  if(!m){
+    return;
+  }
+
+
+  try{
+
+    await navigator.clipboard
+      .writeText(
+        signalText(m)
+      );
+
+
+    alert(
+      "Signal copied"
+    );
+
+  }
+
+  catch{
+
+    alert(
+      signalText(m)
+    );
+
+  }
+
+}
+
+
+async function shareMarket(symbol){
+
+  const m =
+    markets.find(
+      x =>
+        x.symbol === symbol
+    );
+
+
+  if(!m){
     return;
   }
 
 
   const text =
-`${market.symbol} ${market.signal} (${market.grade})
-Confidence: ${market.confidence}%
-Price: ${fmt(market.symbol,market.price)}
-Entry: ${fmt(market.symbol,market.entry)}
-SL: ${fmt(market.symbol,market.sl)}
-TP: ${fmt(market.symbol,market.tp)}
-R:R: ${
-  market.risk_reward
-  ?
-  `1:${market.risk_reward}`
-  :
-  "—"
-}
-Trend: ${market.trend}
-Mkayfx V3 Pro`;
+    signalText(m);
 
 
   if(
-    navigator.clipboard
+    navigator.share
   ){
 
-    navigator.clipboard
-      .writeText(text)
-      .then(
-        () =>
-          alert(
-            "Signal copied"
-          )
-      );
+    try{
+
+      await navigator.share({
+
+        title:
+          `${symbol} Mkayfx`,
+
+        text:
+          text
+
+      });
+
+    }
+
+    catch{}
 
   }
 
   else{
 
-    alert(text);
+    copySignal(symbol);
 
   }
+
+}
+
+
+async function shareSnapshot(){
+
+  const text =
+`Mkayfx V4 Max
+Bias: ${rawData?.overall_bias || "—"}
+Risk: ${rawData?.market_risk || "—"}
+Buy: ${rawData?.summary?.buy || 0} | Sell: ${rawData?.summary?.sell || 0} | Wait: ${rawData?.summary?.wait || 0}
+Tracked WR: ${rawData?.performance?.win_rate || 0}%
+Updated: ${rawData?.updated || "—"}`;
+
+
+  if(
+    navigator.share
+  ){
+
+    try{
+
+      await navigator.share({
+
+        title:
+          "Mkayfx V4 Max",
+
+        text:
+          text
+
+      });
+
+    }
+
+    catch{}
+
+  }
+
+  else{
+
+    try{
+
+      await navigator.clipboard
+        .writeText(text);
+
+
+      alert(
+        "Snapshot copied"
+      );
+
+    }
+
+    catch{
+
+      alert(text);
+
+    }
+
+  }
+
+}
+
+
+function renderMatrix(){
+
+  $("matrix").innerHTML = `
+
+  <table>
+
+    <thead>
+
+      <tr>
+
+        <th>Market</th>
+        <th>Signal</th>
+        <th>Grade</th>
+        <th>5M</th>
+        <th>15M</th>
+        <th>1H</th>
+        <th>Setup</th>
+        <th>Risk</th>
+        <th>Conf.</th>
+
+      </tr>
+
+    </thead>
+
+    <tbody>
+
+      ${markets.map(
+        m => `
+
+        <tr>
+
+          <td>
+            <b>
+              ${m.symbol}
+            </b>
+          </td>
+
+          <td
+            class="${
+              m.signal === "BUY"
+              ?
+              "bullish"
+              :
+              m.signal === "SELL"
+              ?
+              "bearish"
+              :
+              "mixed"
+            }"
+          >
+            ${m.signal}
+          </td>
+
+          <td>
+            ${m.grade}
+          </td>
+
+          <td class="${trendClass(m.trend)}">
+            ${m.trend}
+          </td>
+
+          <td class="${trendClass(m.trend_15m)}">
+            ${m.trend_15m}
+          </td>
+
+          <td class="${trendClass(m.trend_1h)}">
+            ${m.trend_1h}
+          </td>
+
+          <td>
+            ${m.setup_type}
+          </td>
+
+          <td>
+            ${m.risk_level}
+          </td>
+
+          <td>
+            ${m.confidence}%
+          </td>
+
+        </tr>
+
+        `
+      ).join("")}
+
+    </tbody>
+
+  </table>
+
+  `;
 
 }
 
 
 function renderLeaderboard(){
 
-  const leaderboard =
+  const list =
     rawData?.leaderboard || [];
 
 
   $("leaderboard").innerHTML =
 
-    leaderboard.length
+    list.length
     ?
 
-    leaderboard
-      .map(
-        (item,index) => `
+    list.map(
+      (x,i) => `
 
-        <div class="leader-item">
+      <div class="leader-item">
 
-          <div class="rank">
-            ${index + 1}
-          </div>
-
-          <strong>
-            ${item.symbol}
-          </strong>
-
-          <span
-            class="
-              tag
-              ${signalClass(
-                item.signal
-              )}
-            "
-          >
-            ${item.signal}
-          </span>
-
-          <span>
-            ${item.confidence}%
-            ·
-            ${item.grade}
-          </span>
-
+        <div class="rank">
+          ${i + 1}
         </div>
 
-        `
-      )
-      .join("")
+        <strong>
+          ${x.symbol}
+        </strong>
+
+        <span
+          class="
+            tag
+            ${signalClass(
+              x.signal
+            )}
+          "
+        >
+          ${x.signal}
+        </span>
+
+        <span>
+          ${x.confidence}%
+          ·
+          ${x.grade}
+        </span>
+
+        <span>
+          ${x.trend_strength}/100
+        </span>
+
+      </div>
+
+      `
+    ).join("")
 
     :
 
@@ -2912,52 +3627,309 @@ function renderLeaderboard(){
 }
 
 
+function renderPerformance(){
+
+  const p =
+    rawData?.performance || {};
+
+
+  $("perfWin").textContent =
+    `${p.win_rate || 0}%`;
+
+
+  $("perfWins").textContent =
+    p.wins || 0;
+
+
+  $("perfLosses").textContent =
+    p.losses || 0;
+
+
+  $("perfR").textContent =
+    `${Number(
+      p.total_r || 0
+    ).toFixed(2)}R`;
+
+
+  $("perfPF").textContent =
+
+    p.profit_factor === 999
+    ?
+    "∞"
+    :
+    safe(
+      p.profit_factor,
+      0
+    );
+
+
+  $("perfOpen").textContent =
+    p.open || 0;
+
+
+  $("perfExpired").textContent =
+    p.expired || 0;
+
+
+  $("perfStreak").textContent =
+
+    p.streak
+    ?
+    `${p.streak} ${p.streak_type}`
+    :
+    "—";
+
+
+  $("winRate").textContent =
+    `${p.win_rate || 0}%`;
+
+
+  $("totalR").textContent =
+    `${Number(
+      p.total_r || 0
+    ).toFixed(2)}R`;
+
+
+  $("trackedSignals").textContent =
+    `${p.tracked || 0} tracked · ${p.open || 0} open`;
+
+
+  const by =
+    p.by_symbol || {};
+
+
+  $("symbolStats").innerHTML =
+
+    Object.keys(by)
+      .map(
+        s =>
+          `${s}: <b>${by[s].win_rate}% WR</b> · ${by[s].total_r}R · ${by[s].trades} tracked`
+      )
+      .join("<br>")
+
+    ||
+
+    "No statistics yet.";
+
+
+  const trades =
+    rawData?.recent_trades || [];
+
+
+  $("recentTrades").innerHTML =
+
+    trades.length
+    ?
+
+    trades.map(
+      t => `
+
+      <div class="trade-item">
+
+        <b>
+          ${t.symbol} ${t.signal}
+        </b>
+
+        ·
+        ${safe(t.grade)}
+
+        ·
+
+        <b>
+          ${t.status}
+        </b>
+
+
+        <div class="meta">
+
+          Entry ${t.entry}
+
+          · SL ${t.sl}
+
+          · TP ${t.tp}
+
+          · R ${safe(t.r_result,"—")}
+
+          ·
+          ${new Date(
+            t.opened_at
+          ).toLocaleString()}
+
+        </div>
+
+      </div>
+
+      `
+    ).join("")
+
+    :
+
+    `
+    <div class="empty">
+      No tracked signals yet. The tracker records new BUY/SELL changes from now onward.
+    </div>
+    `;
+
+}
+
+
+function renderNews(){
+
+  const news =
+    rawData?.news || [];
+
+
+  $("newsList").innerHTML =
+
+    news.length
+    ?
+
+    news.map(
+      n => `
+
+      <div class="news-item">
+
+        <span
+          class="
+            impact
+            ${
+              n.impact === "HIGH"
+              ?
+              "sell"
+              :
+              n.impact === "MEDIUM"
+              ?
+              "wait"
+              :
+              "buy"
+            }
+          "
+        >
+          ${n.impact}
+        </span>
+
+
+        <div class="news-title">
+          ${escapeHTML(n.title)}
+        </div>
+
+
+        <div class="meta">
+
+          ${escapeHTML(
+            n.published || ""
+          )}
+
+          ${
+            n.link
+            ?
+            ` ·
+            <a
+              class="news-link"
+              href="${n.link}"
+              target="_blank"
+              rel="noopener"
+            >
+              Open article
+            </a>
+            `
+            :
+            ""
+          }
+
+        </div>
+
+      </div>
+
+      `
+    ).join("")
+
+    :
+
+    `
+    <div class="empty">
+      No news returned.
+    </div>
+    `;
+
+}
+
+
+function escapeHTML(s){
+
+  return String(
+    s || ""
+  ).replace(
+    /[&<>"']/g,
+    c => ({
+      "&":"&amp;",
+      "<":"&lt;",
+      ">":"&gt;",
+      '"':"&quot;",
+      "'":"&#039;"
+    }[c])
+  );
+
+}
+
+
 function updateSummary(){
 
-  const data =
+  const d =
     rawData || {};
 
 
   $("buyCount").textContent =
-    data.summary?.buy ?? 0;
+    d.summary?.buy ?? 0;
 
 
   $("sellCount").textContent =
-    data.summary?.sell ?? 0;
+    d.summary?.sell ?? 0;
 
 
   $("waitCount").textContent =
-    data.summary?.wait ?? 0;
+    d.summary?.wait ?? 0;
 
 
   $("bullTotal").textContent =
-    data.bull_score ?? 0;
+    d.bull_score ?? 0;
 
 
   $("bearTotal").textContent =
-    data.bear_score ?? 0;
+    d.bear_score ?? 0;
 
 
   $("overallBias").textContent =
-    data.overall_bias ||
-    "MIXED";
+    d.overall_bias || "MIXED";
 
 
   $("overallBias").className =
     trendClass(
-      data.overall_bias
+      d.overall_bias
+    );
+
+
+  $("marketRisk").textContent =
+    d.market_risk || "—";
+
+
+  $("marketRisk").className =
+    riskClass(
+      d.market_risk
     );
 
 
   $("strongestBuy").textContent =
 
-    data.strongest_buy
+    d.strongest_buy
     ?
 
-    `${data.strongest_buy.symbol}
-     ${data.strongest_buy.confidence}%
+    `${d.strongest_buy.symbol}
+     ${d.strongest_buy.confidence}%
      ·
-     ${data.strongest_buy.grade}`
+     ${d.strongest_buy.grade}
+     ·
+     ${d.strongest_buy.setup_type}`
 
     :
 
@@ -2966,13 +3938,15 @@ function updateSummary(){
 
   $("strongestSell").textContent =
 
-    data.strongest_sell
+    d.strongest_sell
     ?
 
-    `${data.strongest_sell.symbol}
-     ${data.strongest_sell.confidence}%
+    `${d.strongest_sell.symbol}
+     ${d.strongest_sell.confidence}%
      ·
-     ${data.strongest_sell.grade}`
+     ${d.strongest_sell.grade}
+     ·
+     ${d.strongest_sell.setup_type}`
 
     :
 
@@ -2981,11 +3955,11 @@ function updateSummary(){
 
   $("updatedAt").textContent =
 
-    data.updated
+    d.updated
     ?
 
     new Date(
-      data.updated
+      d.updated
     ).toLocaleTimeString(
       [],
       {
@@ -3000,26 +3974,28 @@ function updateSummary(){
 
 
   $("sourceText").textContent =
-    `${data.version || "Mkayfx"}
-     ·
-     ${data.source || ""}`;
+    `${d.version || "Mkayfx"} · ${d.source || ""}`;
 
 
   $("backend").textContent =
-    data.status || "—";
+    d.status || "—";
 
 
   $("timeframe").textContent =
-    data.interval || "—";
+    d.interval || "—";
+
+
+  $("version").textContent =
+    d.version || "—";
 
 
   lastUpdate =
 
-    data.updated
+    d.updated
     ?
 
     new Date(
-      data.updated
+      d.updated
     )
 
     :
@@ -3034,8 +4010,12 @@ function updateSummary(){
 
 function updateDataAge(){
 
-  if(!lastUpdate){
+  if(
+    !lastUpdate
+  ){
+
     return;
+
   }
 
 
@@ -3069,19 +4049,9 @@ function updateDataAge(){
 
   $("liveStatus").innerHTML =
 
-    minutes > 20
-    ?
-
     `
     <span class="dot"></span>
-    STALE
-    `
-
-    :
-
-    `
-    <span class="dot"></span>
-    LIVE
+    ${minutes > 20 ? "STALE" : "LIVE"}
     `;
 
 
@@ -3098,7 +4068,7 @@ function updateDataAge(){
 
 function populateRisk(){
 
-  const oldValue =
+  const old =
     $("riskMarket").value;
 
 
@@ -3112,28 +4082,25 @@ function populateRisk(){
 
     +
 
-    markets
-      .map(
-        market =>
-          `
-          <option value="${market.symbol}">
-            ${market.symbol}
-          </option>
-          `
-      )
-      .join("");
+    markets.map(
+      m =>
+        `
+        <option value="${m.symbol}">
+          ${m.symbol} · ${m.signal}
+        </option>
+        `
+    ).join("");
 
 
   if(
     markets.some(
-      market =>
-        market.symbol ===
-        oldValue
+      m =>
+        m.symbol === old
     )
   ){
 
     $("riskMarket").value =
-      oldValue;
+      old;
 
   }
 
@@ -3158,10 +4125,10 @@ function calculateRisk(){
     $("riskMarket").value;
 
 
-  const market =
+  const m =
     markets.find(
-      item =>
-        item.symbol === symbol
+      x =>
+        x.symbol === symbol
     );
 
 
@@ -3184,7 +4151,16 @@ function calculateRisk(){
     100;
 
 
-  if(!market){
+  if(
+    !m ||
+    ![
+      "BUY",
+      "SELL"
+    ].includes(
+      m.signal
+    ) ||
+    !m.risk_distance
+  ){
 
     $("riskResult").innerHTML =
       `
@@ -3192,6 +4168,10 @@ function calculateRisk(){
       <b>
         ${amount.toFixed(2)}
       </b>
+
+      <br>
+
+      Select an active BUY/SELL setup for unit sizing.
       `;
 
     return;
@@ -3199,54 +4179,80 @@ function calculateRisk(){
   }
 
 
+  const units =
+    amount /
+    Number(
+      m.risk_distance
+    );
+
+
+  const contract =
+    Number(
+      m.contract_units_per_lot || 1
+    );
+
+
+  const lots =
+    units /
+    contract;
+
+
   $("riskResult").innerHTML =
     `
     <b>
-      ${symbol}
+      ${symbol} ${m.signal}
     </b>
 
     <br>
 
-    Maximum loss budget:
+    Risk budget:
     <b>
       ${amount.toFixed(2)}
     </b>
 
     <br>
 
-    SL distance:
+    Stop distance:
     <b>
       ${fmt(
         symbol,
-        market.sl_distance
+        m.risk_distance
       )}
     </b>
 
     <br>
 
-    TP distance:
+    Approx. units:
     <b>
-      ${fmt(
-        symbol,
-        market.tp_distance
+      ${units.toFixed(
+        symbol === "BTCUSD"
+        ?
+        5
+        :
+        2
       )}
     </b>
 
     <br>
 
-    Signal:
+    Estimated lots:
     <b>
-      ${market.signal}
-      ${market.grade}
+      ${lots.toFixed(4)}
     </b>
 
     <br>
 
-    <span style="
-      color:var(--muted)
-    ">
-      This does not calculate
-      broker-specific lot size.
+    TP2 R:R:
+    <b>
+      1:${m.risk_reward || 2}
+    </b>
+
+    <br>
+
+    <span style="color:var(--muted)">
+      Verify your broker's contract size,
+      minimum lot, spread and account currency
+      before using this estimate.
     </span>
     `;
 
@@ -3266,11 +4272,11 @@ function journal(){
 }
 
 
-function saveJournal(data){
+function saveJournal(v){
 
   localStorage.setItem(
     "mkayfxJournal",
-    JSON.stringify(data)
+    JSON.stringify(v)
   );
 
 }
@@ -3278,16 +4284,21 @@ function saveJournal(data){
 
 function savePaperTrade(symbol){
 
-  const market =
+  const m =
     markets.find(
-      item =>
-        item.symbol === symbol
+      x =>
+        x.symbol === symbol
     );
 
 
   if(
-    !market ||
-    market.signal === "WAIT"
+    !m ||
+    ![
+      "BUY",
+      "SELL"
+    ].includes(
+      m.signal
+    )
   ){
 
     alert(
@@ -3309,25 +4320,31 @@ function savePaperTrade(symbol){
       Date.now(),
 
     symbol:
-      market.symbol,
+      m.symbol,
 
     signal:
-      market.signal,
+      m.signal,
 
     grade:
-      market.grade,
+      m.grade,
 
     confidence:
-      market.confidence,
+      m.confidence,
+
+    setup_type:
+      m.setup_type,
 
     entry:
-      market.entry,
+      m.entry,
 
     sl:
-      market.sl,
+      m.sl,
+
+    tp1:
+      m.tp1,
 
     tp:
-      market.tp,
+      m.tp,
 
     status:
       "OPEN",
@@ -3342,7 +4359,7 @@ function savePaperTrade(symbol){
   saveJournal(
     trades.slice(
       0,
-      100
+      200
     )
   );
 
@@ -3362,22 +4379,22 @@ function updateTrade(
   status
 ){
 
-  const trades =
-    journal()
-      .map(
-        trade =>
-          trade.id === id
-          ?
-          {
-            ...trade,
-            status:status
-          }
-          :
-          trade
-      );
+  saveJournal(
 
+    journal().map(
+      t =>
+        t.id === id
+        ?
+        {
+          ...t,
+          status
+        }
+        :
+        t
+    )
 
-  saveJournal(trades);
+  );
+
 
   renderJournal();
 
@@ -3387,11 +4404,12 @@ function updateTrade(
 function deleteTrade(id){
 
   saveJournal(
-    journal()
-      .filter(
-        trade =>
-          trade.id !== id
-      )
+
+    journal().filter(
+      t =>
+        t.id !== id
+    )
+
   );
 
 
@@ -3408,45 +4426,39 @@ function renderJournal(){
 
   const closed =
     trades.filter(
-      trade =>
+      t =>
         [
           "WIN",
           "LOSS",
           "BE"
         ].includes(
-          trade.status
+          t.status
         )
     );
 
 
   const wins =
     closed.filter(
-      trade =>
-        trade.status ===
+      t =>
+        t.status ===
         "WIN"
     ).length;
 
 
-  const winRate =
-
+  const wr =
     closed.length
     ?
-
     Math.round(
       wins /
       closed.length *
       100
     )
-
     :
-
     0;
 
 
   $("journalStats").textContent =
-    `${trades.length} trades
-     ·
-     ${winRate}% win rate`;
+    `${trades.length} trades · ${wr}% win rate`;
 
 
   $("journalList").innerHTML =
@@ -3454,105 +4466,103 @@ function renderJournal(){
     trades.length
     ?
 
-    trades
-      .map(
-        trade => `
+    trades.map(
+      t => `
 
-        <div class="journal-item">
+      <div class="journal-item">
 
-          <b>
-            ${trade.symbol}
-            ${trade.signal}
-          </b>
+        <b>
+          ${t.symbol} ${t.signal}
+        </b>
+
+        ·
+        ${t.grade}
+
+        ·
+        ${t.confidence}%
+
+        ·
+
+        <b>
+          ${t.status}
+        </b>
+
+
+        <div class="meta">
+
+          ${safe(t.setup_type)}
+
+          · Entry ${t.entry}
+
+          · SL ${t.sl}
+
+          · TP1 ${t.tp1}
+
+          · TP2 ${t.tp}
 
           ·
-          ${trade.grade}
-
-          ·
-          ${trade.confidence}%
-
-          ·
-
-          <b>
-            ${trade.status}
-          </b>
-
-
-          <div class="journal-meta">
-
-            Entry
-            ${trade.entry}
-
-            · SL
-            ${trade.sl}
-
-            · TP
-            ${trade.tp}
-
-            ·
-            ${new Date(
-              trade.saved
-            ).toLocaleString()}
-
-          </div>
-
-
-          <div class="journal-actions">
-
-            <button
-              class="tiny-btn"
-              onclick="
-                updateTrade(
-                  ${trade.id},
-                  'WIN'
-                )
-              "
-            >
-              WIN
-            </button>
-
-            <button
-              class="tiny-btn"
-              onclick="
-                updateTrade(
-                  ${trade.id},
-                  'LOSS'
-                )
-              "
-            >
-              LOSS
-            </button>
-
-            <button
-              class="tiny-btn"
-              onclick="
-                updateTrade(
-                  ${trade.id},
-                  'BE'
-                )
-              "
-            >
-              BE
-            </button>
-
-            <button
-              class="tiny-btn"
-              onclick="
-                deleteTrade(
-                  ${trade.id}
-                )
-              "
-            >
-              DELETE
-            </button>
-
-          </div>
+          ${new Date(
+            t.saved
+          ).toLocaleString()}
 
         </div>
 
-        `
-      )
-      .join("")
+
+        <div class="journal-actions">
+
+          <button
+            class="tiny-btn"
+            onclick="
+              updateTrade(
+                ${t.id},
+                'WIN'
+              )
+            "
+          >
+            WIN
+          </button>
+
+          <button
+            class="tiny-btn"
+            onclick="
+              updateTrade(
+                ${t.id},
+                'LOSS'
+              )
+            "
+          >
+            LOSS
+          </button>
+
+          <button
+            class="tiny-btn"
+            onclick="
+              updateTrade(
+                ${t.id},
+                'BE'
+              )
+            "
+          >
+            BE
+          </button>
+
+          <button
+            class="tiny-btn"
+            onclick="
+              deleteTrade(
+                ${t.id}
+              )
+            "
+          >
+            DELETE
+          </button>
+
+        </div>
+
+      </div>
+
+      `
+    ).join("")
 
     :
 
@@ -3582,80 +4592,17 @@ function clearJournal(){
 }
 
 
-function exportJournal(){
-
-  const trades =
-    journal();
-
-
-  if(!trades.length){
-
-    alert(
-      "No journal data to export"
-    );
-
-    return;
-
-  }
-
-
-  const rows = [
-
-    [
-      "symbol",
-      "signal",
-      "grade",
-      "confidence",
-      "entry",
-      "sl",
-      "tp",
-      "status",
-      "saved"
-    ],
-
-    ...trades.map(
-      trade => [
-
-        trade.symbol,
-        trade.signal,
-        trade.grade,
-        trade.confidence,
-        trade.entry,
-        trade.sl,
-        trade.tp,
-        trade.status,
-        trade.saved
-
-      ]
-    )
-
-  ];
-
-
-  const csv =
-    rows
-      .map(
-        row =>
-          row
-            .map(
-              value =>
-                `"${String(
-                  value ?? ""
-                ).replaceAll(
-                  '"',
-                  '""'
-                )}"`
-            )
-            .join(",")
-      )
-      .join("\n");
-
+function downloadBlob(
+  name,
+  text,
+  type
+){
 
   const blob =
     new Blob(
-      [csv],
+      [text],
       {
-        type:"text/csv"
+        type
       }
     );
 
@@ -3666,25 +4613,136 @@ function exportJournal(){
     );
 
 
-  const link =
+  const a =
     document.createElement(
       "a"
     );
 
 
-  link.href =
+  a.href =
     url;
 
 
-  link.download =
-    "mkayfx-journal.csv";
+  a.download =
+    name;
 
 
-  link.click();
+  a.click();
 
 
-  URL.revokeObjectURL(
-    url
+  setTimeout(
+    () =>
+      URL.revokeObjectURL(
+        url
+      ),
+    500
+  );
+
+}
+
+
+function exportJournal(){
+
+  const trades =
+    journal();
+
+
+  if(
+    !trades.length
+  ){
+
+    alert(
+      "No journal data to export"
+    );
+
+    return;
+
+  }
+
+
+  const fields = [
+
+    "symbol",
+    "signal",
+    "grade",
+    "confidence",
+    "setup_type",
+    "entry",
+    "sl",
+    "tp1",
+    "tp",
+    "status",
+    "saved"
+
+  ];
+
+
+  const rows = [
+
+    fields,
+
+    ...trades.map(
+      t =>
+        fields.map(
+          f =>
+            t[f] ?? ""
+        )
+    )
+
+  ];
+
+
+  const csv =
+    rows.map(
+      r =>
+        r.map(
+          v =>
+            `"${String(v).replaceAll(
+              '"',
+              '""'
+            )}"`
+        )
+        .join(",")
+    )
+    .join("\n");
+
+
+  downloadBlob(
+    "mkayfx-v4-journal.csv",
+    csv,
+    "text/csv"
+  );
+
+}
+
+
+function exportSnapshot(){
+
+  if(
+    !rawData
+  ){
+
+    alert(
+      "No market data loaded"
+    );
+
+    return;
+
+  }
+
+
+  downloadBlob(
+
+    "mkayfx-v4-snapshot.json",
+
+    JSON.stringify(
+      rawData,
+      null,
+      2
+    ),
+
+    "application/json"
+
   );
 
 }
@@ -3692,7 +4750,7 @@ function exportJournal(){
 
 function loadSettings(){
 
-  const settings =
+  const s =
     JSON.parse(
       localStorage.getItem(
         "mkayfxSettings"
@@ -3703,12 +4761,12 @@ function loadSettings(){
 
 
   $("alertThreshold").value =
-    settings.threshold ?? 80;
+    s.threshold ?? 80;
 
 
   $("autoRefresh").value =
     String(
-      settings.refresh ?? 60
+      s.refresh ?? 60
     );
 
 
@@ -3724,7 +4782,7 @@ function loadSettings(){
 
 function saveSettings(){
 
-  const settings = {
+  const s = {
 
     threshold:
       Math.max(
@@ -3749,14 +4807,12 @@ function saveSettings(){
 
   localStorage.setItem(
     "mkayfxSettings",
-    JSON.stringify(
-      settings
-    )
+    JSON.stringify(s)
   );
 
 
   refreshLeft =
-    settings.refresh;
+    s.refresh;
 
 
   $("settingsResult").textContent =
@@ -3776,7 +4832,7 @@ async function requestNotifications(){
   ){
 
     $("settingsResult").textContent =
-      "Browser notifications are not supported here. Use the dashboard alert sound instead.";
+      "Browser notifications are not supported here.";
 
     return;
 
@@ -3785,18 +4841,12 @@ async function requestNotifications(){
 
   try{
 
-    const permission =
-      await Notification
-        .requestPermission();
-
-
     $("settingsResult").textContent =
-      `Notification permission:
-       ${permission}`;
+      `Notification permission: ${await Notification.requestPermission()}`;
 
   }
 
-  catch(error){
+  catch{
 
     $("settingsResult").textContent =
       "Could not enable notifications.";
@@ -3834,29 +4884,28 @@ function checkSignalAlerts(){
 
 
   markets.forEach(
-    market => {
+    m => {
 
-      const oldSignal =
+      const old =
         previous[
-          market.symbol
+          m.symbol
         ];
 
 
       if(
-        oldSignal
+        old
         &&
-        oldSignal !==
-        market.signal
+        old !== m.signal
         &&
         [
           "BUY",
           "SELL"
         ].includes(
-          market.signal
+          m.signal
         )
         &&
         (
-          market.confidence || 0
+          m.confidence || 0
         )
         >=
         threshold
@@ -3877,14 +4926,11 @@ function checkSignalAlerts(){
 
           new Notification(
 
-            `${market.symbol}
-             ${market.signal}`,
+            `${m.symbol} ${m.signal}`,
 
             {
               body:
-                `${market.confidence}%
-                 · Grade
-                 ${market.grade}`
+                `${m.confidence}% · ${m.grade} · ${m.setup_type}`
             }
 
           );
@@ -3895,9 +4941,9 @@ function checkSignalAlerts(){
 
 
       previous[
-        market.symbol
+        m.symbol
       ] =
-        market.signal;
+        m.signal;
 
     }
   );
@@ -3905,9 +4951,7 @@ function checkSignalAlerts(){
 
   localStorage.setItem(
     "mkayfxPrevSignals",
-    JSON.stringify(
-      previous
-    )
+    JSON.stringify(previous)
   );
 
 }
@@ -3917,75 +4961,73 @@ function beep(){
 
   try{
 
-    const AudioClass =
+    const A =
       window.AudioContext
       ||
       window.webkitAudioContext;
 
 
-    const context =
-      new AudioClass();
+    const c =
+      new A();
 
 
-    const oscillator =
-      context.createOscillator();
+    const o =
+      c.createOscillator();
 
 
-    const gain =
-      context.createGain();
+    const g =
+      c.createGain();
 
 
-    oscillator.connect(
-      gain
+    o.connect(g);
+
+    g.connect(
+      c.destination
     );
 
 
-    gain.connect(
-      context.destination
-    );
-
-
-    oscillator.frequency.value =
+    o.frequency.value =
       880;
 
 
-    gain.gain.value =
-      0.05;
+    g.gain.value =
+      .04;
 
 
-    oscillator.start();
+    o.start();
 
 
-    oscillator.stop(
-      context.currentTime
+    o.stop(
+      c.currentTime
       +
-      0.12
+      .13
     );
 
   }
 
-  catch(error){}
+  catch{}
 
 }
 
 
 function detectSession(){
 
-  const hour =
+  const h =
     new Date()
       .getUTCHours();
 
 
-  const sessions = [];
+  const s =
+    [];
 
 
   if(
-    hour >= 0
+    h >= 0
     &&
-    hour < 9
+    h < 9
   ){
 
-    sessions.push(
+    s.push(
       "ASIA"
     );
 
@@ -3993,12 +5035,12 @@ function detectSession(){
 
 
   if(
-    hour >= 7
+    h >= 7
     &&
-    hour < 16
+    h < 16
   ){
 
-    sessions.push(
+    s.push(
       "LONDON"
     );
 
@@ -4006,12 +5048,12 @@ function detectSession(){
 
 
   if(
-    hour >= 12
+    h >= 12
     &&
-    hour < 21
+    h < 21
   ){
 
-    sessions.push(
+    s.push(
       "NEW YORK"
     );
 
@@ -4020,33 +5062,53 @@ function detectSession(){
 
   $("session").textContent =
 
-    sessions.length
+    s.length
     ?
-
-    sessions.join(
+    s.join(
       " + "
     )
-
     :
-
     "QUIET";
+
+}
+
+
+function updateExpiries(){
+
+  markets.forEach(
+    m => {
+
+      const e =
+        $(
+          `expiry-${m.symbol}`
+        );
+
+
+      if(e){
+
+        e.textContent =
+          expiryText(m);
+
+      }
+
+    }
+  );
 
 }
 
 
 function tick(){
 
-  const now =
-    new Date();
-
-
   $("localTime").textContent =
-    now.toLocaleTimeString();
+    new Date()
+      .toLocaleTimeString();
 
 
   detectSession();
 
   updateDataAge();
+
+  updateExpiries();
 
 
   const refresh =
@@ -4057,7 +5119,9 @@ function tick(){
     0;
 
 
-  if(refresh > 0){
+  if(
+    refresh > 0
+  ){
 
     refreshLeft--;
 
@@ -4139,15 +5203,21 @@ async function loadData(
         []
       )
       .filter(
-        market =>
-          market.signal !==
+        m =>
+          m.signal !==
           "ERROR"
       );
 
 
     updateSummary();
 
+    renderPerformance();
+
+    renderNews();
+
     renderLeaderboard();
+
+    renderMatrix();
 
     populateRisk();
 
@@ -4167,13 +5237,13 @@ async function loadData(
     if(manual){
 
       button.textContent =
-        "V3 Updated ✓";
+        "V4 Updated ✓";
 
 
       setTimeout(
         () =>
           button.textContent =
-            "Refresh V3 Analysis",
+            "Refresh V4 Analysis",
         1200
       );
 
@@ -4210,7 +5280,7 @@ async function loadData(
     if(manual){
 
       button.textContent =
-        "Retry V3 Analysis";
+        "Retry V4 Analysis";
 
     }
 
@@ -4238,12 +5308,10 @@ tick();
 
 loadData(false);
 
-
-refreshTimer =
-  setInterval(
-    tick,
-    1000
-  );
+setInterval(
+  tick,
+  1000
+);
 
 </script>
 
