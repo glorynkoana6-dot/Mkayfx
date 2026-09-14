@@ -268,14 +268,45 @@
       "tp": 1.35021,
       "opened_at": "2026-09-14T09:57:32.609636+00:00",
       "opened_candle_time": "2026-09-14 09:55:00",
+      "status": "LOSS",
+      "r_result": -1.0,
+      "closed_at": "2026-09-14 10:00:00"
+    },
+    {
+      "id": "EURUSD-1789380597",
+      "symbol": "EURUSD",
+      "signal": "SELL",
+      "grade": "B",
+      "confidence": 79,
+      "setup_type": "CONFLUENCE",
+      "entry": 1.15402,
+      "sl": 1.15448,
+      "tp": 1.1531,
+      "opened_at": "2026-09-14T10:09:57.736459+00:00",
+      "opened_candle_time": "2026-09-14 10:05:00",
+      "status": "OPEN",
+      "r_result": null
+    },
+    {
+      "id": "GBPUSD-1789380597",
+      "symbol": "GBPUSD",
+      "signal": "SELL",
+      "grade": "A",
+      "confidence": 89,
+      "setup_type": "FVG CONTINUATION",
+      "entry": 1.34827,
+      "sl": 1.34888,
+      "tp": 1.34704,
+      "opened_at": "2026-09-14T10:09:57.736471+00:00",
+      "opened_candle_time": "2026-09-14 10:05:00",
       "status": "OPEN",
       "r_result": null
     }
   ],
   "last_signal": {
     "XAUUSD": "SELL",
-    "EURUSD": "WAIT",
-    "GBPUSD": "BUY",
+    "EURUSD": "SELL",
+    "GBPUSD": "SELL",
     "BTCUSD": "BUY"
   }
 }
