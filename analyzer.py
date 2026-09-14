@@ -1,58 +1,30 @@
 import os
 import json
-import math
 import urllib.parse
 import urllib.request
-
 from datetime import datetime, timezone
-
-
-# ============================================================
-# MKAYFX V3 PRO MARKET ANALYZER
-# ============================================================
 
 API_KEY = os.environ["TWELVE_DATA_API_KEY"]
 
 TIMEOUT = 20
-
 INTERVAL = "5min"
-
 OUTPUT_SIZE = 100
 
-
 SYMBOLS = {
-
     "XAUUSD": "XAU/USD",
-
     "EURUSD": "EUR/USD",
-
     "GBPUSD": "GBP/USD",
-
-    "BTCUSD": "BTC/USD"
-
+    "BTCUSD": "BTC/USD",
 }
 
 
-# ============================================================
-# BASIC HELPERS
-# ============================================================
-
 def decimals_for(symbol):
-
-    if symbol in [
-        "EURUSD",
-        "GBPUSD"
-    ]:
+    if symbol in ("EURUSD", "GBPUSD"):
         return 5
-
     return 2
 
 
-def rounded(
-    symbol,
-    value
-):
-
+def rounded(symbol, value):
     if value is None:
         return None
 
@@ -62,88 +34,42 @@ def rounded(
     )
 
 
-def percent_change(
-    old,
-    new
-):
-
+def percent_change(old, new):
     if old == 0:
-        return 0
+        return 0.0
 
-    return (
-        (
-            new - old
-        )
-        /
-        old
-    ) * 100
+    return ((new - old) / old) * 100.0
 
 
-# ============================================================
-# EMA
-# ============================================================
-
-def ema(
-    values,
-    period
-):
-
+def ema(values, period):
     if len(values) < period:
         return None
 
-    multiplier = (
-        2 /
-        (
-            period + 1
-        )
-    )
+    multiplier = 2.0 / (period + 1.0)
 
     value = (
-        sum(
-            values[:period]
-        )
-        /
-        period
+        sum(values[:period])
+        / period
     )
 
     for price in values[period:]:
-
         value = (
             price * multiplier
             +
-            value *
-            (
-                1 - multiplier
-            )
+            value * (1.0 - multiplier)
         )
 
     return value
 
 
-# ============================================================
-# RSI
-# ============================================================
-
-def rsi(
-    values,
-    period=14
-):
-
-    if len(values) < (
-        period + 1
-    ):
-        return 50
+def rsi(values, period=14):
+    if len(values) < period + 1:
+        return 50.0
 
     gains = []
-
     losses = []
 
-
-    for i in range(
-        1,
-        len(values)
-    ):
-
+    for i in range(1, len(values)):
         change = (
             values[i]
             -
@@ -151,84 +77,52 @@ def rsi(
         )
 
         gains.append(
-            max(
-                change,
-                0
-            )
+            max(change, 0.0)
         )
 
         losses.append(
-            max(
-                -change,
-                0
-            )
+            max(-change, 0.0)
         )
-
 
     avg_gain = (
-        sum(
-            gains[-period:]
-        )
+        sum(gains[-period:])
         /
         period
     )
 
     avg_loss = (
-        sum(
-            losses[-period:]
-        )
+        sum(losses[-period:])
         /
         period
     )
 
-
     if avg_loss == 0:
-        return 100
+        return 100.0
 
-
-    rs = (
-        avg_gain /
-        avg_loss
-    )
-
+    rs = avg_gain / avg_loss
 
     return (
-        100
+        100.0
         -
         (
-            100 /
-            (
-                1 + rs
-            )
+            100.0
+            /
+            (1.0 + rs)
         )
     )
 
 
-# ============================================================
-# ATR
-# ============================================================
-
-def true_ranges(
-    candles
-):
-
+def true_ranges(candles):
     values = []
 
+    for i in range(1, len(candles)):
+        current = candles[i]
 
-    for i in range(
-        1,
-        len(candles)
-    ):
-
-        current =
-            candles[i]
-
-        previous =
-            candles[i - 1]
-
+        previous = candles[
+            i - 1
+        ]
 
         tr = max(
-
             current["high"]
             -
             current["low"],
@@ -244,36 +138,22 @@ def true_ranges(
                 -
                 previous["close"]
             )
-
         )
 
-
-        values.append(
-            tr
-        )
-
+        values.append(tr)
 
     return values
 
 
-def atr(
-    candles,
-    period=14
-):
-
-    values =
-        true_ranges(
-            candles
-        )
-
+def atr(candles, period=14):
+    values = true_ranges(
+        candles
+    )
 
     if not values:
-        return 0
+        return 0.0
 
-
-    recent =
-        values[-period:]
-
+    recent = values[-period:]
 
     return (
         sum(recent)
@@ -282,34 +162,24 @@ def atr(
     )
 
 
-# ============================================================
-# SUPPORT + RESISTANCE
-# ============================================================
-
 def support_resistance(
     candles,
     lookback=20
 ):
 
-    recent =
-        candles[
-            -lookback:
-        ]
-
+    recent = candles[
+        -lookback:
+    ]
 
     support = min(
         candle["low"]
-        for candle
-        in recent
+        for candle in recent
     )
-
 
     resistance = max(
         candle["high"]
-        for candle
-        in recent
+        for candle in recent
     )
-
 
     return (
         support,
@@ -317,130 +187,87 @@ def support_resistance(
     )
 
 
-# ============================================================
-# MARKET STRUCTURE
-# ============================================================
-
-def market_structure(
-    candles
-):
-
+def market_structure(candles):
     if len(candles) < 12:
         return "MIXED"
 
-
-    old =
-        candles[-12:-6]
-
-    recent =
-        candles[-6:]
-
+    old = candles[-12:-6]
+    recent = candles[-6:]
 
     old_high = max(
-        c["high"]
-        for c in old
+        candle["high"]
+        for candle in old
     )
 
     old_low = min(
-        c["low"]
-        for c in old
+        candle["low"]
+        for candle in old
     )
 
-
     recent_high = max(
-        c["high"]
-        for c in recent
+        candle["high"]
+        for candle in recent
     )
 
     recent_low = min(
-        c["low"]
-        for c in recent
+        candle["low"]
+        for candle in recent
     )
-
 
     if (
         recent_high > old_high
         and
         recent_low > old_low
     ):
-
         return "BULLISH"
-
 
     if (
         recent_high < old_high
         and
         recent_low < old_low
     ):
-
         return "BEARISH"
-
 
     return "MIXED"
 
 
-# ============================================================
-# CANDLE PATTERNS
-# ============================================================
-
-def candle_pattern(
-    candles
-):
-
+def candle_pattern(candles):
     if len(candles) < 3:
         return "NONE"
 
+    previous = candles[-2]
+    current = candles[-1]
 
-    previous =
-        candles[-2]
+    body = abs(
+        current["close"]
+        -
+        current["open"]
+    )
 
-    current =
-        candles[-1]
-
-
-    previous_body =
-        abs(
-            previous["close"]
-            -
-            previous["open"]
-        )
-
-
-    current_body =
-        abs(
-            current["close"]
-            -
-            current["open"]
-        )
-
-
-    current_range = max(
+    candle_range = max(
         current["high"]
         -
         current["low"],
-        0.00000001
+        0.000000000001
     )
 
-
-    upper_wick =
+    upper_wick = (
         current["high"]
         -
         max(
             current["open"],
             current["close"]
         )
+    )
 
-
-    lower_wick =
+    lower_wick = (
         min(
             current["open"],
             current["close"]
         )
         -
         current["low"]
-
-
-    # Bullish engulfing
+    )
 
     if (
         previous["close"]
@@ -459,12 +286,8 @@ def candle_pattern(
         >=
         previous["open"]
     ):
-
         return "BULLISH ENGULFING"
 
-
-    # Bearish engulfing
-
     if (
         previous["close"]
         >
@@ -482,80 +305,46 @@ def candle_pattern(
         <=
         previous["open"]
     ):
-
         return "BEARISH ENGULFING"
 
-
-    # Bullish rejection
-
     if (
-        lower_wick
-        >
-        current_body * 2
+        lower_wick > body * 2
         and
-        lower_wick
-        >
-        upper_wick
+        lower_wick > upper_wick
         and
-        current_body
-        <
-        current_range * 0.45
+        body < candle_range * 0.45
     ):
-
         return "BULLISH REJECTION"
 
-
-    # Bearish rejection
-
     if (
-        upper_wick
-        >
-        current_body * 2
+        upper_wick > body * 2
         and
-        upper_wick
-        >
-        lower_wick
+        upper_wick > lower_wick
         and
-        current_body
-        <
-        current_range * 0.45
+        body < candle_range * 0.45
     ):
-
         return "BEARISH REJECTION"
 
-
-    last_three =
-        candles[-3:]
-
+    last_three = candles[-3:]
 
     if all(
         candle["close"]
         >
         candle["open"]
-        for candle
-        in last_three
+        for candle in last_three
     ):
-
         return "3 BULLISH CANDLES"
-
 
     if all(
         candle["close"]
         <
         candle["open"]
-        for candle
-        in last_three
+        for candle in last_three
     ):
-
         return "3 BEARISH CANDLES"
-
 
     return "NONE"
 
-
-# ============================================================
-# MARKET REGIME
-# ============================================================
 
 def market_regime(
     candles,
@@ -564,34 +353,25 @@ def market_regime(
     ema50
 ):
 
-    trs =
-        true_ranges(
-            candles
-        )
+    ranges = true_ranges(
+        candles
+    )
 
-
-    if len(trs) < 30:
+    if len(ranges) < 30:
         return "NORMAL"
 
-
-    historical =
-        trs[-40:-14]
-
+    historical = ranges[
+        -40:-14
+    ]
 
     if historical:
-
-        average_atr =
-            sum(
-                historical
-            ) / len(
-                historical
-            )
-
+        average_atr = (
+            sum(historical)
+            /
+            len(historical)
+        )
     else:
-
-        average_atr =
-            current_atr
-
+        average_atr = current_atr
 
     if (
         average_atr > 0
@@ -600,17 +380,11 @@ def market_regime(
         >
         average_atr * 1.55
     ):
-
         return "HIGH VOLATILITY"
 
-
-    ema_distance =
-        abs(
-            ema20
-            -
-            ema50
-        )
-
+    ema_distance = abs(
+        ema20 - ema50
+    )
 
     if (
         current_atr > 0
@@ -619,16 +393,10 @@ def market_regime(
         >
         current_atr * 0.70
     ):
-
         return "TRENDING"
-
 
     return "RANGING"
 
-
-# ============================================================
-# MOMENTUM
-# ============================================================
 
 def momentum_analysis(
     closes,
@@ -636,68 +404,49 @@ def momentum_analysis(
 ):
 
     if len(closes) < 7:
-
         return (
             "WEAK",
             "NEUTRAL"
         )
 
-
-    change =
+    change = (
         closes[-1]
         -
         closes[-6]
+    )
 
-
-    absolute =
-        abs(change)
-
+    absolute_change = abs(
+        change
+    )
 
     if current_atr <= 0:
+        strength = "WEAK"
 
-        strength =
-            "WEAK"
-
-
-    elif absolute >= (
+    elif (
+        absolute_change
+        >=
         current_atr * 2
     ):
+        strength = "STRONG"
 
-        strength =
-            "STRONG"
-
-
-    elif absolute >= (
+    elif (
+        absolute_change
+        >=
         current_atr
     ):
-
-        strength =
-            "MODERATE"
-
+        strength = "MODERATE"
 
     else:
-
-        strength =
-            "WEAK"
-
+        strength = "WEAK"
 
     if change > 0:
-
-        direction =
-            "BULLISH"
-
+        direction = "BULLISH"
 
     elif change < 0:
-
-        direction =
-            "BEARISH"
-
+        direction = "BEARISH"
 
     else:
-
-        direction =
-            "NEUTRAL"
-
+        direction = "NEUTRAL"
 
     return (
         strength,
@@ -705,14 +454,7 @@ def momentum_analysis(
     )
 
 
-# ============================================================
-# SIGNAL GRADE
-# ============================================================
-
-def signal_grade(
-    confidence
-):
-
+def signal_grade(confidence):
     if confidence >= 90:
         return "A+"
 
@@ -731,24 +473,20 @@ def signal_grade(
     return "D"
 
 
-# ============================================================
-# DATA FRESHNESS
-# ============================================================
-
 def candle_age_minutes(
     candle_time
 ):
 
     try:
-
-        candle_datetime =
+        candle_datetime = (
             datetime.strptime(
                 candle_time,
                 "%Y-%m-%d %H:%M:%S"
-            ).replace(
+            )
+            .replace(
                 tzinfo=timezone.utc
             )
-
+        )
 
         age_seconds = (
             datetime.now(
@@ -758,107 +496,73 @@ def candle_age_minutes(
             candle_datetime
         ).total_seconds()
 
-
         return max(
             0,
             int(
-                age_seconds
-                /
-                60
+                age_seconds / 60
             )
         )
 
-
     except Exception:
-
         return None
 
 
-# ============================================================
-# FETCH TWELVE DATA
-# ============================================================
+def get_data(symbol):
 
-def get_data(
-    symbol
-):
-
-    params =
-        urllib.parse.urlencode({
-
-            "symbol":
-                symbol,
-
-            "interval":
-                INTERVAL,
-
-            "outputsize":
-                OUTPUT_SIZE,
-
-            "order":
-                "ASC",
-
-            "timezone":
-                "UTC",
-
-            "apikey":
-                API_KEY
-
-        })
-
+    params = urllib.parse.urlencode({
+        "symbol": symbol,
+        "interval": INTERVAL,
+        "outputsize": OUTPUT_SIZE,
+        "order": "ASC",
+        "timezone": "UTC",
+        "apikey": API_KEY
+    })
 
     url = (
-        "https://api.twelvedata.com/time_series?"
+        "https://api.twelvedata.com/"
+        "time_series?"
         +
         params
     )
 
-
-    request =
+    request = (
         urllib.request.Request(
-
             url,
-
             headers={
                 "User-Agent":
                     "Mkayfx-V3"
             }
-
         )
-
+    )
 
     with urllib.request.urlopen(
         request,
         timeout=TIMEOUT
     ) as response:
 
-        data =
-            json.loads(
-                response
-                .read()
-                .decode()
+        data = json.loads(
+            response
+            .read()
+            .decode(
+                "utf-8"
             )
+        )
 
-
-    if (
-        "values"
-        not in data
-    ):
-
-        raise Exception(
+    if "values" not in data:
+        raise RuntimeError(
             data.get(
                 "message",
                 "No market data returned"
             )
         )
 
-
     candles = []
 
-
-    for candle in data["values"]:
+    for candle in data[
+        "values"
+    ]:
 
         candles.append({
-
             "datetime":
                 candle["datetime"],
 
@@ -881,137 +585,99 @@ def get_data(
                 float(
                     candle["close"]
                 )
-
         })
 
-
     if len(candles) < 60:
-
-        raise Exception(
+        raise RuntimeError(
             "Not enough candle data"
         )
 
-
     return candles
 
-
-# ============================================================
-# ANALYSE MARKET
-# ============================================================
 
 def analyse(
     name,
     api_symbol
 ):
 
-    candles =
-        get_data(
-            api_symbol
-        )
-
+    candles = get_data(
+        api_symbol
+    )
 
     closes = [
         candle["close"]
-        for candle
-        in candles
+        for candle in candles
     ]
 
+    price = closes[-1]
 
-    price =
+    current_ema20 = ema(
+        closes,
+        20
+    )
+
+    current_ema50 = ema(
+        closes,
+        50
+    )
+
+    current_rsi = rsi(
+        closes,
+        14
+    )
+
+    current_atr = atr(
+        candles,
+        14
+    )
+
+    (
+        support,
+        resistance
+    ) = support_resistance(
+        candles,
+        20
+    )
+
+    structure = market_structure(
+        candles
+    )
+
+    pattern = candle_pattern(
+        candles
+    )
+
+    (
+        momentum_strength,
+        momentum_direction
+    ) = momentum_analysis(
+        closes,
+        current_atr
+    )
+
+    regime = market_regime(
+        candles,
+        current_atr,
+        current_ema20,
+        current_ema50
+    )
+
+    change_5m = percent_change(
+        closes[-2],
         closes[-1]
+    )
 
-
-    current_ema20 =
-        ema(
-            closes,
-            20
-        )
-
-
-    current_ema50 =
-        ema(
-            closes,
-            50
-        )
-
-
-    current_rsi =
-        rsi(
-            closes,
-            14
-        )
-
-
-    current_atr =
-        atr(
-            candles,
-            14
-        )
-
-
-    support, resistance =
-        support_resistance(
-            candles,
-            20
-        )
-
-
-    structure =
-        market_structure(
-            candles
-        )
-
-
-    pattern =
-        candle_pattern(
-            candles
-        )
-
-
-    momentum_strength, momentum_direction =
-        momentum_analysis(
-            closes,
-            current_atr
-        )
-
-
-    regime =
-        market_regime(
-            candles,
-            current_atr,
-            current_ema20,
-            current_ema50
-        )
-
-
-    change_5m =
-        percent_change(
-            closes[-2],
-            closes[-1]
-        )
-
-
-    # 12 x 5-minute candles = 1 hour
-
-    change_1h =
-        percent_change(
-            closes[-13],
-            closes[-1]
-        )
-
+    change_1h = percent_change(
+        closes[-13],
+        closes[-1]
+    )
 
     bull_score = 0
-
     bear_score = 0
 
     bull_reasons = []
-
     bear_reasons = []
 
-
-    # ========================================================
-    # EMA TREND
-    # ========================================================
 
     if (
         current_ema20
@@ -1024,7 +690,6 @@ def analyse(
         bull_reasons.append(
             "EMA20 is above EMA50"
         )
-
 
     elif (
         current_ema20
@@ -1039,10 +704,6 @@ def analyse(
         )
 
 
-    # ========================================================
-    # PRICE VS EMA
-    # ========================================================
-
     if (
         price
         >
@@ -1054,7 +715,6 @@ def analyse(
         bull_reasons.append(
             "Price is above EMA20"
         )
-
 
     elif (
         price
@@ -1069,10 +729,6 @@ def analyse(
         )
 
 
-    # ========================================================
-    # RSI
-    # ========================================================
-
     if current_rsi >= 55:
 
         bull_score += 1
@@ -1080,7 +736,6 @@ def analyse(
         bull_reasons.append(
             "RSI shows bullish pressure"
         )
-
 
     elif current_rsi <= 45:
 
@@ -1090,10 +745,6 @@ def analyse(
             "RSI shows bearish pressure"
         )
 
-
-    # ========================================================
-    # MOMENTUM
-    # ========================================================
 
     if (
         momentum_direction
@@ -1108,7 +759,6 @@ def analyse(
             +
             " bullish momentum"
         )
-
 
     elif (
         momentum_direction
@@ -1125,10 +775,6 @@ def analyse(
         )
 
 
-    # ========================================================
-    # STRUCTURE
-    # ========================================================
-
     if structure == "BULLISH":
 
         bull_score += 1
@@ -1136,7 +782,6 @@ def analyse(
         bull_reasons.append(
             "Bullish market structure"
         )
-
 
     elif structure == "BEARISH":
 
@@ -1147,14 +792,7 @@ def analyse(
         )
 
 
-    # ========================================================
-    # CANDLE PATTERN
-    # ========================================================
-
-    if (
-        "BULLISH"
-        in pattern
-    ):
+    if "BULLISH" in pattern:
 
         bull_score += 1
 
@@ -1162,11 +800,7 @@ def analyse(
             pattern
         )
 
-
-    elif (
-        "BEARISH"
-        in pattern
-    ):
+    elif "BEARISH" in pattern:
 
         bear_score += 1
 
@@ -1175,37 +809,22 @@ def analyse(
         )
 
 
-    # ========================================================
-    # SIGNAL
-    # ========================================================
-
-    difference =
+    difference = (
         bull_score
         -
         bear_score
+    )
 
 
     if difference >= 2:
-
-        signal =
-            "BUY"
-
+        signal = "BUY"
 
     elif difference <= -2:
-
-        signal =
-            "SELL"
-
+        signal = "SELL"
 
     else:
+        signal = "WAIT"
 
-        signal =
-            "WAIT"
-
-
-    # ========================================================
-    # CONFIDENCE
-    # ========================================================
 
     confidence = (
         54
@@ -1217,14 +836,10 @@ def analyse(
 
 
     if (
-        regime ==
-        "TRENDING"
+        regime == "TRENDING"
         and
-        signal
-        !=
-        "WAIT"
+        signal != "WAIT"
     ):
-
         confidence += 4
 
 
@@ -1233,194 +848,139 @@ def analyse(
         ==
         "STRONG"
         and
-        signal
-        !=
-        "WAIT"
+        signal != "WAIT"
     ):
-
         confidence += 3
 
 
-    confidence =
-        min(
-            95,
-            int(
-                confidence
-            )
-        )
+    confidence = min(
+        95,
+        int(confidence)
+    )
 
 
     if signal == "WAIT":
-
-        confidence =
-            min(
-                confidence,
-                65
-            )
-
-
-    grade =
-        signal_grade(
-            confidence
+        confidence = min(
+            confidence,
+            65
         )
 
 
-    # ========================================================
-    # TREND
-    # ========================================================
+    grade = signal_grade(
+        confidence
+    )
+
 
     if (
-        price > current_ema20
-        and
-        current_ema20 > current_ema50
+        price
+        >
+        current_ema20
+        >
+        current_ema50
     ):
-
-        trend =
-            "BULLISH"
-
+        trend = "BULLISH"
 
     elif (
-        price < current_ema20
-        and
-        current_ema20 < current_ema50
+        price
+        <
+        current_ema20
+        <
+        current_ema50
     ):
-
-        trend =
-            "BEARISH"
-
+        trend = "BEARISH"
 
     else:
+        trend = "MIXED"
 
-        trend =
-            "MIXED"
-
-
-    # ========================================================
-    # ENTRY / SL / TP
-    # ========================================================
 
     entry = None
-
     stop_loss = None
-
     take_profit = None
 
     risk_reward = None
-
     sl_distance = None
-
     tp_distance = None
 
 
     if signal == "BUY":
 
-        entry =
-            price
+        entry = price
 
-
-        stop_loss =
+        stop_loss = (
             price
             -
             current_atr
+        )
 
-
-        take_profit =
+        take_profit = (
             price
             +
-            (
-                current_atr
-                *
-                2
-            )
+            current_atr * 2
+        )
 
 
     elif signal == "SELL":
 
-        entry =
-            price
+        entry = price
 
-
-        stop_loss =
+        stop_loss = (
             price
             +
             current_atr
+        )
 
-
-        take_profit =
+        take_profit = (
             price
             -
-            (
-                current_atr
-                *
+            current_atr * 2
+        )
+
+
+    if entry is not None:
+
+        sl_distance = abs(
+            entry
+            -
+            stop_loss
+        )
+
+        tp_distance = abs(
+            take_profit
+            -
+            entry
+        )
+
+        if sl_distance > 0:
+
+            risk_reward = round(
+                tp_distance
+                /
+                sl_distance,
                 2
             )
 
 
-    if (
-        entry is not None
-        and
-        stop_loss is not None
-        and
-        take_profit is not None
-    ):
-
-        sl_distance =
-            abs(
-                entry
-                -
-                stop_loss
-            )
-
-
-        tp_distance =
-            abs(
-                take_profit
-                -
-                entry
-            )
-
-
-        if sl_distance > 0:
-
-            risk_reward =
-                round(
-                    tp_distance
-                    /
-                    sl_distance,
-                    2
-                )
-
-
-    # ========================================================
-    # ATR %
-    # ========================================================
-
-    atr_percent = 0
-
-
-    if price != 0:
-
+    if price:
         atr_percent = (
             current_atr
             /
             price
         ) * 100
 
+    else:
+        atr_percent = 0
 
-    # ========================================================
-    # DATA AGE
-    # ========================================================
 
-    last_candle_time =
+    last_candle_time = (
         candles[-1][
             "datetime"
         ]
+    )
 
 
-    age =
-        candle_age_minutes(
-            last_candle_time
-        )
+    age = candle_age_minutes(
+        last_candle_time
+    )
 
 
     if (
@@ -1428,64 +988,34 @@ def analyse(
         and
         age <= 15
     ):
-
-        freshness =
-            "FRESH"
-
+        freshness = "FRESH"
 
     else:
+        freshness = "STALE"
 
-        freshness =
-            "STALE"
-
-
-    # ========================================================
-    # EXPLANATION
-    # ========================================================
 
     if signal == "BUY":
-
-        reasons =
-            bull_reasons
-
+        reasons = bull_reasons
 
     elif signal == "SELL":
-
-        reasons =
-            bear_reasons
-
+        reasons = bear_reasons
 
     else:
-
         reasons = [
-
             "Bullish and bearish evidence is too balanced",
-
             "Waiting for stronger confirmation"
-
         ]
 
 
-    # ========================================================
-    # SPARKLINE
-    # ========================================================
-
     sparkline = [
-
         rounded(
             name,
             value
         )
-
         for value
         in closes[-24:]
-
     ]
 
-
-    # ========================================================
-    # RESULT
-    # ========================================================
 
     return {
 
@@ -1635,13 +1165,8 @@ def analyse(
 
         "sparkline":
             sparkline
-
     }
 
-
-# ============================================================
-# RUN ALL MARKETS
-# ============================================================
 
 results = []
 
@@ -1653,22 +1178,16 @@ for (
 
     try:
 
-        result =
+        results.append(
             analyse(
                 name,
                 api_symbol
             )
-
-
-        results.append(
-            result
         )
-
 
     except Exception as error:
 
         results.append({
-
             "symbol":
                 name,
 
@@ -1677,106 +1196,71 @@ for (
 
             "error":
                 str(error)
-
         })
 
 
-# ============================================================
-# OVERALL MARKET BIAS
-# ============================================================
-
 valid_results = [
-
     market
-
-    for market
-    in results
-
+    for market in results
     if (
-        market.get(
-            "signal"
-        )
+        market.get("signal")
         !=
         "ERROR"
     )
-
 ]
 
 
 buy_markets = [
-
     market
-
-    for market
-    in valid_results
-
+    for market in valid_results
     if (
-        market.get(
-            "signal"
-        )
+        market.get("signal")
         ==
         "BUY"
     )
-
 ]
 
 
 sell_markets = [
-
     market
-
-    for market
-    in valid_results
-
+    for market in valid_results
     if (
-        market.get(
-            "signal"
-        )
+        market.get("signal")
         ==
         "SELL"
     )
-
 ]
 
 
 wait_markets = [
-
     market
-
-    for market
-    in valid_results
-
+    for market in valid_results
     if (
-        market.get(
-            "signal"
-        )
+        market.get("signal")
         ==
         "WAIT"
     )
-
 ]
 
 
-total_bull_score =
-    sum(
-        market.get(
-            "bull_score",
-            0
-        )
-        for market
-        in valid_results
+total_bull_score = sum(
+    market.get(
+        "bull_score",
+        0
     )
+    for market
+    in valid_results
+)
 
 
-total_bear_score =
-    sum(
-        market.get(
-            "bear_score",
-            0
-        )
-        for market
-        in valid_results
+total_bear_score = sum(
+    market.get(
+        "bear_score",
+        0
     )
+    for market
+    in valid_results
+)
 
 
 if (
@@ -1785,8 +1269,7 @@ if (
     total_bear_score
 ):
 
-    overall_bias =
-        "BULLISH"
+    overall_bias = "BULLISH"
 
 
 elif (
@@ -1795,97 +1278,71 @@ elif (
     total_bull_score
 ):
 
-    overall_bias =
-        "BEARISH"
+    overall_bias = "BEARISH"
 
 
 else:
 
-    overall_bias =
-        "MIXED"
+    overall_bias = "MIXED"
 
 
-# ============================================================
-# STRONGEST SIGNALS
-# ============================================================
-
-strongest_buy = None
-
-strongest_sell = None
-
-
-if buy_markets:
-
-    strongest_buy =
-        max(
-            buy_markets,
-            key=lambda market:
-                market.get(
-                    "confidence",
-                    0
-                )
-        )
-
-
-if sell_markets:
-
-    strongest_sell =
-        max(
-            sell_markets,
-            key=lambda market:
-                market.get(
-                    "confidence",
-                    0
-                )
-        )
-
-
-# ============================================================
-# MARKET LEADERBOARD
-# ============================================================
-
-leaderboard = sorted(
-
-    valid_results,
-
+strongest_buy = max(
+    buy_markets,
     key=lambda market:
-        market.get(
-            "confidence",
-            0
-        ),
-
-    reverse=True
-
+        market[
+            "confidence"
+        ],
+    default=None
 )
 
 
-leaderboard = [
-
-    {
-
-        "symbol":
-            market["symbol"],
-
-        "signal":
-            market["signal"],
-
-        "confidence":
-            market["confidence"],
-
-        "grade":
-            market["grade"]
-
-    }
-
-    for market
-    in leaderboard
-
-]
+strongest_sell = max(
+    sell_markets,
+    key=lambda market:
+        market[
+            "confidence"
+        ],
+    default=None
+)
 
 
-# ============================================================
-# FINAL JSON
-# ============================================================
+leaderboard = sorted(
+
+    [
+        {
+            "symbol":
+                market[
+                    "symbol"
+                ],
+
+            "signal":
+                market[
+                    "signal"
+                ],
+
+            "confidence":
+                market[
+                    "confidence"
+                ],
+
+            "grade":
+                market[
+                    "grade"
+                ]
+        }
+
+        for market
+        in valid_results
+    ],
+
+    key=lambda market:
+        market[
+            "confidence"
+        ],
+
+    reverse=True
+)
+
 
 output = {
 
@@ -1931,7 +1388,6 @@ output = {
             len(
                 wait_markets
             )
-
     },
 
     "strongest_buy":
@@ -1954,7 +1410,6 @@ output = {
                 strongest_buy[
                     "grade"
                 ]
-
         },
 
     "strongest_sell":
@@ -1977,7 +1432,6 @@ output = {
                 strongest_sell[
                     "grade"
                 ]
-
         },
 
     "leaderboard":
@@ -1985,17 +1439,13 @@ output = {
 
     "markets":
         results
-
 }
 
 
-# ============================================================
-# SAVE
-# ============================================================
-
 with open(
     "data.json",
-    "w"
+    "w",
+    encoding="utf-8"
 ) as file:
 
     json.dump(
