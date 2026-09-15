@@ -1327,12 +1327,27 @@
       "status": "LOSS",
       "r_result": -1.0,
       "closed_at": "2026-09-15 15:00:00"
+    },
+    {
+      "id": "GBPUSD-1789485881",
+      "symbol": "GBPUSD",
+      "signal": "SELL",
+      "grade": "C",
+      "confidence": 68,
+      "setup_type": "RANGE SETUP",
+      "entry": 1.34836,
+      "sl": 1.34892,
+      "tp": 1.34723,
+      "opened_at": "2026-09-15T15:24:41.965414+00:00",
+      "opened_candle_time": "2026-09-15 15:20:00",
+      "status": "OPEN",
+      "r_result": null
     }
   ],
   "last_signal": {
     "XAUUSD": "WAIT",
     "EURUSD": "WAIT",
-    "GBPUSD": "WAIT",
+    "GBPUSD": "SELL",
     "BTCUSD": "SELL"
   }
 }
