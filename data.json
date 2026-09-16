@@ -3,70 +3,70 @@
   "version": "Mkayfx V4 Max",
   "source": "Twelve Data",
   "interval": "5min",
-  "updated": "2026-09-16T07:23:47.750126+00:00",
+  "updated": "2026-09-16T07:38:17.346964+00:00",
   "overall_bias": "BULLISH",
   "market_risk": "MEDIUM",
-  "bull_score": 17,
-  "bear_score": 11,
+  "bull_score": 26,
+  "bear_score": 2,
   "summary": {
-    "buy": 2,
+    "buy": 3,
     "sell": 0,
-    "wait": 2,
+    "wait": 1,
     "errors": 0
   },
   "strongest_buy": {
     "symbol": "XAUUSD",
-    "confidence": 94,
+    "confidence": 97,
     "grade": "A+",
-    "setup_type": "TREND CONTINUATION"
+    "setup_type": "BREAKOUT"
   },
   "strongest_sell": null,
   "leaderboard": [
     {
       "symbol": "XAUUSD",
       "signal": "BUY",
-      "confidence": 94,
+      "confidence": 97,
       "grade": "A+",
-      "trend_strength": 84,
+      "trend_strength": 91,
       "risk_level": "MEDIUM"
     },
     {
       "symbol": "EURUSD",
       "signal": "BUY",
-      "confidence": 74,
-      "grade": "B",
-      "trend_strength": 47,
+      "confidence": 97,
+      "grade": "A+",
+      "trend_strength": 59,
       "risk_level": "MEDIUM"
     },
     {
       "symbol": "GBPUSD",
-      "signal": "WAIT",
-      "confidence": 64,
-      "grade": "C",
-      "trend_strength": 18,
+      "signal": "BUY",
+      "confidence": 83,
+      "grade": "B+",
+      "trend_strength": 10,
       "risk_level": "LOW"
     },
     {
       "symbol": "BTCUSD",
       "signal": "WAIT",
-      "confidence": 63,
+      "confidence": 53,
       "grade": "D",
       "trend_strength": 16,
       "risk_level": "LOW"
     }
   ],
   "performance": {
-    "tracked": 115,
-    "open": 4,
-    "wins": 47,
-    "losses": 61,
+    "tracked": 116,
+    "open": 3,
+    "wins": 48,
+    "losses": 62,
     "expired": 3,
     "ambiguous": 0,
-    "win_rate": 43.5,
-    "total_r": 34.49,
+    "win_rate": 43.6,
+    "total_r": 35.49,
     "profit_factor": 1.57,
-    "streak": 4,
-    "streak_type": "LOSS",
+    "streak": 1,
+    "streak_type": "WIN",
     "by_symbol": {
       "XAUUSD": {
         "trades": 30,
@@ -77,17 +77,17 @@
       },
       "EURUSD": {
         "trades": 24,
-        "wins": 11,
+        "wins": 12,
         "losses": 10,
-        "win_rate": 52.4,
-        "total_r": 12.9
+        "win_rate": 54.5,
+        "total_r": 14.9
       },
       "GBPUSD": {
-        "trades": 33,
+        "trades": 34,
         "wins": 13,
-        "losses": 19,
-        "win_rate": 40.6,
-        "total_r": 7.0
+        "losses": 20,
+        "win_rate": 39.4,
+        "total_r": 6.0
       },
       "BTCUSD": {
         "trades": 28,
@@ -100,6 +100,21 @@
   },
   "recent_trades": [
     {
+      "id": "GBPUSD-1789544297",
+      "symbol": "GBPUSD",
+      "signal": "BUY",
+      "grade": "B+",
+      "confidence": 83,
+      "setup_type": "FVG CONTINUATION",
+      "entry": 1.34833,
+      "sl": 1.34791,
+      "tp": 1.34917,
+      "opened_at": "2026-09-16T07:38:17.344849+00:00",
+      "opened_candle_time": "2026-09-16 07:35:00",
+      "status": "OPEN",
+      "r_result": null
+    },
+    {
       "id": "EURUSD-1789542450",
       "symbol": "EURUSD",
       "signal": "BUY",
@@ -111,8 +126,9 @@
       "tp": 1.15555,
       "opened_at": "2026-09-16T07:07:30.734254+00:00",
       "opened_candle_time": "2026-09-16 07:05:00",
-      "status": "OPEN",
-      "r_result": null
+      "status": "WIN",
+      "r_result": 2.0,
+      "closed_at": "2026-09-16 07:35:00"
     },
     {
       "id": "XAUUSD-1789541569",
@@ -141,8 +157,9 @@
       "tp": 1.34669,
       "opened_at": "2026-09-16T06:37:21.810645+00:00",
       "opened_candle_time": "2026-09-16 06:35:00",
-      "status": "OPEN",
-      "r_result": null
+      "status": "LOSS",
+      "r_result": -1.0,
+      "closed_at": "2026-09-16 07:30:00"
     },
     {
       "id": "BTCUSD-1789536059",
@@ -398,23 +415,6 @@
       "status": "LOSS",
       "r_result": -1.0,
       "closed_at": "2026-09-15 22:40:00"
-    },
-    {
-      "id": "EURUSD-1789509227",
-      "symbol": "EURUSD",
-      "signal": "SELL",
-      "grade": "B",
-      "confidence": 76,
-      "setup_type": "CONFLUENCE",
-      "entry": 1.15384,
-      "sl": 1.15452,
-      "tp": 1.15248,
-      "opened_at": "2026-09-15T21:53:47.790821+00:00",
-      "opened_candle_time": "2026-09-15 21:50:00",
-      "status": "EXPIRED",
-      "r_result": 0.76,
-      "closed_at": "2026-09-16 02:05:00",
-      "close_price": 1.15332
     }
   ],
   "news": [
@@ -425,9 +425,9 @@
       "impact": "MEDIUM"
     },
     {
-      "title": "Gold gains with Fed rate decision in spotlight - Reuters",
-      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQdEVwMWpILUF1dnhqajU0di1FMVRLWGNScTJKdTR2NUl2VWZSUXpWNF9UQ3h2M0ZuMUYxZzJab09IcUMwN0RQSlRtcC1HSGdQM2poNXptR1BCeklERXdjcmE5N2tzNmdHczY1SkdnSXE0Q3dJNV9TYkNjVDdNUFZjLUhDMkRWcHlsNVF5V19sS1MwX3lnNG13?oc=5",
-      "published": "Wed, 16 Sep 2026 02:07:00 GMT",
+      "title": "UK inflation speeds up to 3.1% but underlying price growth stable - Reuters",
+      "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPamd0cUlhVDJZWHMweFF4QjNMOGdJZ1p2LUpLdHJpSzlwa2NCNXFqTjluUW5xY0g4c25PamlpRjZpMmJ5WkFqZF9xVFRwTDlCNW5MR3ZKc2JHWEo2ZU11R1RFeU1XM1NWMFdQRzRXdTNVcllHdjNySHc3UDJvTkZoSm91bw?oc=5",
+      "published": "Wed, 16 Sep 2026 06:04:00 GMT",
       "impact": "HIGH"
     },
     {
@@ -437,13 +437,19 @@
       "impact": "HIGH"
     },
     {
+      "title": "U.K. Inflation Rises Ahead of BOE Rate Call - WSJ",
+      "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQNElRM0hrTDZaM3JYWV9UTlpwd0RaUHVzeFQ5VUw3dWJWTURkaVZSR0hTQ1JJbGZYNFR2Q0NQeG1NdDA4dldTSmZFVGk1MjQtZUZXeVhRdkxPRUlZazVZOVJsLU9Ha3M5Rm9xbW1OcENhU2liRjNxNFNtYzBIMUVzQUs5eTgwM2RmOGx1Uk1Oaw?oc=5",
+      "published": "Wed, 16 Sep 2026 06:30:00 GMT",
+      "impact": "HIGH"
+    },
+    {
       "title": "UK inflation jumps to 3.1% as energy costs soar - CNBC",
       "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE13WG5PbGNuVmxRejVTbnlzREU2NzB5T3RsQmkzMlpzTHg5S0dudjJUV3I4a0tCdWRqSVd2Z3lYU3dFNzBjVnoxZnZvY3otOEw5UUJzSTdfZlNWQ1BWWjNRV2c3Tkd4LTAzYWpmRk5CM3MxR1h5UmxMQjFnc0rSAYIBQVVfeXFMTWh1SmdIQVJFZUZwcmFKSUVFSjhjWGJUOGJTWlJvdHdUeUdGY2x6Z0ZwLUZNT0FDdFVoaWpXN3RjQmwxSm5HTWFqWWQxeVgyZ2ExUTBFSXJoQ3JUSmRPbHlHTTEwNXhmSU0xdzJCSWZZbF94bXp0RFlSMHRkMzF2eksyQQ?oc=5",
       "published": "Wed, 16 Sep 2026 06:06:05 GMT",
       "impact": "HIGH"
     },
     {
-      "title": "Bitcoin tumbles 4% to $75,000 as hopes of CLARITY Act passage this year fade - Yahoo Finance",
+      "title": "Bitcoin tumbles 4% to $75,000 as hopes of CLARITY Act passage this year fade - finance.yahoo.com",
       "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPYk5NTFFuS0pBQV9Zckt5ejlZMVU2TFNScjRMYTl2Q2ZnWHN1d2pRa0s1Ykw3dm0xeDBkUFJkVGpBVk42dWY4TVMzdjAzQnVpNFB3VDJ1VUNfUWNwLTJST1NMbXFFbEQ0NUx1emJ2eUdYdHFnM3BlZ05nSWV5RThITDFFbC1zQmlmVF9kSEItWWpvOW10M0lLVkU0S2tlVjdWQ0lnXzVuZl9sNi1fcDB5bjlDUF9XSlhXMlBic2UyUmI2U0E4T0JBa0JR?oc=5",
       "published": "Tue, 15 Sep 2026 19:06:40 GMT",
       "impact": "MEDIUM"
@@ -455,59 +461,53 @@
       "impact": "HIGH"
     },
     {
-      "title": "U.K. Inflation Rises Ahead of BOE Rate Call - WSJ",
-      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQVE9rWmhUNnJVbGZ4UHFlV0dWM21vdzR5UEo1QjFCMXpES01UWFotZGk2Z25xMWpURU9uMDNsaUttRWwxN3pmTm5GMmk0NnZjaVprLVVwOGo4M1RLVEJkWFlVcHJQMlpZMkZkeTY4dE5hdlZ5eVc5RTJNMm1EOGlCTUVXWHRJdw?oc=5",
-      "published": "Wed, 16 Sep 2026 06:32:00 GMT",
+      "title": "Federal Reserve is expected to raise its benchmark rate, defying Trump\u2019s demands - AP News",
+      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNcEg4dFhUa0hYYzZsdXJhRTVFZ09rQUl5ems3Z0JuTE8zdlZJb3Z4bC1QUjZ3d0MzZG1KazlSenRUT20wSGFCMm9ya3AzQjJQeFBVZXB1enM4SDd5akRpNmgwT3RuOXRhSWZvVDYtZ3BOdkx1OWVkWmRCd292c1ItVDVVcmZKV1VPMWtjSU9IVF8tWEpUYm1pRnJacE1JbE5DbHJLbQ?oc=5",
+      "published": "Tue, 15 Sep 2026 16:32:00 GMT",
       "impact": "HIGH"
-    },
-    {
-      "title": "Gold prices could rally a little on a Fed hike, but a lot on a hold, with $5,000/oz back on the table \u2013 Jesse Columbo - KITCO",
-      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOaUJTMUtESEtkRnFoUEpRVHlFVXBrYTdTa21UaXkwa3ZMd1F3VTItTjlMdS1odWdZSzlHT001ZkhVaUxrLW5VeFJ0Z3EyN3RQTHV2aUplQ1ZKR0Z6QVV6ckxkOExERDNxeWdlRFEzVDg1aXhuQjBwTWI3RTNSNVktcmRqY0Rha1ZFc2RhSXRUSkpoQkJ5R3F4bHdJWlFrZDluV0VEeXZKeEpjdW5peDhna2Fwb1RPNG9EMWc?oc=5",
-      "published": "Tue, 15 Sep 2026 22:46:00 GMT",
-      "impact": "MEDIUM"
     }
   ],
   "markets": [
     {
       "symbol": "XAUUSD",
       "api_symbol": "XAU/USD",
-      "price": 4332.95,
+      "price": 4337.29,
       "signal": "BUY",
-      "confidence": 94,
+      "confidence": 97,
       "grade": "A+",
-      "setup_type": "TREND CONTINUATION",
+      "setup_type": "BREAKOUT",
       "risk_level": "MEDIUM",
       "trend": "BULLISH",
       "trend_15m": "BULLISH",
       "trend_1h": "MIXED",
-      "trend_strength": 84,
+      "trend_strength": 91,
       "alignment": 2,
       "regime": "TRENDING",
       "structure": "BULLISH",
-      "momentum": "WEAK",
+      "momentum": "MODERATE",
       "momentum_direction": "BULLISH",
-      "rsi": 60.1,
-      "rsi_state": "NEUTRAL",
-      "ema9": 4332.14,
-      "ema20": 4329.88,
-      "ema50": 4323.5,
-      "atr": 3.61,
-      "atr_percent": 0.083,
-      "change_5m": -0.083,
-      "change_15m": -0.022,
-      "change_1h": 0.105,
-      "change_4h": -0.109,
+      "rsi": 72.1,
+      "rsi_state": "OVERBOUGHT",
+      "ema9": 4334.14,
+      "ema20": 4331.56,
+      "ema50": 4324.69,
+      "atr": 3.64,
+      "atr_percent": 0.084,
+      "change_5m": 0.083,
+      "change_15m": 0.026,
+      "change_1h": 0.25,
+      "change_4h": 0.242,
       "support": 4322.01,
-      "resistance": 4337.08,
+      "resistance": 4337.64,
       "major_support": 4320.74,
-      "major_resistance": 4339.71,
-      "distance_support_pct": -0.252,
-      "distance_resistance_pct": 0.095,
+      "major_resistance": 4337.64,
+      "distance_support_pct": -0.352,
+      "distance_resistance_pct": 0.008,
       "candle_pattern": "NONE",
       "fvg": "NONE",
       "liquidity_sweep": "NONE",
-      "bos": "NONE",
-      "bull_score": 7,
+      "bos": "BULLISH BOS",
+      "bull_score": 9,
       "bear_score": 0,
       "dominance": 100.0,
       "score_breakdown": [
@@ -529,12 +529,17 @@
         {
           "side": "BULL",
           "points": 1,
-          "reason": "WEAK bullish momentum"
+          "reason": "MODERATE bullish momentum"
         },
         {
           "side": "BULL",
           "points": 1,
           "reason": "Bullish structure"
+        },
+        {
+          "side": "BULL",
+          "points": 2,
+          "reason": "BULLISH BOS"
         },
         {
           "side": "BULL",
@@ -546,26 +551,24 @@
         "EMA20 above EMA50",
         "Price above EMA9 and EMA20",
         "RSI bullish pressure",
-        "WEAK bullish momentum",
+        "MODERATE bullish momentum",
         "Bullish structure",
+        "BULLISH BOS",
         "15M trend bullish"
       ],
-      "entry": 4332.95,
-      "sl": 4327.54,
-      "tp1": 4338.36,
-      "tp": 4343.77,
+      "entry": 4337.29,
+      "sl": 4331.83,
+      "tp1": 4342.75,
+      "tp": 4348.21,
       "risk_reward": 2.0,
-      "risk_distance": 5.41,
+      "risk_distance": 5.46,
       "contract_units_per_lot": 100.0,
       "signal_expiry_minutes": 20,
-      "expires_at": "2026-09-16T07:40:00+00:00",
-      "candle_time": "2026-09-16 07:20:00",
+      "expires_at": "2026-09-16T07:55:00+00:00",
+      "candle_time": "2026-09-16 07:35:00",
       "candle_age_minutes": 3,
       "freshness": "FRESH",
       "sparkline": [
-        4325.92,
-        4326.33,
-        4325.7,
         4323.83,
         4321.8,
         4321.83,
@@ -598,51 +601,54 @@
         4333.91,
         4332.4,
         4336.56,
-        4332.95
+        4336.17,
+        4335.23,
+        4333.69,
+        4337.29
       ]
     },
     {
       "symbol": "EURUSD",
       "api_symbol": "EUR/USD",
-      "price": 1.15493,
+      "price": 1.15551,
       "signal": "BUY",
-      "confidence": 74,
-      "grade": "B",
-      "setup_type": "CONFLUENCE",
+      "confidence": 97,
+      "grade": "A+",
+      "setup_type": "FVG CONTINUATION",
       "risk_level": "MEDIUM",
       "trend": "BULLISH",
       "trend_15m": "BULLISH",
       "trend_1h": "MIXED",
-      "trend_strength": 47,
+      "trend_strength": 59,
       "alignment": 2,
       "regime": "TRENDING",
-      "structure": "BEARISH",
-      "momentum": "WEAK",
+      "structure": "BULLISH",
+      "momentum": "MODERATE",
       "momentum_direction": "BULLISH",
-      "rsi": 42.8,
-      "rsi_state": "NEUTRAL",
-      "ema9": 1.15486,
-      "ema20": 1.15479,
-      "ema50": 1.15456,
-      "atr": 0.00022,
-      "atr_percent": 0.019,
-      "change_5m": 0.001,
-      "change_15m": 0.01,
-      "change_1h": 0.005,
-      "change_4h": 0.054,
+      "rsi": 70.6,
+      "rsi_state": "OVERBOUGHT",
+      "ema9": 1.15509,
+      "ema20": 1.15493,
+      "ema50": 1.15464,
+      "atr": 0.00027,
+      "atr_percent": 0.023,
+      "change_5m": 0.023,
+      "change_15m": 0.039,
+      "change_1h": 0.07,
+      "change_4h": 0.125,
       "support": 1.15441,
-      "resistance": 1.15519,
+      "resistance": 1.15556,
       "major_support": 1.15397,
-      "major_resistance": 1.15519,
-      "distance_support_pct": -0.045,
-      "distance_resistance_pct": 0.023,
-      "candle_pattern": "NONE",
-      "fvg": "NONE",
+      "major_resistance": 1.15556,
+      "distance_support_pct": -0.095,
+      "distance_resistance_pct": 0.004,
+      "candle_pattern": "3 BULLISH CANDLES",
+      "fvg": "BULLISH FVG",
       "liquidity_sweep": "NONE",
       "bos": "NONE",
-      "bull_score": 5,
-      "bear_score": 2,
-      "dominance": 60.0,
+      "bull_score": 9,
+      "bear_score": 0,
+      "dominance": 100.0,
       "score_breakdown": [
         {
           "side": "BULL",
@@ -655,19 +661,29 @@
           "reason": "Price above EMA9 and EMA20"
         },
         {
-          "side": "BEAR",
+          "side": "BULL",
           "points": 1,
-          "reason": "RSI bearish pressure"
+          "reason": "RSI bullish pressure"
         },
         {
           "side": "BULL",
           "points": 1,
-          "reason": "WEAK bullish momentum"
+          "reason": "MODERATE bullish momentum"
         },
         {
-          "side": "BEAR",
+          "side": "BULL",
           "points": 1,
-          "reason": "Bearish structure"
+          "reason": "Bullish structure"
+        },
+        {
+          "side": "BULL",
+          "points": 1,
+          "reason": "3 BULLISH CANDLES"
+        },
+        {
+          "side": "BULL",
+          "points": 1,
+          "reason": "BULLISH FVG"
         },
         {
           "side": "BULL",
@@ -678,25 +694,25 @@
       "reasons": [
         "EMA20 above EMA50",
         "Price above EMA9 and EMA20",
-        "WEAK bullish momentum",
-        "15M trend bullish"
+        "RSI bullish pressure",
+        "MODERATE bullish momentum",
+        "Bullish structure",
+        "3 BULLISH CANDLES",
+        "BULLISH FVG"
       ],
-      "entry": 1.15493,
-      "sl": 1.1546,
-      "tp1": 1.15526,
-      "tp": 1.1556,
+      "entry": 1.15551,
+      "sl": 1.15511,
+      "tp1": 1.15591,
+      "tp": 1.15632,
       "risk_reward": 2.0,
-      "risk_distance": 0.00033,
+      "risk_distance": 0.0004,
       "contract_units_per_lot": 100000.0,
       "signal_expiry_minutes": 20,
-      "expires_at": "2026-09-16T07:40:00+00:00",
-      "candle_time": "2026-09-16 07:20:00",
+      "expires_at": "2026-09-16T07:55:00+00:00",
+      "candle_time": "2026-09-16 07:35:00",
       "candle_age_minutes": 3,
       "freshness": "FRESH",
       "sparkline": [
-        1.15442,
-        1.15464,
-        1.15461,
         1.15447,
         1.15451,
         1.15443,
@@ -729,51 +745,54 @@
         1.15482,
         1.15508,
         1.15492,
-        1.15493
+        1.15506,
+        1.15506,
+        1.15525,
+        1.15551
       ]
     },
     {
       "symbol": "GBPUSD",
       "api_symbol": "GBP/USD",
-      "price": 1.34799,
-      "signal": "WAIT",
-      "confidence": 64,
-      "grade": "C",
-      "setup_type": "NO SETUP",
+      "price": 1.34833,
+      "signal": "BUY",
+      "confidence": 83,
+      "grade": "B+",
+      "setup_type": "FVG CONTINUATION",
       "risk_level": "LOW",
-      "trend": "BEARISH",
-      "trend_15m": "BEARISH",
+      "trend": "MIXED",
+      "trend_15m": "BULLISH",
       "trend_1h": "MIXED",
-      "trend_strength": 18,
-      "alignment": 2,
+      "trend_strength": 10,
+      "alignment": 1,
       "regime": "RANGING",
-      "structure": "BEARISH",
+      "structure": "MIXED",
       "momentum": "WEAK",
       "momentum_direction": "BULLISH",
-      "rsi": 29.2,
-      "rsi_state": "OVERSOLD",
-      "ema9": 1.34802,
-      "ema20": 1.34813,
-      "ema50": 1.3481,
-      "atr": 0.00027,
-      "atr_percent": 0.02,
-      "change_5m": -0.004,
-      "change_15m": -0.001,
-      "change_1h": -0.017,
-      "change_4h": -0.007,
+      "rsi": 64.2,
+      "rsi_state": "NEUTRAL",
+      "ema9": 1.34813,
+      "ema20": 1.34816,
+      "ema50": 1.34811,
+      "atr": 0.00028,
+      "atr_percent": 0.021,
+      "change_5m": 0.008,
+      "change_15m": 0.019,
+      "change_1h": 0.032,
+      "change_4h": 0.033,
       "support": 1.34763,
-      "resistance": 1.3495,
+      "resistance": 1.34942,
       "major_support": 1.34763,
       "major_resistance": 1.3495,
-      "distance_support_pct": -0.027,
-      "distance_resistance_pct": 0.112,
-      "candle_pattern": "BEARISH ENGULFING",
-      "fvg": "NONE",
+      "distance_support_pct": -0.052,
+      "distance_resistance_pct": 0.081,
+      "candle_pattern": "NONE",
+      "fvg": "BULLISH FVG",
       "liquidity_sweep": "NONE",
       "bos": "NONE",
-      "bull_score": 3,
-      "bear_score": 5,
-      "dominance": 40.0,
+      "bull_score": 6,
+      "bear_score": 0,
+      "dominance": 100.0,
       "score_breakdown": [
         {
           "side": "BULL",
@@ -781,14 +800,9 @@
           "reason": "EMA20 above EMA50"
         },
         {
-          "side": "BEAR",
+          "side": "BULL",
           "points": 1,
-          "reason": "Price below EMA9 and EMA20"
-        },
-        {
-          "side": "BEAR",
-          "points": 1,
-          "reason": "RSI bearish pressure"
+          "reason": "RSI bullish pressure"
         },
         {
           "side": "BULL",
@@ -796,41 +810,36 @@
           "reason": "WEAK bullish momentum"
         },
         {
-          "side": "BEAR",
+          "side": "BULL",
           "points": 1,
-          "reason": "Bearish structure"
+          "reason": "BULLISH FVG"
         },
         {
-          "side": "BEAR",
+          "side": "BULL",
           "points": 1,
-          "reason": "BEARISH ENGULFING"
-        },
-        {
-          "side": "BEAR",
-          "points": 1,
-          "reason": "15M trend bearish"
+          "reason": "15M trend bullish"
         }
       ],
       "reasons": [
-        "Bull and bear evidence are too balanced",
-        "Waiting for stronger confluence"
+        "EMA20 above EMA50",
+        "RSI bullish pressure",
+        "WEAK bullish momentum",
+        "BULLISH FVG",
+        "15M trend bullish"
       ],
-      "entry": null,
-      "sl": null,
-      "tp1": null,
-      "tp": null,
-      "risk_reward": null,
-      "risk_distance": null,
+      "entry": 1.34833,
+      "sl": 1.34791,
+      "tp1": 1.34875,
+      "tp": 1.34917,
+      "risk_reward": 2.0,
+      "risk_distance": 0.00042,
       "contract_units_per_lot": 100000.0,
       "signal_expiry_minutes": 20,
-      "expires_at": null,
-      "candle_time": "2026-09-16 07:20:00",
+      "expires_at": "2026-09-16T07:55:00+00:00",
+      "candle_time": "2026-09-16 07:35:00",
       "candle_age_minutes": 3,
       "freshness": "FRESH",
       "sparkline": [
-        1.34826,
-        1.3485,
-        1.34859,
         1.34844,
         1.34841,
         1.34835,
@@ -863,15 +872,18 @@
         1.348,
         1.34812,
         1.34805,
-        1.34799
+        1.34808,
+        1.34804,
+        1.34822,
+        1.34833
       ]
     },
     {
       "symbol": "BTCUSD",
       "api_symbol": "BTC/USD",
-      "price": 75815.79,
+      "price": 75832.36,
       "signal": "WAIT",
-      "confidence": 63,
+      "confidence": 53,
       "grade": "D",
       "setup_type": "NO SETUP",
       "risk_level": "LOW",
@@ -882,32 +894,32 @@
       "alignment": 1,
       "regime": "RANGING",
       "structure": "MIXED",
-      "momentum": "STRONG",
+      "momentum": "WEAK",
       "momentum_direction": "BEARISH",
-      "rsi": 38.4,
+      "rsi": 44.2,
       "rsi_state": "NEUTRAL",
-      "ema9": 75904.71,
-      "ema20": 75919.2,
-      "ema50": 75894.95,
-      "atr": 87.02,
-      "atr_percent": 0.115,
-      "change_5m": 0.0,
-      "change_15m": -0.174,
-      "change_1h": -0.119,
-      "change_4h": -0.282,
-      "support": 75807.19,
+      "ema9": 75868.11,
+      "ema20": 75896.17,
+      "ema50": 75885.54,
+      "atr": 83.35,
+      "atr_percent": 0.11,
+      "change_5m": 0.014,
+      "change_15m": -0.007,
+      "change_1h": -0.026,
+      "change_4h": 0.043,
+      "support": 75758.02,
       "resistance": 76097.54,
       "major_support": 75677.64,
       "major_resistance": 76097.54,
-      "distance_support_pct": -0.011,
-      "distance_resistance_pct": 0.372,
-      "candle_pattern": "BEARISH REJECTION",
+      "distance_support_pct": -0.098,
+      "distance_resistance_pct": 0.35,
+      "candle_pattern": "NONE",
       "fvg": "NONE",
       "liquidity_sweep": "NONE",
       "bos": "NONE",
       "bull_score": 2,
-      "bear_score": 4,
-      "dominance": 50.0,
+      "bear_score": 2,
+      "dominance": 0.0,
       "score_breakdown": [
         {
           "side": "BULL",
@@ -922,17 +934,7 @@
         {
           "side": "BEAR",
           "points": 1,
-          "reason": "RSI bearish pressure"
-        },
-        {
-          "side": "BEAR",
-          "points": 1,
-          "reason": "STRONG bearish momentum"
-        },
-        {
-          "side": "BEAR",
-          "points": 1,
-          "reason": "BEARISH REJECTION"
+          "reason": "WEAK bearish momentum"
         }
       ],
       "reasons": [
@@ -948,13 +950,10 @@
       "contract_units_per_lot": 1.0,
       "signal_expiry_minutes": 20,
       "expires_at": null,
-      "candle_time": "2026-09-16 07:20:00",
+      "candle_time": "2026-09-16 07:35:00",
       "candle_age_minutes": 3,
       "freshness": "FRESH",
       "sparkline": [
-        75870.1,
-        75910.0,
-        75980.0,
         75929.02,
         75904.0,
         75830.71,
@@ -987,7 +986,10 @@
         75948.0,
         75880.02,
         75815.79,
-        75815.79
+        75837.44,
+        75817.86,
+        75822.01,
+        75832.36
       ]
     }
   ]
