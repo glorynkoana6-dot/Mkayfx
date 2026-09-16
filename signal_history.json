@@ -2223,8 +2223,9 @@
       "tp": 4312.21,
       "opened_at": "2026-09-16T18:08:43.396243+00:00",
       "opened_candle_time": "2026-09-16 18:05:00",
-      "status": "OPEN",
-      "r_result": null
+      "status": "WIN",
+      "r_result": 2.0,
+      "closed_at": "2026-09-16 18:10:00"
     },
     {
       "id": "BTCUSD-1789582123",
@@ -2238,14 +2239,15 @@
       "tp": 77066.12,
       "opened_at": "2026-09-16T18:08:43.396269+00:00",
       "opened_candle_time": "2026-09-16 18:05:00",
-      "status": "OPEN",
-      "r_result": null
+      "status": "LOSS",
+      "r_result": -1.0,
+      "closed_at": "2026-09-16 18:10:00"
     }
   ],
   "last_signal": {
     "XAUUSD": "SELL",
     "EURUSD": "SELL",
     "GBPUSD": "SELL",
-    "BTCUSD": "BUY"
+    "BTCUSD": "WAIT"
   }
 }
