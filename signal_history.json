@@ -2657,8 +2657,9 @@
       "tp": 1.34003,
       "opened_at": "2026-09-17T08:49:22.788549+00:00",
       "opened_candle_time": "2026-09-17 08:45:00",
-      "status": "OPEN",
-      "r_result": null
+      "status": "WIN",
+      "r_result": 2.0,
+      "closed_at": "2026-09-17 10:10:00"
     },
     {
       "id": "BTCUSD-1789634962",
@@ -2704,8 +2705,9 @@
       "tp": 4296.9,
       "opened_at": "2026-09-17T09:30:19.462894+00:00",
       "opened_candle_time": "2026-09-17 09:25:00",
-      "status": "OPEN",
-      "r_result": null
+      "status": "LOSS",
+      "r_result": -1.0,
+      "closed_at": "2026-09-17 10:10:00"
     },
     {
       "id": "EURUSD-1789639836",
@@ -2721,12 +2723,27 @@
       "opened_candle_time": "2026-09-17 10:05:00",
       "status": "OPEN",
       "r_result": null
+    },
+    {
+      "id": "BTCUSD-1789640962",
+      "symbol": "BTCUSD",
+      "signal": "SELL",
+      "grade": "A",
+      "confidence": 86,
+      "setup_type": "RANGE SETUP",
+      "entry": 76365.45,
+      "sl": 76474.92,
+      "tp": 76146.52,
+      "opened_at": "2026-09-17T10:29:22.281250+00:00",
+      "opened_candle_time": "2026-09-17 10:25:00",
+      "status": "OPEN",
+      "r_result": null
     }
   ],
   "last_signal": {
     "XAUUSD": "WAIT",
     "EURUSD": "BUY",
     "GBPUSD": "BUY",
-    "BTCUSD": "WAIT"
+    "BTCUSD": "SELL"
   }
 }
