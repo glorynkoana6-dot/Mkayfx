@@ -3861,12 +3861,42 @@
       "status": "LOSS",
       "r_result": -1.0,
       "closed_at": "2026-09-18 21:05:00"
+    },
+    {
+      "id": "EURUSD-1789769180",
+      "symbol": "EURUSD",
+      "signal": "BUY",
+      "grade": "B+",
+      "confidence": 81,
+      "setup_type": "CONFLUENCE",
+      "entry": 1.14879,
+      "sl": 1.1483,
+      "tp": 1.14978,
+      "opened_at": "2026-09-18T22:06:20.594195+00:00",
+      "opened_candle_time": "2026-09-18 22:00:00",
+      "status": "OPEN",
+      "r_result": null
+    },
+    {
+      "id": "GBPUSD-1789769180",
+      "symbol": "GBPUSD",
+      "signal": "BUY",
+      "grade": "A",
+      "confidence": 86,
+      "setup_type": "LIQUIDITY REVERSAL",
+      "entry": 1.33948,
+      "sl": 1.339,
+      "tp": 1.34044,
+      "opened_at": "2026-09-18T22:06:20.594227+00:00",
+      "opened_candle_time": "2026-09-18 22:00:00",
+      "status": "OPEN",
+      "r_result": null
     }
   ],
   "last_signal": {
     "XAUUSD": "WAIT",
-    "EURUSD": "WAIT",
-    "GBPUSD": "WAIT",
+    "EURUSD": "BUY",
+    "GBPUSD": "BUY",
     "BTCUSD": "BUY"
   }
 }
