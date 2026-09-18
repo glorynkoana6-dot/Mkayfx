@@ -3650,8 +3650,9 @@
       "tp": 1.33347,
       "opened_at": "2026-09-18T13:22:46.059239+00:00",
       "opened_candle_time": "2026-09-18 13:20:00",
-      "status": "OPEN",
-      "r_result": null
+      "status": "LOSS",
+      "r_result": -1.0,
+      "closed_at": "2026-09-18 14:35:00"
     },
     {
       "id": "BTCUSD-1789737766",
@@ -3668,12 +3669,27 @@
       "status": "WIN",
       "r_result": 2.0,
       "closed_at": "2026-09-18 13:30:00"
+    },
+    {
+      "id": "GBPUSD-1789742978",
+      "symbol": "GBPUSD",
+      "signal": "BUY",
+      "grade": "B+",
+      "confidence": 85,
+      "setup_type": "BREAKOUT",
+      "entry": 1.33585,
+      "sl": 1.33515,
+      "tp": 1.33725,
+      "opened_at": "2026-09-18T14:49:38.012072+00:00",
+      "opened_candle_time": "2026-09-18 14:45:00",
+      "status": "OPEN",
+      "r_result": null
     }
   ],
   "last_signal": {
-    "XAUUSD": "SELL",
-    "EURUSD": "SELL",
-    "GBPUSD": "WAIT",
+    "XAUUSD": "WAIT",
+    "EURUSD": "WAIT",
+    "GBPUSD": "BUY",
     "BTCUSD": "BUY"
   }
 }
