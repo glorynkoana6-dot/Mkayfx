@@ -4463,14 +4463,30 @@
       "tp": 1.33907,
       "opened_at": "2026-09-19T22:05:52.834004+00:00",
       "opened_candle_time": "2026-09-19 22:00:00",
+      "status": "LOSS",
+      "r_result": -1.0,
+      "closed_at": "2026-09-19 22:40:00"
+    },
+    {
+      "id": "BTCUSD-1789857816",
+      "symbol": "BTCUSD",
+      "signal": "BUY",
+      "grade": "B",
+      "confidence": 78,
+      "setup_type": "FVG CONTINUATION",
+      "entry": 81217.24,
+      "sl": 81106.65,
+      "tp": 81438.43,
+      "opened_at": "2026-09-19T22:43:36.543838+00:00",
+      "opened_candle_time": "2026-09-19 22:40:00",
       "status": "OPEN",
       "r_result": null
     }
   ],
   "last_signal": {
-    "XAUUSD": "WAIT",
-    "EURUSD": "SELL",
+    "XAUUSD": "SELL",
+    "EURUSD": "WAIT",
     "GBPUSD": "SELL",
-    "BTCUSD": "WAIT"
+    "BTCUSD": "BUY"
   }
 }
