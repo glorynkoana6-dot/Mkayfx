@@ -4006,6 +4006,22 @@
       "tp": 1.33909,
       "opened_at": "2026-09-19T04:21:18.829478+00:00",
       "opened_candle_time": "2026-09-19 04:15:00",
+      "status": "LOSS",
+      "r_result": -1.0,
+      "closed_at": "2026-09-19 05:00:00"
+    },
+    {
+      "id": "GBPUSD-1789794345",
+      "symbol": "GBPUSD",
+      "signal": "SELL",
+      "grade": "B",
+      "confidence": 73,
+      "setup_type": "LIQUIDITY REVERSAL",
+      "entry": 1.33937,
+      "sl": 1.33952,
+      "tp": 1.33907,
+      "opened_at": "2026-09-19T05:05:45.763359+00:00",
+      "opened_candle_time": "2026-09-19 05:00:00",
       "status": "OPEN",
       "r_result": null
     }
@@ -4013,7 +4029,7 @@
   "last_signal": {
     "XAUUSD": "WAIT",
     "EURUSD": "SELL",
-    "GBPUSD": "WAIT",
-    "BTCUSD": "SELL"
+    "GBPUSD": "SELL",
+    "BTCUSD": "WAIT"
   }
 }
