@@ -4320,8 +4320,10 @@
       "tp": 4380.59,
       "opened_at": "2026-09-19T17:19:01.306907+00:00",
       "opened_candle_time": "2026-09-19 17:15:00",
-      "status": "OPEN",
-      "r_result": null
+      "status": "EXPIRED",
+      "r_result": -0.12,
+      "closed_at": "2026-09-19 21:15:00",
+      "close_price": 4380.11
     },
     {
       "id": "BTCUSD-1789838911",
@@ -4419,9 +4421,9 @@
     }
   ],
   "last_signal": {
-    "XAUUSD": "SELL",
-    "EURUSD": "BUY",
-    "GBPUSD": "WAIT",
+    "XAUUSD": "WAIT",
+    "EURUSD": "WAIT",
+    "GBPUSD": "BUY",
     "BTCUSD": "SELL"
   }
 }
