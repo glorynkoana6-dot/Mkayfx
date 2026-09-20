@@ -5021,12 +5021,27 @@
       "status": "LOSS",
       "r_result": -1.0,
       "closed_at": "2026-09-20 18:40:00"
+    },
+    {
+      "id": "XAUUSD-1789930550",
+      "symbol": "XAUUSD",
+      "signal": "SELL",
+      "grade": "B",
+      "confidence": 73,
+      "setup_type": "LIQUIDITY REVERSAL",
+      "entry": 4380.09,
+      "sl": 4380.33,
+      "tp": 4379.6,
+      "opened_at": "2026-09-20T18:55:50.128109+00:00",
+      "opened_candle_time": "2026-09-20 18:50:00",
+      "status": "OPEN",
+      "r_result": null
     }
   ],
   "last_signal": {
-    "XAUUSD": "BUY",
-    "EURUSD": "BUY",
+    "XAUUSD": "SELL",
+    "EURUSD": "WAIT",
     "GBPUSD": "BUY",
-    "BTCUSD": "BUY"
+    "BTCUSD": "WAIT"
   }
 }
