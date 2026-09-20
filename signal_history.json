@@ -4597,12 +4597,42 @@
       "opened_candle_time": "2026-09-20 02:05:00",
       "status": "OPEN",
       "r_result": null
+    },
+    {
+      "id": "EURUSD-1789877450",
+      "symbol": "EURUSD",
+      "signal": "BUY",
+      "grade": "C",
+      "confidence": 68,
+      "setup_type": "RANGE SETUP",
+      "entry": 1.14863,
+      "sl": 1.14857,
+      "tp": 1.14875,
+      "opened_at": "2026-09-20T04:10:50.989288+00:00",
+      "opened_candle_time": "2026-09-20 04:05:00",
+      "status": "OPEN",
+      "r_result": null
+    },
+    {
+      "id": "BTCUSD-1789877450",
+      "symbol": "BTCUSD",
+      "signal": "SELL",
+      "grade": "B",
+      "confidence": 79,
+      "setup_type": "CONFLUENCE",
+      "entry": 80453.13,
+      "sl": 80649.38,
+      "tp": 80060.63,
+      "opened_at": "2026-09-20T04:10:50.989308+00:00",
+      "opened_candle_time": "2026-09-20 04:05:00",
+      "status": "OPEN",
+      "r_result": null
     }
   ],
   "last_signal": {
     "XAUUSD": "SELL",
-    "EURUSD": "WAIT",
+    "EURUSD": "BUY",
     "GBPUSD": "WAIT",
-    "BTCUSD": "WAIT"
+    "BTCUSD": "SELL"
   }
 }
