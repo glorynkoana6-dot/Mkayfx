@@ -4527,14 +4527,30 @@
       "tp": 1.33964,
       "opened_at": "2026-09-20T00:09:42.689089+00:00",
       "opened_candle_time": "2026-09-20 00:05:00",
+      "status": "LOSS",
+      "r_result": -1.0,
+      "closed_at": "2026-09-20 00:10:00"
+    },
+    {
+      "id": "GBPUSD-1789864257",
+      "symbol": "GBPUSD",
+      "signal": "SELL",
+      "grade": "C",
+      "confidence": 68,
+      "setup_type": "RANGE SETUP",
+      "entry": 1.33938,
+      "sl": 1.33951,
+      "tp": 1.33912,
+      "opened_at": "2026-09-20T00:30:57.435857+00:00",
+      "opened_candle_time": "2026-09-20 00:25:00",
       "status": "OPEN",
       "r_result": null
     }
   ],
   "last_signal": {
-    "XAUUSD": "BUY",
+    "XAUUSD": "WAIT",
     "EURUSD": "WAIT",
-    "GBPUSD": "BUY",
-    "BTCUSD": "SELL"
+    "GBPUSD": "SELL",
+    "BTCUSD": "WAIT"
   }
 }
