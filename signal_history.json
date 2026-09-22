@@ -6368,8 +6368,9 @@
       "tp": 86698.46,
       "opened_at": "2026-09-22T13:50:57.127145+00:00",
       "opened_candle_time": "2026-09-22 13:45:00",
-      "status": "OPEN",
-      "r_result": null
+      "status": "LOSS",
+      "r_result": -1.0,
+      "closed_at": "2026-09-22 14:30:00"
     },
     {
       "id": "GBPUSD-1790086957",
@@ -6385,12 +6386,27 @@
       "opened_candle_time": "2026-09-22 14:20:00",
       "status": "OPEN",
       "r_result": null
+    },
+    {
+      "id": "XAUUSD-1790088009",
+      "symbol": "XAUUSD",
+      "signal": "BUY",
+      "grade": "C",
+      "confidence": 65,
+      "setup_type": "LIQUIDITY REVERSAL",
+      "entry": 4327.1,
+      "sl": 4320.08,
+      "tp": 4341.15,
+      "opened_at": "2026-09-22T14:40:09.470323+00:00",
+      "opened_candle_time": "2026-09-22 14:35:00",
+      "status": "OPEN",
+      "r_result": null
     }
   ],
   "last_signal": {
-    "XAUUSD": "WAIT",
+    "XAUUSD": "BUY",
     "EURUSD": "SELL",
     "GBPUSD": "SELL",
-    "BTCUSD": "BUY"
+    "BTCUSD": "WAIT"
   }
 }
