@@ -7618,8 +7618,9 @@
       "tp": 4273.51,
       "opened_at": "2026-09-24T03:12:47.890722+00:00",
       "opened_candle_time": "2026-09-24 03:10:00",
-      "status": "OPEN",
-      "r_result": null
+      "status": "LOSS",
+      "r_result": -1.0,
+      "closed_at": "2026-09-24 05:00:00"
     },
     {
       "id": "BTCUSD-1790220572",
@@ -7633,8 +7634,9 @@
       "tp": 83723.19,
       "opened_at": "2026-09-24T03:29:32.332854+00:00",
       "opened_candle_time": "2026-09-24 03:25:00",
-      "status": "OPEN",
-      "r_result": null
+      "status": "LOSS",
+      "r_result": -1.0,
+      "closed_at": "2026-09-24 05:00:00"
     },
     {
       "id": "EURUSD-1790222141",
@@ -7682,12 +7684,27 @@
       "opened_candle_time": "2026-09-24 04:45:00",
       "status": "OPEN",
       "r_result": null
+    },
+    {
+      "id": "BTCUSD-1790226345",
+      "symbol": "BTCUSD",
+      "signal": "BUY",
+      "grade": "B+",
+      "confidence": 80,
+      "setup_type": "BREAKOUT",
+      "entry": 84240.0,
+      "sl": 84091.21,
+      "tp": 84537.58,
+      "opened_at": "2026-09-24T05:05:45.655137+00:00",
+      "opened_candle_time": "2026-09-24 05:00:00",
+      "status": "OPEN",
+      "r_result": null
     }
   ],
   "last_signal": {
     "XAUUSD": "BUY",
     "EURUSD": "BUY",
     "GBPUSD": "BUY",
-    "BTCUSD": "SELL"
+    "BTCUSD": "BUY"
   }
 }
