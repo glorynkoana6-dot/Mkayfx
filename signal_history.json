@@ -7861,11 +7861,41 @@
       "status": "WIN",
       "r_result": 2.0,
       "closed_at": "2026-09-24 10:20:00"
+    },
+    {
+      "id": "XAUUSD-1790247335",
+      "symbol": "XAUUSD",
+      "signal": "SELL",
+      "grade": "C",
+      "confidence": 68,
+      "setup_type": "LIQUIDITY REVERSAL",
+      "entry": 4258.62,
+      "sl": 4265.56,
+      "tp": 4244.72,
+      "opened_at": "2026-09-24T10:55:35.454207+00:00",
+      "opened_candle_time": "2026-09-24 10:50:00",
+      "status": "OPEN",
+      "r_result": null
+    },
+    {
+      "id": "EURUSD-1790247335",
+      "symbol": "EURUSD",
+      "signal": "SELL",
+      "grade": "C",
+      "confidence": 71,
+      "setup_type": "TREND CONTINUATION",
+      "entry": 1.13706,
+      "sl": 1.13766,
+      "tp": 1.13586,
+      "opened_at": "2026-09-24T10:55:35.454244+00:00",
+      "opened_candle_time": "2026-09-24 10:50:00",
+      "status": "OPEN",
+      "r_result": null
     }
   ],
   "last_signal": {
-    "XAUUSD": "WAIT",
-    "EURUSD": "WAIT",
+    "XAUUSD": "SELL",
+    "EURUSD": "SELL",
     "GBPUSD": "WAIT",
     "BTCUSD": "WAIT"
   }
