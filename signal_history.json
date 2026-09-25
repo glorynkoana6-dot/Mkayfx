@@ -1,22 +1,6 @@
 {
   "trades": [
     {
-      "id": "EURUSD-1789389033",
-      "symbol": "EURUSD",
-      "signal": "SELL",
-      "grade": "B+",
-      "confidence": 82,
-      "setup_type": "FVG CONTINUATION",
-      "entry": 1.15409,
-      "sl": 1.15456,
-      "tp": 1.15316,
-      "opened_at": "2026-09-14T12:30:33.325362+00:00",
-      "opened_candle_time": "2026-09-14 12:25:00",
-      "status": "WIN",
-      "r_result": 2.0,
-      "closed_at": "2026-09-14 12:40:00"
-    },
-    {
       "id": "BTCUSD-1789389033",
       "symbol": "BTCUSD",
       "signal": "BUY",
@@ -8020,8 +8004,9 @@
       "tp": 1.13885,
       "opened_at": "2026-09-25T01:14:44.503326+00:00",
       "opened_candle_time": "2026-09-25 01:10:00",
-      "status": "OPEN",
-      "r_result": null
+      "status": "LOSS",
+      "r_result": -1.0,
+      "closed_at": "2026-09-25 01:30:00"
     },
     {
       "id": "GBPUSD-1790298884",
@@ -8035,6 +8020,22 @@
       "tp": 1.32285,
       "opened_at": "2026-09-25T01:14:44.503377+00:00",
       "opened_candle_time": "2026-09-25 01:10:00",
+      "status": "LOSS",
+      "r_result": -1.0,
+      "closed_at": "2026-09-25 01:30:00"
+    },
+    {
+      "id": "BTCUSD-1790300295",
+      "symbol": "BTCUSD",
+      "signal": "SELL",
+      "grade": "B+",
+      "confidence": 80,
+      "setup_type": "BREAKOUT",
+      "entry": 84366.01,
+      "sl": 84510.8,
+      "tp": 84076.43,
+      "opened_at": "2026-09-25T01:38:15.818269+00:00",
+      "opened_candle_time": "2026-09-25 01:35:00",
       "status": "OPEN",
       "r_result": null
     }
@@ -8043,6 +8044,6 @@
     "XAUUSD": "BUY",
     "EURUSD": "BUY",
     "GBPUSD": "BUY",
-    "BTCUSD": "WAIT"
+    "BTCUSD": "SELL"
   }
 }
