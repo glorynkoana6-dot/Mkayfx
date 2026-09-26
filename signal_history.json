@@ -1,22 +1,6 @@
 {
   "trades": [
     {
-      "id": "XAUUSD-1789504645",
-      "symbol": "XAUUSD",
-      "signal": "SELL",
-      "grade": "B",
-      "confidence": 78,
-      "setup_type": "BREAKOUT",
-      "entry": 4292.53,
-      "sl": 4296.51,
-      "tp": 4284.58,
-      "opened_at": "2026-09-15T20:37:25.190183+00:00",
-      "opened_candle_time": "2026-09-15 20:35:00",
-      "status": "LOSS",
-      "r_result": -1.0,
-      "closed_at": "2026-09-15 22:25:00"
-    },
-    {
       "id": "EURUSD-1789509227",
       "symbol": "EURUSD",
       "signal": "SELL",
@@ -8044,12 +8028,27 @@
       "opened_candle_time": "2026-09-26 15:05:00",
       "status": "OPEN",
       "r_result": null
+    },
+    {
+      "id": "BTCUSD-1790436102",
+      "symbol": "BTCUSD",
+      "signal": "BUY",
+      "grade": "C",
+      "confidence": 71,
+      "setup_type": "TREND CONTINUATION",
+      "entry": 84038.01,
+      "sl": 84009.94,
+      "tp": 84094.16,
+      "opened_at": "2026-09-26T15:21:42.899667+00:00",
+      "opened_candle_time": "2026-09-26 15:20:00",
+      "status": "OPEN",
+      "r_result": null
     }
   ],
   "last_signal": {
     "XAUUSD": "SELL",
-    "EURUSD": "BUY",
-    "GBPUSD": "BUY",
-    "BTCUSD": "WAIT"
+    "EURUSD": "SELL",
+    "GBPUSD": "WAIT",
+    "BTCUSD": "BUY"
   }
 }
