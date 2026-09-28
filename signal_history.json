@@ -1,38 +1,6 @@
 {
   "trades": [
     {
-      "id": "EURUSD-1789680062",
-      "symbol": "EURUSD",
-      "signal": "BUY",
-      "grade": "C",
-      "confidence": 68,
-      "setup_type": "RANGE SETUP",
-      "entry": 1.14796,
-      "sl": 1.14764,
-      "tp": 1.14861,
-      "opened_at": "2026-09-17T21:21:02.207780+00:00",
-      "opened_candle_time": "2026-09-17 21:15:00",
-      "status": "LOSS",
-      "r_result": -1.0,
-      "closed_at": "2026-09-17 21:25:00"
-    },
-    {
-      "id": "EURUSD-1789680937",
-      "symbol": "EURUSD",
-      "signal": "SELL",
-      "grade": "C",
-      "confidence": 68,
-      "setup_type": "FVG CONTINUATION",
-      "entry": 1.14771,
-      "sl": 1.14803,
-      "tp": 1.14707,
-      "opened_at": "2026-09-17T21:35:37.947857+00:00",
-      "opened_candle_time": "2026-09-17 21:30:00",
-      "status": "LOSS",
-      "r_result": -1.0,
-      "closed_at": "2026-09-18 00:20:00"
-    },
-    {
       "id": "XAUUSD-1789682779",
       "symbol": "XAUUSD",
       "signal": "BUY",
@@ -7889,8 +7857,9 @@
       "tp": 1.13641,
       "opened_at": "2026-09-28T09:08:22.591244+00:00",
       "opened_candle_time": "2026-09-28 09:05:00",
-      "status": "OPEN",
-      "r_result": null
+      "status": "WIN",
+      "r_result": 2.0,
+      "closed_at": "2026-09-28 13:05:00"
     },
     {
       "id": "GBPUSD-1790587677",
@@ -8051,12 +8020,42 @@
       "status": "LOSS",
       "r_result": -1.0,
       "closed_at": "2026-09-28 12:55:00"
+    },
+    {
+      "id": "XAUUSD-1790601542",
+      "symbol": "XAUUSD",
+      "signal": "SELL",
+      "grade": "A",
+      "confidence": 86,
+      "setup_type": "RANGE SETUP",
+      "entry": 4149.66,
+      "sl": 4157.64,
+      "tp": 4133.7,
+      "opened_at": "2026-09-28T13:19:02.590842+00:00",
+      "opened_candle_time": "2026-09-28 13:15:00",
+      "status": "OPEN",
+      "r_result": null
+    },
+    {
+      "id": "GBPUSD-1790601542",
+      "symbol": "GBPUSD",
+      "signal": "SELL",
+      "grade": "A",
+      "confidence": 91,
+      "setup_type": "RANGE SETUP",
+      "entry": 1.32509,
+      "sl": 1.32571,
+      "tp": 1.32386,
+      "opened_at": "2026-09-28T13:19:02.590899+00:00",
+      "opened_candle_time": "2026-09-28 13:15:00",
+      "status": "OPEN",
+      "r_result": null
     }
   ],
   "last_signal": {
-    "XAUUSD": "WAIT",
+    "XAUUSD": "SELL",
     "EURUSD": "SELL",
-    "GBPUSD": "WAIT",
+    "GBPUSD": "SELL",
     "BTCUSD": "BUY"
   }
 }
