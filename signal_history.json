@@ -7985,8 +7985,10 @@
       "tp": 1.13937,
       "opened_at": "2026-09-28T00:55:00.812281+00:00",
       "opened_candle_time": "2026-09-28 00:50:00",
-      "status": "OPEN",
-      "r_result": null
+      "status": "EXPIRED",
+      "r_result": 0.44,
+      "closed_at": "2026-09-28 04:55:00",
+      "close_price": 1.13872
     },
     {
       "id": "GBPUSD-1790556900",
@@ -8048,14 +8050,15 @@
       "tp": 1.32526,
       "opened_at": "2026-09-28T04:23:34.952691+00:00",
       "opened_candle_time": "2026-09-28 04:20:00",
-      "status": "OPEN",
-      "r_result": null
+      "status": "LOSS",
+      "r_result": -1.0,
+      "closed_at": "2026-09-28 04:55:00"
     }
   ],
   "last_signal": {
-    "XAUUSD": "SELL",
+    "XAUUSD": "WAIT",
     "EURUSD": "BUY",
-    "GBPUSD": "BUY",
+    "GBPUSD": "WAIT",
     "BTCUSD": "WAIT"
   }
 }
