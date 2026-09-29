@@ -1,22 +1,6 @@
 {
   "trades": [
     {
-      "id": "EURUSD-1789765566",
-      "symbol": "EURUSD",
-      "signal": "BUY",
-      "grade": "B+",
-      "confidence": 81,
-      "setup_type": "LIQUIDITY REVERSAL",
-      "entry": 1.14879,
-      "sl": 1.14848,
-      "tp": 1.14941,
-      "opened_at": "2026-09-18T21:06:06.047483+00:00",
-      "opened_candle_time": "2026-09-18 21:00:00",
-      "status": "LOSS",
-      "r_result": -1.0,
-      "closed_at": "2026-09-18 21:05:00"
-    },
-    {
       "id": "EURUSD-1789769180",
       "symbol": "EURUSD",
       "signal": "BUY",
@@ -8049,12 +8033,27 @@
       "status": "LOSS",
       "r_result": -1.0,
       "closed_at": "2026-09-29 10:20:00"
+    },
+    {
+      "id": "EURUSD-1790679452",
+      "symbol": "EURUSD",
+      "signal": "BUY",
+      "grade": "B",
+      "confidence": 73,
+      "setup_type": "FVG CONTINUATION",
+      "entry": 1.13463,
+      "sl": 1.13417,
+      "tp": 1.13556,
+      "opened_at": "2026-09-29T10:57:32.047588+00:00",
+      "opened_candle_time": "2026-09-29 10:55:00",
+      "status": "OPEN",
+      "r_result": null
     }
   ],
   "last_signal": {
     "XAUUSD": "BUY",
-    "EURUSD": "WAIT",
-    "GBPUSD": "BUY",
-    "BTCUSD": "BUY"
+    "EURUSD": "BUY",
+    "GBPUSD": "WAIT",
+    "BTCUSD": "WAIT"
   }
 }
