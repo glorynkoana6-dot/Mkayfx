@@ -1,23 +1,6 @@
 {
   "trades": [
     {
-      "id": "EURUSD-1789820758",
-      "symbol": "EURUSD",
-      "signal": "BUY",
-      "grade": "B",
-      "confidence": 78,
-      "setup_type": "RANGE SETUP",
-      "entry": 1.1486,
-      "sl": 1.14852,
-      "tp": 1.14875,
-      "opened_at": "2026-09-19T12:25:58.435481+00:00",
-      "opened_candle_time": "2026-09-19 12:20:00",
-      "status": "EXPIRED",
-      "r_result": -0.63,
-      "closed_at": "2026-09-19 16:30:00",
-      "close_price": 1.14855
-    },
-    {
       "id": "XAUUSD-1789823188",
       "symbol": "XAUUSD",
       "signal": "SELL",
@@ -8037,6 +8020,22 @@
       "tp": 83297.5,
       "opened_at": "2026-09-29T21:50:56.448150+00:00",
       "opened_candle_time": "2026-09-29 21:45:00",
+      "status": "LOSS",
+      "r_result": -1.0,
+      "closed_at": "2026-09-29 22:00:00"
+    },
+    {
+      "id": "BTCUSD-1790719600",
+      "symbol": "BTCUSD",
+      "signal": "BUY",
+      "grade": "B",
+      "confidence": 78,
+      "setup_type": "FVG CONTINUATION",
+      "entry": 83558.0,
+      "sl": 83469.89,
+      "tp": 83734.23,
+      "opened_at": "2026-09-29T22:06:40.937798+00:00",
+      "opened_candle_time": "2026-09-29 22:05:00",
       "status": "OPEN",
       "r_result": null
     }
@@ -8044,7 +8043,7 @@
   "last_signal": {
     "XAUUSD": "BUY",
     "EURUSD": "BUY",
-    "GBPUSD": "WAIT",
-    "BTCUSD": "SELL"
+    "GBPUSD": "BUY",
+    "BTCUSD": "BUY"
   }
 }
