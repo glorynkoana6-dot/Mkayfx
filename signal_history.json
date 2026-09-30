@@ -7963,8 +7963,9 @@
       "tp": 1.13236,
       "opened_at": "2026-09-30T16:09:23.450483+00:00",
       "opened_candle_time": "2026-09-30 16:05:00",
-      "status": "OPEN",
-      "r_result": null
+      "status": "WIN",
+      "r_result": 2.0,
+      "closed_at": "2026-09-30 19:45:00"
     },
     {
       "id": "BTCUSD-1790784563",
@@ -7994,8 +7995,10 @@
       "tp": 4145.41,
       "opened_at": "2026-09-30T16:29:19.276563+00:00",
       "opened_candle_time": "2026-09-30 16:25:00",
-      "status": "OPEN",
-      "r_result": null
+      "status": "EXPIRED",
+      "r_result": 0.78,
+      "closed_at": "2026-09-30 22:45:00",
+      "close_price": 4154.65
     },
     {
       "id": "BTCUSD-1790791190",
@@ -8009,8 +8012,9 @@
       "tp": 83695.32,
       "opened_at": "2026-09-30T17:59:50.117871+00:00",
       "opened_candle_time": "2026-09-30 17:55:00",
-      "status": "OPEN",
-      "r_result": null
+      "status": "WIN",
+      "r_result": 2.0,
+      "closed_at": "2026-09-30 19:15:00"
     },
     {
       "id": "GBPUSD-1790792344",
@@ -8024,14 +8028,15 @@
       "tp": 1.32562,
       "opened_at": "2026-09-30T18:19:04.634743+00:00",
       "opened_candle_time": "2026-09-30 18:15:00",
-      "status": "OPEN",
-      "r_result": null
+      "status": "LOSS",
+      "r_result": -1.0,
+      "closed_at": "2026-09-30 21:10:00"
     }
   ],
   "last_signal": {
     "XAUUSD": "SELL",
     "EURUSD": "SELL",
-    "GBPUSD": "SELL",
-    "BTCUSD": "SELL"
+    "GBPUSD": "WAIT",
+    "BTCUSD": "WAIT"
   }
 }
