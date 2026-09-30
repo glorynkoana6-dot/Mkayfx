@@ -1,22 +1,6 @@
 {
   "trades": [
     {
-      "id": "GBPUSD-1789897530",
-      "symbol": "GBPUSD",
-      "signal": "SELL",
-      "grade": "C",
-      "confidence": 71,
-      "setup_type": "RANGE SETUP",
-      "entry": 1.33951,
-      "sl": 1.33962,
-      "tp": 1.33929,
-      "opened_at": "2026-09-20T09:45:30.243492+00:00",
-      "opened_candle_time": "2026-09-20 09:40:00",
-      "status": "WIN",
-      "r_result": 2.0,
-      "closed_at": "2026-09-20 11:40:00"
-    },
-    {
       "id": "XAUUSD-1789900328",
       "symbol": "XAUUSD",
       "signal": "SELL",
@@ -8034,10 +8018,25 @@
       "status": "LOSS",
       "r_result": -1.0,
       "closed_at": "2026-09-30 13:45:00"
+    },
+    {
+      "id": "XAUUSD-1790777436",
+      "symbol": "XAUUSD",
+      "signal": "SELL",
+      "grade": "A+",
+      "confidence": 96,
+      "setup_type": "RANGE SETUP",
+      "entry": 4176.62,
+      "sl": 4185.98,
+      "tp": 4157.9,
+      "opened_at": "2026-09-30T14:10:36.427144+00:00",
+      "opened_candle_time": "2026-09-30 14:05:00",
+      "status": "OPEN",
+      "r_result": null
     }
   ],
   "last_signal": {
-    "XAUUSD": "WAIT",
+    "XAUUSD": "SELL",
     "EURUSD": "WAIT",
     "GBPUSD": "WAIT",
     "BTCUSD": "WAIT"
