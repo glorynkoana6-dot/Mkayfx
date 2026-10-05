@@ -1,38 +1,6 @@
 {
   "trades": [
     {
-      "id": "XAUUSD-1789996364",
-      "symbol": "XAUUSD",
-      "signal": "BUY",
-      "grade": "C",
-      "confidence": 71,
-      "setup_type": "CONFLUENCE",
-      "entry": 4362.4,
-      "sl": 4353.16,
-      "tp": 4380.86,
-      "opened_at": "2026-09-21T13:12:44.117352+00:00",
-      "opened_candle_time": "2026-09-21 13:10:00",
-      "status": "LOSS",
-      "r_result": -1.0,
-      "closed_at": "2026-09-21 13:35:00"
-    },
-    {
-      "id": "EURUSD-1789996364",
-      "symbol": "EURUSD",
-      "signal": "SELL",
-      "grade": "C",
-      "confidence": 68,
-      "setup_type": "FVG CONTINUATION",
-      "entry": 1.14843,
-      "sl": 1.14891,
-      "tp": 1.14747,
-      "opened_at": "2026-09-21T13:12:44.117380+00:00",
-      "opened_candle_time": "2026-09-21 13:10:00",
-      "status": "WIN",
-      "r_result": 2.0,
-      "closed_at": "2026-09-21 13:50:00"
-    },
-    {
       "id": "GBPUSD-1789996364",
       "symbol": "GBPUSD",
       "signal": "BUY",
@@ -8030,14 +7998,45 @@
       "tp": 85173.29,
       "opened_at": "2026-10-05T05:30:44.690725+00:00",
       "opened_candle_time": "2026-10-05 05:25:00",
+      "status": "LOSS",
+      "r_result": -1.0,
+      "closed_at": "2026-10-05 05:35:00"
+    },
+    {
+      "id": "XAUUSD-1791203691",
+      "symbol": "XAUUSD",
+      "signal": "BUY",
+      "grade": "A",
+      "confidence": 86,
+      "setup_type": "FVG CONTINUATION",
+      "entry": 4162.48,
+      "sl": 4157.0,
+      "tp": 4173.44,
+      "opened_at": "2026-10-05T12:34:51.063734+00:00",
+      "opened_candle_time": "2026-10-05 12:30:00",
+      "status": "OPEN",
+      "r_result": null
+    },
+    {
+      "id": "EURUSD-1791203691",
+      "symbol": "EURUSD",
+      "signal": "BUY",
+      "grade": "A",
+      "confidence": 91,
+      "setup_type": "FVG CONTINUATION",
+      "entry": 1.12129,
+      "sl": 1.12043,
+      "tp": 1.12301,
+      "opened_at": "2026-10-05T12:34:51.063851+00:00",
+      "opened_candle_time": "2026-10-05 12:30:00",
       "status": "OPEN",
       "r_result": null
     }
   ],
   "last_signal": {
-    "XAUUSD": "WAIT",
-    "EURUSD": "WAIT",
+    "XAUUSD": "BUY",
+    "EURUSD": "BUY",
     "GBPUSD": "WAIT",
-    "BTCUSD": "SELL"
+    "BTCUSD": "WAIT"
   }
 }
