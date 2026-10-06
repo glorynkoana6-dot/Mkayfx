@@ -1,38 +1,6 @@
 {
   "trades": [
     {
-      "id": "GBPUSD-1789996364",
-      "symbol": "GBPUSD",
-      "signal": "BUY",
-      "grade": "C",
-      "confidence": 71,
-      "setup_type": "CONFLUENCE",
-      "entry": 1.33926,
-      "sl": 1.33888,
-      "tp": 1.34002,
-      "opened_at": "2026-09-21T13:12:44.117404+00:00",
-      "opened_candle_time": "2026-09-21 13:10:00",
-      "status": "LOSS",
-      "r_result": -1.0,
-      "closed_at": "2026-09-21 13:35:00"
-    },
-    {
-      "id": "GBPUSD-1789998145",
-      "symbol": "GBPUSD",
-      "signal": "SELL",
-      "grade": "B+",
-      "confidence": 83,
-      "setup_type": "BREAKOUT",
-      "entry": 1.33866,
-      "sl": 1.33903,
-      "tp": 1.33793,
-      "opened_at": "2026-09-21T13:42:25.728685+00:00",
-      "opened_candle_time": "2026-09-21 13:40:00",
-      "status": "WIN",
-      "r_result": 2.0,
-      "closed_at": "2026-09-21 14:00:00"
-    },
-    {
       "id": "BTCUSD-1789998959",
       "symbol": "BTCUSD",
       "signal": "BUY",
@@ -8014,8 +7982,9 @@
       "tp": 4173.44,
       "opened_at": "2026-10-05T12:34:51.063734+00:00",
       "opened_candle_time": "2026-10-05 12:30:00",
-      "status": "OPEN",
-      "r_result": null
+      "status": "LOSS",
+      "r_result": -1.0,
+      "closed_at": "2026-10-05 17:10:00"
     },
     {
       "id": "EURUSD-1791203691",
@@ -8029,14 +7998,45 @@
       "tp": 1.12301,
       "opened_at": "2026-10-05T12:34:51.063851+00:00",
       "opened_candle_time": "2026-10-05 12:30:00",
+      "status": "LOSS",
+      "r_result": -1.0,
+      "closed_at": "2026-10-05 17:10:00"
+    },
+    {
+      "id": "GBPUSD-1791250259",
+      "symbol": "GBPUSD",
+      "signal": "BUY",
+      "grade": "A+",
+      "confidence": 97,
+      "setup_type": "BREAKOUT",
+      "entry": 1.32298,
+      "sl": 1.32262,
+      "tp": 1.3237,
+      "opened_at": "2026-10-06T01:30:59.631561+00:00",
+      "opened_candle_time": "2026-10-06 01:25:00",
+      "status": "OPEN",
+      "r_result": null
+    },
+    {
+      "id": "BTCUSD-1791250259",
+      "symbol": "BTCUSD",
+      "signal": "BUY",
+      "grade": "B+",
+      "confidence": 81,
+      "setup_type": "RANGE SETUP",
+      "entry": 85974.0,
+      "sl": 85820.42,
+      "tp": 86281.16,
+      "opened_at": "2026-10-06T01:30:59.631706+00:00",
+      "opened_candle_time": "2026-10-06 01:25:00",
       "status": "OPEN",
       "r_result": null
     }
   ],
   "last_signal": {
-    "XAUUSD": "BUY",
+    "XAUUSD": "WAIT",
     "EURUSD": "BUY",
-    "GBPUSD": "WAIT",
-    "BTCUSD": "WAIT"
+    "GBPUSD": "BUY",
+    "BTCUSD": "BUY"
   }
 }
