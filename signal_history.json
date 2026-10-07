@@ -1,39 +1,6 @@
 {
   "trades": [
     {
-      "id": "GBPUSD-1790009416",
-      "symbol": "GBPUSD",
-      "signal": "SELL",
-      "grade": "B+",
-      "confidence": 84,
-      "setup_type": "FVG CONTINUATION",
-      "entry": 1.33721,
-      "sl": 1.33759,
-      "tp": 1.33645,
-      "opened_at": "2026-09-21T16:50:16.069604+00:00",
-      "opened_candle_time": "2026-09-21 16:45:00",
-      "status": "EXPIRED",
-      "r_result": 1.24,
-      "closed_at": "2026-09-21 20:50:00",
-      "close_price": 1.33674
-    },
-    {
-      "id": "BTCUSD-1790009416",
-      "symbol": "BTCUSD",
-      "signal": "BUY",
-      "grade": "B+",
-      "confidence": 84,
-      "setup_type": "FVG CONTINUATION",
-      "entry": 85983.17,
-      "sl": 85699.86,
-      "tp": 86549.8,
-      "opened_at": "2026-09-21T16:50:16.069643+00:00",
-      "opened_candle_time": "2026-09-21 16:45:00",
-      "status": "LOSS",
-      "r_result": -1.0,
-      "closed_at": "2026-09-21 17:55:00"
-    },
-    {
       "id": "BTCUSD-1790014060",
       "symbol": "BTCUSD",
       "signal": "BUY",
@@ -8030,6 +7997,37 @@
       "tp": 4137.58,
       "opened_at": "2026-10-07T03:45:03.776173+00:00",
       "opened_candle_time": "2026-10-07 03:40:00",
+      "status": "LOSS",
+      "r_result": -1.0,
+      "closed_at": "2026-10-07 03:50:00"
+    },
+    {
+      "id": "GBPUSD-1791369340",
+      "symbol": "GBPUSD",
+      "signal": "SELL",
+      "grade": "B",
+      "confidence": 79,
+      "setup_type": "TREND CONTINUATION",
+      "entry": 1.32253,
+      "sl": 1.3231,
+      "tp": 1.32139,
+      "opened_at": "2026-10-07T10:35:40.684722+00:00",
+      "opened_candle_time": "2026-10-07 10:30:00",
+      "status": "OPEN",
+      "r_result": null
+    },
+    {
+      "id": "BTCUSD-1791369340",
+      "symbol": "BTCUSD",
+      "signal": "SELL",
+      "grade": "A",
+      "confidence": 86,
+      "setup_type": "TREND CONTINUATION",
+      "entry": 83718.99,
+      "sl": 83914.98,
+      "tp": 83327.01,
+      "opened_at": "2026-10-07T10:35:40.684775+00:00",
+      "opened_candle_time": "2026-10-07 10:30:00",
       "status": "OPEN",
       "r_result": null
     }
@@ -8037,7 +8035,7 @@
   "last_signal": {
     "XAUUSD": "SELL",
     "EURUSD": "SELL",
-    "GBPUSD": "WAIT",
-    "BTCUSD": "WAIT"
+    "GBPUSD": "SELL",
+    "BTCUSD": "SELL"
   }
 }
