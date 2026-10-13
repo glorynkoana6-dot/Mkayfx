@@ -1,22 +1,6 @@
 {
   "trades": [
     {
-      "id": "XAUUSD-1790089591",
-      "symbol": "XAUUSD",
-      "signal": "BUY",
-      "grade": "C",
-      "confidence": 70,
-      "setup_type": "FVG CONTINUATION",
-      "entry": 4330.13,
-      "sl": 4322.03,
-      "tp": 4346.33,
-      "opened_at": "2026-09-22T15:06:31.036694+00:00",
-      "opened_candle_time": "2026-09-22 15:05:00",
-      "status": "WIN",
-      "r_result": 2.0,
-      "closed_at": "2026-09-22 17:50:00"
-    },
-    {
       "id": "BTCUSD-1790089591",
       "symbol": "BTCUSD",
       "signal": "BUY",
@@ -8000,8 +7984,9 @@
       "tp": 4179.57,
       "opened_at": "2026-10-12T23:48:24.592028+00:00",
       "opened_candle_time": "2026-10-12 23:45:00",
-      "status": "OPEN",
-      "r_result": null
+      "status": "LOSS",
+      "r_result": -1.0,
+      "closed_at": "2026-10-13 00:00:00"
     },
     {
       "id": "EURUSD-1791848904",
@@ -8015,8 +8000,9 @@
       "tp": 1.11667,
       "opened_at": "2026-10-12T23:48:24.592082+00:00",
       "opened_candle_time": "2026-10-12 23:45:00",
-      "status": "OPEN",
-      "r_result": null
+      "status": "LOSS",
+      "r_result": -1.0,
+      "closed_at": "2026-10-12 23:55:00"
     },
     {
       "id": "GBPUSD-1791848904",
@@ -8030,6 +8016,22 @@
       "tp": 1.3215,
       "opened_at": "2026-10-12T23:48:24.592147+00:00",
       "opened_candle_time": "2026-10-12 23:45:00",
+      "status": "LOSS",
+      "r_result": -1.0,
+      "closed_at": "2026-10-13 00:00:00"
+    },
+    {
+      "id": "BTCUSD-1791863799",
+      "symbol": "BTCUSD",
+      "signal": "BUY",
+      "grade": "B",
+      "confidence": 79,
+      "setup_type": "CONFLUENCE",
+      "entry": 83314.57,
+      "sl": 83069.44,
+      "tp": 83804.84,
+      "opened_at": "2026-10-13T03:56:39.557953+00:00",
+      "opened_candle_time": "2026-10-13 03:55:00",
       "status": "OPEN",
       "r_result": null
     }
@@ -8038,6 +8040,6 @@
     "XAUUSD": "BUY",
     "EURUSD": "BUY",
     "GBPUSD": "BUY",
-    "BTCUSD": "SELL"
+    "BTCUSD": "BUY"
   }
 }
