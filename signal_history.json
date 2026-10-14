@@ -1,22 +1,6 @@
 {
   "trades": [
     {
-      "id": "BTCUSD-1790108415",
-      "symbol": "BTCUSD",
-      "signal": "SELL",
-      "grade": "B+",
-      "confidence": 81,
-      "setup_type": "RANGE SETUP",
-      "entry": 86244.7,
-      "sl": 86417.96,
-      "tp": 85898.17,
-      "opened_at": "2026-09-22T20:20:15.094252+00:00",
-      "opened_candle_time": "2026-09-22 20:15:00",
-      "status": "LOSS",
-      "r_result": -1.0,
-      "closed_at": "2026-09-22 23:05:00"
-    },
-    {
       "id": "GBPUSD-1790110573",
       "symbol": "GBPUSD",
       "signal": "BUY",
@@ -8015,8 +7999,9 @@
       "tp": 1.32777,
       "opened_at": "2026-10-14T12:26:27.842904+00:00",
       "opened_candle_time": "2026-10-14 12:25:00",
-      "status": "OPEN",
-      "r_result": null
+      "status": "AMBIGUOUS",
+      "r_result": 0.0,
+      "closed_at": "2026-10-14 12:30:00"
     },
     {
       "id": "BTCUSD-1791980787",
@@ -8030,14 +8015,30 @@
       "tp": 83939.26,
       "opened_at": "2026-10-14T12:26:27.842957+00:00",
       "opened_candle_time": "2026-10-14 12:25:00",
+      "status": "LOSS",
+      "r_result": -1.0,
+      "closed_at": "2026-10-14 12:30:00"
+    },
+    {
+      "id": "XAUUSD-1791998810",
+      "symbol": "XAUUSD",
+      "signal": "BUY",
+      "grade": "C",
+      "confidence": 68,
+      "setup_type": "FVG CONTINUATION",
+      "entry": 4085.79,
+      "sl": 4081.26,
+      "tp": 4094.85,
+      "opened_at": "2026-10-14T17:26:50.689871+00:00",
+      "opened_candle_time": "2026-10-14 17:25:00",
       "status": "OPEN",
       "r_result": null
     }
   ],
   "last_signal": {
-    "XAUUSD": "WAIT",
+    "XAUUSD": "BUY",
     "EURUSD": "WAIT",
-    "GBPUSD": "BUY",
-    "BTCUSD": "BUY"
+    "GBPUSD": "WAIT",
+    "BTCUSD": "WAIT"
   }
 }
