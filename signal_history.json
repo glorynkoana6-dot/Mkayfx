@@ -8018,8 +8018,9 @@
       "tp": 1.12368,
       "opened_at": "2026-10-17T21:43:00.301741+00:00",
       "opened_candle_time": "2026-10-17 21:40:00",
-      "status": "OPEN",
-      "r_result": null
+      "status": "WIN",
+      "r_result": 2.0,
+      "closed_at": "2026-10-17 21:45:00"
     },
     {
       "id": "BTCUSD-1792273380",
@@ -8033,14 +8034,15 @@
       "tp": 80757.79,
       "opened_at": "2026-10-17T21:43:00.301769+00:00",
       "opened_candle_time": "2026-10-17 21:40:00",
-      "status": "OPEN",
-      "r_result": null
+      "status": "LOSS",
+      "r_result": -1.0,
+      "closed_at": "2026-10-17 21:45:00"
     }
   ],
   "last_signal": {
-    "XAUUSD": "BUY",
-    "EURUSD": "SELL",
-    "GBPUSD": "SELL",
+    "XAUUSD": "SELL",
+    "EURUSD": "WAIT",
+    "GBPUSD": "WAIT",
     "BTCUSD": "SELL"
   }
 }
