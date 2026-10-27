@@ -1,22 +1,6 @@
 {
   "trades": [
     {
-      "id": "EURUSD-1790340397",
-      "symbol": "EURUSD",
-      "signal": "SELL",
-      "grade": "C",
-      "confidence": 70,
-      "setup_type": "FVG CONTINUATION",
-      "entry": 1.14005,
-      "sl": 1.14051,
-      "tp": 1.13913,
-      "opened_at": "2026-09-25T12:46:37.874174+00:00",
-      "opened_candle_time": "2026-09-25 12:45:00",
-      "status": "LOSS",
-      "r_result": -1.0,
-      "closed_at": "2026-09-25 13:05:00"
-    },
-    {
       "id": "BTCUSD-1790340397",
       "symbol": "BTCUSD",
       "signal": "SELL",
@@ -8043,14 +8027,30 @@
       "tp": 80869.3,
       "opened_at": "2026-10-27T19:31:18.298837+00:00",
       "opened_candle_time": "2026-10-27 19:25:00",
+      "status": "WIN",
+      "r_result": 2.0,
+      "closed_at": "2026-10-27 21:30:00"
+    },
+    {
+      "id": "GBPUSD-1793142413",
+      "symbol": "GBPUSD",
+      "signal": "SELL",
+      "grade": "C",
+      "confidence": 68,
+      "setup_type": "CONFLUENCE",
+      "entry": 1.33068,
+      "sl": 1.33089,
+      "tp": 1.33026,
+      "opened_at": "2026-10-27T23:06:53.140770+00:00",
+      "opened_candle_time": "2026-10-27 23:05:00",
       "status": "OPEN",
       "r_result": null
     }
   ],
   "last_signal": {
-    "XAUUSD": "BUY",
+    "XAUUSD": "WAIT",
     "EURUSD": "WAIT",
-    "GBPUSD": "WAIT",
+    "GBPUSD": "SELL",
     "BTCUSD": "BUY"
   }
 }
