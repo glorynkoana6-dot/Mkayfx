@@ -1,22 +1,6 @@
 {
   "trades": [
     {
-      "id": "BTCUSD-1790332733",
-      "symbol": "BTCUSD",
-      "signal": "BUY",
-      "grade": "A",
-      "confidence": 86,
-      "setup_type": "CONFLUENCE",
-      "entry": 84762.01,
-      "sl": 84625.3,
-      "tp": 85035.42,
-      "opened_at": "2026-09-25T10:38:53.717033+00:00",
-      "opened_candle_time": "2026-09-25 10:35:00",
-      "status": "WIN",
-      "r_result": 2.0,
-      "closed_at": "2026-09-25 11:05:00"
-    },
-    {
       "id": "EURUSD-1790340397",
       "symbol": "EURUSD",
       "signal": "SELL",
@@ -8011,8 +7995,9 @@
       "tp": 4050.35,
       "opened_at": "2026-10-27T14:23:41.335498+00:00",
       "opened_candle_time": "2026-10-27 14:20:00",
-      "status": "OPEN",
-      "r_result": null
+      "status": "WIN",
+      "r_result": 2.0,
+      "closed_at": "2026-10-27 14:40:00"
     },
     {
       "id": "GBPUSD-1793111021",
@@ -8026,8 +8011,9 @@
       "tp": 1.33402,
       "opened_at": "2026-10-27T14:23:41.335527+00:00",
       "opened_candle_time": "2026-10-27 14:20:00",
-      "status": "OPEN",
-      "r_result": null
+      "status": "LOSS",
+      "r_result": -1.0,
+      "closed_at": "2026-10-27 14:45:00"
     },
     {
       "id": "BTCUSD-1793111021",
@@ -8041,6 +8027,22 @@
       "tp": 79654.47,
       "opened_at": "2026-10-27T14:23:41.335551+00:00",
       "opened_candle_time": "2026-10-27 14:20:00",
+      "status": "LOSS",
+      "r_result": -1.0,
+      "closed_at": "2026-10-27 14:25:00"
+    },
+    {
+      "id": "BTCUSD-1793129478",
+      "symbol": "BTCUSD",
+      "signal": "BUY",
+      "grade": "C",
+      "confidence": 71,
+      "setup_type": "TREND CONTINUATION",
+      "entry": 80662.01,
+      "sl": 80558.37,
+      "tp": 80869.3,
+      "opened_at": "2026-10-27T19:31:18.298837+00:00",
+      "opened_candle_time": "2026-10-27 19:25:00",
       "status": "OPEN",
       "r_result": null
     }
@@ -8048,7 +8050,7 @@
   "last_signal": {
     "XAUUSD": "BUY",
     "EURUSD": "WAIT",
-    "GBPUSD": "BUY",
-    "BTCUSD": "SELL"
+    "GBPUSD": "WAIT",
+    "BTCUSD": "BUY"
   }
 }
