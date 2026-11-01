@@ -8006,8 +8006,10 @@
       "tp": 3874.96,
       "opened_at": "2026-11-01T13:57:42.100679+00:00",
       "opened_candle_time": "2026-11-01 13:55:00",
-      "status": "OPEN",
-      "r_result": null
+      "status": "EXPIRED",
+      "r_result": -0.33,
+      "closed_at": "2026-11-01 18:40:00",
+      "close_price": 3875.43
     },
     {
       "id": "EURUSD-1793541462",
@@ -8021,8 +8023,9 @@
       "tp": 1.11579,
       "opened_at": "2026-11-01T13:57:42.100720+00:00",
       "opened_candle_time": "2026-11-01 13:55:00",
-      "status": "OPEN",
-      "r_result": null
+      "status": "WIN",
+      "r_result": 2.0,
+      "closed_at": "2026-11-01 15:00:00"
     },
     {
       "id": "BTCUSD-1793541462",
@@ -8036,13 +8039,14 @@
       "tp": 77773.32,
       "opened_at": "2026-11-01T13:57:42.100757+00:00",
       "opened_candle_time": "2026-11-01 13:55:00",
-      "status": "OPEN",
-      "r_result": null
+      "status": "LOSS",
+      "r_result": -1.0,
+      "closed_at": "2026-11-01 14:00:00"
     }
   ],
   "last_signal": {
-    "XAUUSD": "SELL",
-    "EURUSD": "SELL",
+    "XAUUSD": "WAIT",
+    "EURUSD": "WAIT",
     "GBPUSD": "WAIT",
     "BTCUSD": "SELL"
   }
