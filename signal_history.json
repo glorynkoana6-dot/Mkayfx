@@ -1,22 +1,6 @@
 {
   "trades": [
     {
-      "id": "BTCUSD-1790440939",
-      "symbol": "BTCUSD",
-      "signal": "BUY",
-      "grade": "B+",
-      "confidence": 84,
-      "setup_type": "CONFLUENCE",
-      "entry": 84156.74,
-      "sl": 84105.75,
-      "tp": 84258.72,
-      "opened_at": "2026-09-26T16:42:19.199822+00:00",
-      "opened_candle_time": "2026-09-26 16:40:00",
-      "status": "LOSS",
-      "r_result": -1.0,
-      "closed_at": "2026-09-26 16:55:00"
-    },
-    {
       "id": "GBPUSD-1790442343",
       "symbol": "GBPUSD",
       "signal": "SELL",
@@ -8002,8 +7986,9 @@
       "tp": 3951.54,
       "opened_at": "2026-11-03T15:52:10.647378+00:00",
       "opened_candle_time": "2026-11-03 15:50:00",
-      "status": "OPEN",
-      "r_result": null
+      "status": "LOSS",
+      "r_result": -1.0,
+      "closed_at": "2026-11-03 16:45:00"
     },
     {
       "id": "GBPUSD-1793721130",
@@ -8017,8 +8002,9 @@
       "tp": 1.33996,
       "opened_at": "2026-11-03T15:52:10.647434+00:00",
       "opened_candle_time": "2026-11-03 15:50:00",
-      "status": "OPEN",
-      "r_result": null
+      "status": "LOSS",
+      "r_result": -1.0,
+      "closed_at": "2026-11-03 16:15:00"
     },
     {
       "id": "BTCUSD-1793721130",
@@ -8032,13 +8018,29 @@
       "tp": 78082.27,
       "opened_at": "2026-11-03T15:52:10.647484+00:00",
       "opened_candle_time": "2026-11-03 15:50:00",
+      "status": "LOSS",
+      "r_result": -1.0,
+      "closed_at": "2026-11-03 16:20:00"
+    },
+    {
+      "id": "EURUSD-1793741111",
+      "symbol": "EURUSD",
+      "signal": "SELL",
+      "grade": "A",
+      "confidence": 86,
+      "setup_type": "RANGE SETUP",
+      "entry": 1.11914,
+      "sl": 1.11937,
+      "tp": 1.11869,
+      "opened_at": "2026-11-03T21:25:11.145605+00:00",
+      "opened_candle_time": "2026-11-03 21:20:00",
       "status": "OPEN",
       "r_result": null
     }
   ],
   "last_signal": {
     "XAUUSD": "BUY",
-    "EURUSD": "WAIT",
+    "EURUSD": "SELL",
     "GBPUSD": "SELL",
     "BTCUSD": "BUY"
   }
