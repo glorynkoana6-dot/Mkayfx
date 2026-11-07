@@ -8018,8 +8018,9 @@
       "tp": 1.1151,
       "opened_at": "2026-11-06T22:03:45.483817+00:00",
       "opened_candle_time": "2026-11-06 22:00:00",
-      "status": "OPEN",
-      "r_result": null
+      "status": "WIN",
+      "r_result": 2.0,
+      "closed_at": "2026-11-06 22:05:00"
     },
     {
       "id": "GBPUSD-1794002625",
@@ -8033,14 +8034,15 @@
       "tp": 1.33694,
       "opened_at": "2026-11-06T22:03:45.483845+00:00",
       "opened_candle_time": "2026-11-06 22:00:00",
-      "status": "OPEN",
-      "r_result": null
+      "status": "LOSS",
+      "r_result": -1.0,
+      "closed_at": "2026-11-06 22:05:00"
     }
   ],
   "last_signal": {
     "XAUUSD": "BUY",
-    "EURUSD": "BUY",
-    "GBPUSD": "BUY",
+    "EURUSD": "WAIT",
+    "GBPUSD": "WAIT",
     "BTCUSD": "BUY"
   }
 }
