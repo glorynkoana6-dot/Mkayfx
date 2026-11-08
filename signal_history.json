@@ -1,22 +1,6 @@
 {
   "trades": [
     {
-      "id": "EURUSD-1790493678",
-      "symbol": "EURUSD",
-      "signal": "BUY",
-      "grade": "A",
-      "confidence": 91,
-      "setup_type": "FVG CONTINUATION",
-      "entry": 1.1394,
-      "sl": 1.13923,
-      "tp": 1.13973,
-      "opened_at": "2026-09-27T07:21:18.422021+00:00",
-      "opened_candle_time": "2026-09-27 07:20:00",
-      "status": "LOSS",
-      "r_result": -1.0,
-      "closed_at": "2026-09-27 07:45:00"
-    },
-    {
       "id": "BTCUSD-1790494640",
       "symbol": "BTCUSD",
       "signal": "BUY",
@@ -8019,8 +8003,9 @@
       "tp": 1.335,
       "opened_at": "2026-11-08T15:28:58.563501+00:00",
       "opened_candle_time": "2026-11-08 15:25:00",
-      "status": "OPEN",
-      "r_result": null
+      "status": "LOSS",
+      "r_result": -1.0,
+      "closed_at": "2026-11-08 16:00:00"
     },
     {
       "id": "BTCUSD-1794151738",
@@ -8034,14 +8019,30 @@
       "tp": 76186.31,
       "opened_at": "2026-11-08T15:28:58.563528+00:00",
       "opened_candle_time": "2026-11-08 15:25:00",
+      "status": "LOSS",
+      "r_result": -1.0,
+      "closed_at": "2026-11-08 16:30:00"
+    },
+    {
+      "id": "XAUUSD-1794167594",
+      "symbol": "XAUUSD",
+      "signal": "SELL",
+      "grade": "C",
+      "confidence": 71,
+      "setup_type": "CONFLUENCE",
+      "entry": 4066.07,
+      "sl": 4066.93,
+      "tp": 4064.35,
+      "opened_at": "2026-11-08T19:53:14.111422+00:00",
+      "opened_candle_time": "2026-11-08 19:50:00",
       "status": "OPEN",
       "r_result": null
     }
   ],
   "last_signal": {
-    "XAUUSD": "BUY",
+    "XAUUSD": "SELL",
     "EURUSD": "WAIT",
     "GBPUSD": "SELL",
-    "BTCUSD": "BUY"
+    "BTCUSD": "WAIT"
   }
 }
