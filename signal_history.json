@@ -1,38 +1,6 @@
 {
   "trades": [
     {
-      "id": "EURUSD-1790616214",
-      "symbol": "EURUSD",
-      "signal": "BUY",
-      "grade": "A",
-      "confidence": 86,
-      "setup_type": "CONFLUENCE",
-      "entry": 1.13763,
-      "sl": 1.13667,
-      "tp": 1.13955,
-      "opened_at": "2026-09-28T17:23:34.434641+00:00",
-      "opened_candle_time": "2026-09-28 17:20:00",
-      "status": "LOSS",
-      "r_result": -1.0,
-      "closed_at": "2026-09-28 19:00:00"
-    },
-    {
-      "id": "BTCUSD-1790616214",
-      "symbol": "BTCUSD",
-      "signal": "BUY",
-      "grade": "A+",
-      "confidence": 97,
-      "setup_type": "TREND CONTINUATION",
-      "entry": 84025.11,
-      "sl": 83666.66,
-      "tp": 84742.01,
-      "opened_at": "2026-09-28T17:23:34.434694+00:00",
-      "opened_candle_time": "2026-09-28 17:20:00",
-      "status": "LOSS",
-      "r_result": -1.0,
-      "closed_at": "2026-09-28 19:10:00"
-    },
-    {
       "id": "XAUUSD-1790617127",
       "symbol": "XAUUSD",
       "signal": "SELL",
@@ -8036,14 +8004,46 @@
       "tp": 3537.3,
       "opened_at": "2026-11-21T18:14:48.561412+00:00",
       "opened_candle_time": "2026-11-21 18:10:00",
+      "status": "EXPIRED",
+      "r_result": 0.8,
+      "closed_at": "2026-11-21 23:20:00",
+      "close_price": 3536.6
+    },
+    {
+      "id": "EURUSD-1795303415",
+      "symbol": "EURUSD",
+      "signal": "SELL",
+      "grade": "B",
+      "confidence": 76,
+      "setup_type": "RANGE SETUP",
+      "entry": 1.09703,
+      "sl": 1.09732,
+      "tp": 1.09644,
+      "opened_at": "2026-11-21T23:23:35.574544+00:00",
+      "opened_candle_time": "2026-11-21 23:20:00",
+      "status": "OPEN",
+      "r_result": null
+    },
+    {
+      "id": "BTCUSD-1795303415",
+      "symbol": "BTCUSD",
+      "signal": "SELL",
+      "grade": "C",
+      "confidence": 65,
+      "setup_type": "RANGE SETUP",
+      "entry": 60267.66,
+      "sl": 60403.61,
+      "tp": 59995.77,
+      "opened_at": "2026-11-21T23:23:35.574577+00:00",
+      "opened_candle_time": "2026-11-21 23:20:00",
       "status": "OPEN",
       "r_result": null
     }
   ],
   "last_signal": {
     "XAUUSD": "BUY",
-    "EURUSD": "WAIT",
+    "EURUSD": "SELL",
     "GBPUSD": "BUY",
-    "BTCUSD": "BUY"
+    "BTCUSD": "SELL"
   }
 }
